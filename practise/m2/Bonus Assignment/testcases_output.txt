@@ -1,0 +1,52 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+2297
+
+Your Output: 
+Traceback (most recent call last):
+  File "sol.py", line 49, in <module>
+    if __name__ == "__main__": main()
+  File "sol.py", line 43, in main
+    with open(os.path.join(os.path.dirname(__file__), "matrix.txt")) as matfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'matrix.txt'
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+2040
+
+Your Output: 
+Traceback (most recent call last):
+  File "sol.py", line 49, in <module>
+    if __name__ == "__main__": main()
+  File "sol.py", line 43, in main
+    with open(os.path.join(os.path.dirname(__file__), "matrix.txt")) as matfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'matrix.txt'
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+7858
+
+Your Output: 
+Traceback (most recent call last):
+  File "sol.py", line 49, in <module>
+    if __name__ == "__main__": main()
+  File "sol.py", line 43, in main
+    with open(os.path.join(os.path.dirname(__file__), "matrix.txt")) as matfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'matrix.txt'
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+1399000000000
+
+Your Output: 
+Traceback (most recent call last):
+  File "sol.py", line 49, in <module>
+    if __name__ == "__main__": main()
+  File "sol.py", line 43, in main
+    with open(os.path.join(os.path.dirname(__file__), "matrix.txt")) as matfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'matrix.txt'
+----------------------------------------
+
