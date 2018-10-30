@@ -3,10 +3,8 @@ Expected Output:
 2297
 
 Your Output: 
-  File "sol.py", line 32
-    print minimal_path_sum('matrix.txt')
-                         ^
-SyntaxError: invalid syntax
+Incorrect number of arguments.
+Usage: ./pathsumfourways.jar p083_matrix.txt
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -14,10 +12,8 @@ Expected Output:
 2040
 
 Your Output: 
-  File "sol.py", line 32
-    print minimal_path_sum('matrix.txt')
-                         ^
-SyntaxError: invalid syntax
+Incorrect number of arguments.
+Usage: ./pathsumfourways.jar p083_matrix.txt
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -25,10 +21,8 @@ Expected Output:
 7858
 
 Your Output: 
-  File "sol.py", line 32
-    print minimal_path_sum('matrix.txt')
-                         ^
-SyntaxError: invalid syntax
+Incorrect number of arguments.
+Usage: ./pathsumfourways.jar p083_matrix.txt
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -36,9 +30,7 @@ Expected Output:
 1399000000000
 
 Your Output: 
-  File "sol.py", line 32
-    print minimal_path_sum('matrix.txt')
-                         ^
-SyntaxError: invalid syntax
+Incorrect number of arguments.
+Usage: ./pathsumfourways.jar p083_matrix.txt
 ----------------------------------------
 
