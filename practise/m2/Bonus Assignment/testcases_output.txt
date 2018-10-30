@@ -3,8 +3,7 @@ Expected Output:
 2297
 
 Your Output: 
-Incorrect number of arguments.
-Usage: ./pathsumfourways.jar p083_matrix.txt
+425185
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -12,8 +11,7 @@ Expected Output:
 2040
 
 Your Output: 
-Incorrect number of arguments.
-Usage: ./pathsumfourways.jar p083_matrix.txt
+425185
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -21,8 +19,7 @@ Expected Output:
 7858
 
 Your Output: 
-Incorrect number of arguments.
-Usage: ./pathsumfourways.jar p083_matrix.txt
+425185
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -30,7 +27,6 @@ Expected Output:
 1399000000000
 
 Your Output: 
-Incorrect number of arguments.
-Usage: ./pathsumfourways.jar p083_matrix.txt
+
 ----------------------------------------
 
