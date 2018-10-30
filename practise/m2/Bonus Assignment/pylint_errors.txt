@@ -1,2 +1,0 @@
-************* Module sol
-sol.py:32:0: E0001: invalid syntax (<unknown>, line 32) (syntax-error)
