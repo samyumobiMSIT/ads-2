@@ -1,0 +1,240 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 4: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 5: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 6: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 7: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 8: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 9: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 10: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 11: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 12: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 13: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 14: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 15: Failed ##########
+Expected Output: 
+false
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 16: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 17: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 18: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 19: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 20: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 21: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 22: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
+########## Testcase 23: Failed ##########
+Expected Output: 
+true
+
+Your Output: 
+Error: Main method not found in class Percolation, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+----------------------------------------
+
