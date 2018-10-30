@@ -1,49 +1,32 @@
-import os
-import heapq
+# Path sum
+# In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by only moving to the right and down, is indicated in bold red and is equal to 2427.
+#
+# *131*  673   234   103   18
+# *201* *96*  *342*  965   150
+# 630    803  *746*  *422* 111
+# 537    699   497   *121* 956
+# 805    732   524   *37*  *331*
+#
+# Find the minimal path sum, in matrix.txt (right click and 'Save Link/Target As...'), a 31K text file containing a 80 by 80 matrix, from the top left to the bottom right by only moving right and down.
 
-def parse(matfile):
-    return [[int(n) for n in row.split(',')] for row in matfile]
 
-def distance(a, b):
-    return sum(abs(a[i] - b[i]) for i in range(len(a)))
+def minimal_path_sum(file_name):
+  matrix = [line.rstrip('\n') for line in open('matrix.txt')]
+  matrix = [map(int, row.split(',')) for row in matrix]
 
-def astar(matrix, targets, sources):
-    def neighbors(position):
-        (x, y) = position
-        candidates = [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]
-        return [(x, y) for (x, y) in candidates if x >= 0 and x < len(matrix)
-                                               and y >= 0 and y < len(matrix[0])]
+  size = len(matrix)
+  # calculate minimal sums for bottom row and last column
+  # as they don't have any other way to be reached
+  for i in reversed(range(0, size - 1)):
+    matrix[size - 1][i] += matrix[size - 1][i + 1]
+    matrix[i][size - 1] += matrix[i + 1][size - 1]
 
-    def evaluate(path):
-        f = sum(matrix[y][x] for (x, y) in path)
-        h = min(distance(path[-1], target) for target in targets)
-        return f + h
+  for i in reversed(range(0, size - 1)):
+    for j in reversed(range(0, size - 1)):
+      matrix[i][j] += min(matrix[i + 1][j], matrix[i][j + 1])
 
-    targets = set(targets)
-    frontier = set(sources)
-    explored = set()
-    frontier_queue = []
-    for source in sources:
-        path = [source]
-        heapq.heappush(frontier_queue, (evaluate(path), path))
+  return matrix[0][0]
 
-    while frontier:
-        (_, path) = heapq.heappop(frontier_queue)
-        frontier.remove(path[-1])
-        explored.add(path[-1])
-        if path[-1] in targets:
-            return path
-        for neighbor in neighbors(path[-1]):
-            if neighbor not in frontier | explored:
-                frontier.add(neighbor)
-                new_path = path + [neighbor]
-                heapq.heappush(frontier_queue, (evaluate(new_path), new_path))
 
-def main():
-    with open(os.path.join(os.path.dirname(__file__), "matrix.txt")) as matfile:
-        matrix = parse(matfile)
-    targets = [(len(matrix) - 1, len(matrix[0]) - 1)]
-    sources = [(0, 0)]
-    print(sum(matrix[y][x] for (x, y) in astar(matrix, targets, sources)))
 
-if __name__ == "__main__": main()
+print minimal_path_sum('matrix.txt')

@@ -1,22 +1,2 @@
 ************* Module sol
-sol.py:15:0: C0330: Wrong continued indentation (remove 31 spaces).
-                                               and y >= 0 and y < len(matrix[0])]
-                |                              ^ (bad-continuation)
-sol.py:49:0: C0304: Final newline missing (missing-final-newline)
-sol.py:1:0: C0111: Missing module docstring (missing-docstring)
-sol.py:4:0: C0111: Missing function docstring (missing-docstring)
-sol.py:7:0: C0103: Argument name "a" doesn't conform to snake_case naming style (invalid-name)
-sol.py:7:0: C0103: Argument name "b" doesn't conform to snake_case naming style (invalid-name)
-sol.py:7:0: C0111: Missing function docstring (missing-docstring)
-sol.py:10:0: C0111: Missing function docstring (missing-docstring)
-sol.py:12:9: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)
-sol.py:12:12: C0103: Variable name "y" doesn't conform to snake_case naming style (invalid-name)
-sol.py:14:51: R1716: Simplify chained comparison between the operands (chained-comparison)
-sol.py:18:8: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)
-sol.py:19:8: C0103: Variable name "h" doesn't conform to snake_case naming style (invalid-name)
-sol.py:42:0: C0111: Missing function docstring (missing-docstring)
-sol.py:49:27: C0321: More than one statement on a single line (multiple-statements)
-
------------------------------------
-Your code has been rated at 6.34/10
-
+sol.py:32:0: E0001: invalid syntax (<unknown>, line 32) (syntax-error)
