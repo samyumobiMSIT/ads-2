@@ -1,221 +1,177 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 false
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+false
 ----------------------------------------
 
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 false
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+false
 ----------------------------------------
 
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 false
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+false
 ----------------------------------------
 
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 false
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+false
 ----------------------------------------
 
-########## Testcase 6: Failed ##########
+########## Testcase 6: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 7: Failed ##########
+########## Testcase 7: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 8: Failed ##########
+########## Testcase 8: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 9: Failed ##########
+########## Testcase 9: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 10: Failed ##########
+########## Testcase 10: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 11: Failed ##########
+########## Testcase 11: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 12: Failed ##########
+########## Testcase 12: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 13: Failed ##########
+########## Testcase 13: Passed ##########
 Expected Output: 
 false
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+false
 ----------------------------------------
 
-########## Testcase 14: Failed ##########
+########## Testcase 14: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 15: Failed ##########
+########## Testcase 15: Passed ##########
 Expected Output: 
 false
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+false
 ----------------------------------------
 
-########## Testcase 16: Failed ##########
+########## Testcase 16: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 17: Failed ##########
+########## Testcase 17: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 18: Failed ##########
+########## Testcase 18: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 19: Failed ##########
+########## Testcase 19: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 20: Failed ##########
+########## Testcase 20: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
-########## Testcase 21: Failed ##########
+########## Testcase 21: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 
 ########## Testcase 22: Failed ##########
@@ -223,18 +179,1038 @@ Expected Output:
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+Exception in thread "main" java.lang.StackOverflowError
+	at Graph.adj(Graph.java:77)
+	at CC.dfs(CC.java:31)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
+	at CC.dfs(CC.java:33)
 ----------------------------------------
 
-########## Testcase 23: Failed ##########
+########## Testcase 23: Passed ##########
 Expected Output: 
 true
 
 Your Output: 
-Error: Main method not found in class Percolation, please define the main method as:
-   public static void main(String[] args)
-or a JavaFX application class must extend javafx.application.Application
+true
 ----------------------------------------
 

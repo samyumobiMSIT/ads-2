@@ -1,161 +1,53 @@
-public class Percolation {
+import java.util.*;
+class Solution{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int size = Integer.parseInt(sc.nextLine());
+		percolate obj = new percolate(size);
+		while(sc.hasNextLine()){
+			String[] input = sc.nextLine().split(" ");
+			obj.open(Integer.parseInt(input[0])-1, Integer.parseInt(input[1])-1);
+		}
+		System.out.println(obj.ispercolate());
+	}
+}
+class percolate{
+	int size;
+	boolean[][] grid;
+	Graph obj;
 
-    private int virtualTopIndex;
-    private int virtualBottomIndex;
+	percolate(int size){
+		this.size = size;
+		grid = new boolean[size][size];
+		obj = new Graph(size*size + 2);
+	}
 
-    private int size;
-    private boolean[] gridStates;
+	public void open(int i, int j){
+		if(grid[i][j]) return;
+		grid[i][j] = true;
+		if(i == 0){
+			obj.addEdge(convert(i, j), size*size);
+		}if(i == size-1){
+			obj.addEdge(convert(i, j), size*size+1);
+		}
+		if(i < size - 1 && grid[i+1][j]){
+			obj.addEdge(convert(i,j), convert(i+1,j));
+		}if(i > 0 && grid[i-1][j]){
+			obj.addEdge(convert(i, j), convert(i-1,j));
+		}if(j > 0 && grid[i][j-1]){
+			obj.addEdge(convert(i, j), convert(i,j-1));
+		}if(j < size-1 && grid[i][j+1]){
+			obj.addEdge(convert(i, j), convert(i,j+1));
+		}
+	}
+	public boolean ispercolate(){
+		CC obj1 = new CC(obj);
+		return obj1.connected(size*size, size*size+1);
 
-    private WeightedQuickUnionUF gridUnions;
-    private WeightedQuickUnionUF gridUnionsFull;
+		//return obj.connected(size*size, size*size+1);
+	}
 
-    /**
-     * creates N-by-N grid, with all sites blocked
-     * 
-     * @param initialSize
-     *            initial size
-     */
-    public Percolation(final int initialSize) {
-        if (initialSize <= 0) {
-            throw new IllegalArgumentException();
-        }
-
-        size = initialSize;
-
-        // We are adding a virtual top and bottom
-        gridStates = new boolean[initialSize * initialSize + 2];
-        gridUnions = new WeightedQuickUnionUF(initialSize * initialSize + 2);
-        // To avoid the back wash, we'll use another WQUF
-        gridUnionsFull =
-                new WeightedQuickUnionUF(initialSize * initialSize + 1);
-
-        // both virtual nodes are open
-        virtualTopIndex = initialSize * initialSize;
-        virtualBottomIndex = initialSize * initialSize + 1;
-        gridStates[virtualTopIndex] = true;
-        gridStates[virtualBottomIndex] = true;
-    }
-
-    /**
-     * open site (row i, column j) if it is not already.
-     * 
-     * @param row
-     * @param column
-     */
-    public void open(final int row, final int column) {
-        checkIndexInbounds(row, column);
-        if (isOpen(row, column)) {
-            return;
-        }
-
-        // we open the cell
-        final int cellIndex = getCellIndex(row, column);
-
-        gridStates[cellIndex] = true;
-
-        if (row != 1 && isOpen(row - 1, column)) {
-            union(cellIndex, getCellIndex(row - 1, column));
-        } else if (row == 1) { // top row
-            union(cellIndex, virtualTopIndex);
-        }
-
-        if (row != size && isOpen(row + 1, column)) {
-            union(cellIndex, getCellIndex(row + 1, column));
-        } else if (row == size) { // bottom row
-            union(cellIndex, virtualBottomIndex);
-        }
-
-        if (column != 1 && isOpen(row, column - 1)) {
-            union(cellIndex, getCellIndex(row, column - 1));
-        }
-
-        if (column != size && isOpen(row, column + 1)) {
-            union(cellIndex, getCellIndex(row, column + 1));
-        }
-    }
-
-    /**
-     * is site (row i, column j) open?
-     * 
-     * @param row
-     * @param column
-     * @return
-     */
-    public boolean isOpen(final int row, final int column) {
-        checkIndexInbounds(row, column);
-        return gridStates[getCellIndex(row, column)];
-    }
-
-    /**
-     * is site (row i, column j) full?
-     * 
-     * @param row
-     * @param column
-     * @return
-     */
-    public boolean isFull(final int row, final int column) {
-        checkIndexInbounds(row, column);
-        return gridUnionsFull.connected(virtualTopIndex,
-                getCellIndex(row, column));
-    }
-
-    /**
-     * does the system percolate?
-     * 
-     * @return
-     */
-    public boolean percolates() {
-        return gridUnions.connected(virtualTopIndex, virtualBottomIndex);
-    }
-
-    private void union(final int indexOne, final int indexTwo) {
-        if (!gridUnions.connected(indexOne, indexTwo)) {
-            gridUnions.union(indexOne, indexTwo);
-        }
-        if (indexOne <= (size * size) && indexTwo <= (size * size)
-                && !gridUnionsFull.connected(indexOne, indexTwo)) {
-            gridUnionsFull.union(indexOne, indexTwo);
-        }
-    }
-
-    private void checkIndexInbounds(final int row, final int column) {
-
-        if (row < 1 || row > size || column < 1 || column > size) {
-            throw new IndexOutOfBoundsException("spot " + row + "," + column
-                    + "is out of bounds");
-        }
-    }
-
-    private int getCellIndex(final int row, final int column) {
-        return (row - 1) * size + column - 1;
-    }
-
-    public static void main(String[] args) {
-
-        checkArguments(args);
-        String defaultSize = args[0];
-        String numberOfExperiments = args[1];
-
-        final PercolationStats perStats =
-                new PercolationStats(Integer.parseInt(defaultSize),
-                        Integer.parseInt(numberOfExperiments));
-        System.out.println("mean                    = " + perStats.mean());
-        System.out.println("stddev                  = " + perStats.stddev());
-        System.out.println("95% confidence interval = "
-                + perStats.confidenceLo() + ", " + perStats.confidenceHi());
-
-    }
-
-    /**
-     * Checks if there are at least two arguments and both of them are numeric
-     * and greater than 0
-     * 
-     * @param args
-     */
-    private static void checkArguments(final String[] args) {
-        if (args.length < 1) {
-            throw new IllegalArgumentException();
-        }
-
-    }
+	public int convert(int i, int j){
+		return ((i * size) + j);
+	}
 }

@@ -1,97 +1,133 @@
 public class Percolation {
-    
-    private WeightedQuickUnionUF grid, auxGrid;
-    private boolean[]   state;
-    private int     N;
+  private final int n;
+  private final WeightedQuickUnionUF uf;
+  private final boolean[][] sites;
+  private int numberOfOpenSites;
 
-    // create N-by-N grid, with all sites blocked
-    public Percolation(int N) {
+  private final int source;
+  private final int destination;
 
-        int siteCount = N * N;
-        this.N = N;
+  // create n-by-n grid, with all sites blocked
+  public Percolation(int n) {
+    validate(n);
 
-        // index 0 and N^2+1 are reserved for virtual top and bottom sites
-        grid    = new WeightedQuickUnionUF(siteCount + 2);
-        auxGrid = new WeightedQuickUnionUF(siteCount + 1);
-        state   = new boolean[siteCount + 2];
+    this.n = n;
+    this.uf = new WeightedQuickUnionUF(n * n + 2);
+    this.source = 0;
+    this.destination = n * n + 1;
 
-        // Initialize all sites to be blocked.
-        for (int i = 1; i <= siteCount; i++)
-            state[i] = false;
-        // Initialize virtual top and bottom site with open state
-        state[0] = true;
-        state[siteCount+1] = true;
+    this.sites = new boolean[n][n];
+    numberOfOpenSites = 0;
+  }
+
+  private void validate(int capacity) {
+    if (capacity <= 0) {
+      throw new IllegalArgumentException("Grid should to be at least 1*1");
+    }
+  }
+
+  private void validate(int row, int col) {
+    if (row < 1 || row > n || col < 1 || col > n) {
+      throw new IllegalArgumentException("Row or Column value is out of range");
+    }
+  }
+
+  private void connectIfOpen(int pos, int row, int col) {
+    if (row >= 1 && row <= n && col >= 1 && col <= n && isOpen(row, col)) {
+      uf.union(n * (row - 1) + col, pos);
+    }
+  }
+
+  // open site (row, col) if it is not open already
+  public void open(int row, int col) {
+    validate(row, col);
+    if (!isOpen(row, col)) {
+      sites[row - 1][col - 1] = true;
+      numberOfOpenSites++;
+    }
+    int pos = n * (row - 1) + col;
+
+    if (row == 1) {
+      uf.union(source, pos);
+    } else if (row == n) {
+      uf.union(pos, destination);
     }
 
-    // return array index of given row i and column j
-    private int xyToIndex(int i, int j) {
-        // Attention: i and j are of range 1 ~ N, NOT 0 ~ N-1.
-        // Throw IndexOutOfBoundsException if i or j is not valid
-        if (i <= 0 || i > N) 
-            throw new IndexOutOfBoundsException("row i out of bound");
-        if (j <= 0 || j > N) 
-            throw new IndexOutOfBoundsException("column j out of bound");
+    // Try with left
+    connectIfOpen(pos, row, col - 1);
 
-        return (i - 1) * N + j;
-    }
+    // Try with top
+    connectIfOpen(pos, row - 1, col);
 
-    private boolean isTopSite(int index) {
-        return index <= N;
-    }
+    // Try with right
+    connectIfOpen(pos, row, col + 1);
 
-    private boolean isBottomSite(int index) {
-        return index >= (N - 1) * N + 1;
-    }
+    // Try with bottom
+    connectIfOpen(pos, row + 1, col);
+  }
 
-    // open site (row i, column j) if it is not already
-    public void open(int i, int j) {
-        // All input sites are blocked at first. 
-        // Check the state of site before invoking this method.
-        int idx = xyToIndex(i, j);
-        state[idx] = true;
+  // is site (row, col) open?
+  public boolean isOpen(int row, int col) {
+    validate(row, col);
+    return sites[row - 1][col - 1];
+  }
 
-        // Traverse surrounding sites, connect all open ones. 
-        // Make sure we do not index sites out of bounds.
-        if (i != 1 && isOpen(i-1, j)) {
-            grid.union(idx, xyToIndex(i-1, j));
-            auxGrid.union(idx, xyToIndex(i-1, j));
-        }
-        if (i != N && isOpen(i+1, j)) {
-            grid.union(idx, xyToIndex(i+1, j));
-            auxGrid.union(idx, xyToIndex(i+1, j));
-        }
-        if (j != 1 && isOpen(i, j-1)) {
-            grid.union(idx, xyToIndex(i, j-1));
-            auxGrid.union(idx, xyToIndex(i, j-1));
-        }
-        if (j != N && isOpen(i, j+1)) {
-            grid.union(idx, xyToIndex(i, j+1));
-            auxGrid.union(idx, xyToIndex(i, j+1));
-        }
-        // if site is on top or bottom, connect to corresponding virtual site.
-        if (isTopSite(idx)) {
-            grid.union(0, idx);
-            auxGrid.union(0, idx);
-        }
-        if (isBottomSite(idx))  grid.union(state.length-1, idx);
-    }
+  // is site (row, col) full?
+  public boolean isFull(int row, int col) {
+    validate(row, col);
+    return isOpen(row, col) && uf.connected(source, n * (row - 1) + col);
+  }
 
-    // is site (row i, column j) open?
-    public boolean isOpen(int i, int j) {
-        int idx = xyToIndex(i, j);
-        return state[idx];
-    }
+  // number of open sites
+  public int numberOfOpenSites() {
+    return numberOfOpenSites;
+  }
 
-    // is site (row i, column j) full?
-    public boolean isFull(int i, int j) {
-        // Check if this site is connected to virtual top site
-        int idx = xyToIndex(i, j);
-        return grid.connected(0, idx) && auxGrid.connected(0, idx);
-    }
+  // does the system percolate?
+  public boolean percolates() {
+    return uf.connected(source, destination);
+  }
 
-    // does the system percolate?
-    public boolean percolates() {
-        // Check whether virtual top and bottom sites are connected
-        return grid.connected(0, state.length-1);
-    }
+  public static void main(String[] args) {
+    Percolation percolation = new Percolation(8);
+    percolation.open(1, 3);
+    percolation.open(1, 4);
+    percolation.open(1, 5);
+    percolation.open(2, 1);
+    percolation.open(2, 4);
+    percolation.open(2, 5);
+    percolation.open(2, 6);
+    percolation.open(2, 7);
+    percolation.open(2, 8);
+    percolation.open(3, 1);
+    percolation.open(3, 2);
+    percolation.open(3, 3);
+    percolation.open(3, 6);
+    percolation.open(3, 7);
+    percolation.open(4, 3);
+    percolation.open(4, 4);
+    percolation.open(4, 6);
+    percolation.open(4, 7);
+    percolation.open(4, 8);
+    percolation.open(5, 2);
+    percolation.open(5, 3);
+    percolation.open(5, 4);
+    percolation.open(5, 6);
+    percolation.open(5, 7);
+    percolation.open(6, 2);
+    percolation.open(6, 7);
+    percolation.open(6, 8);
+    percolation.open(7, 1);
+    percolation.open(7, 3);
+    percolation.open(7, 5);
+    percolation.open(7, 6);
+    percolation.open(7, 7);
+    percolation.open(7, 8);
+    percolation.open(8, 1);
+    percolation.open(8, 2);
+    percolation.open(8, 3);
+    percolation.open(8, 4);
+    percolation.open(8, 6);
+    System.out.println(percolation.percolates() ? "Yes" : "No");
+  }
 }
