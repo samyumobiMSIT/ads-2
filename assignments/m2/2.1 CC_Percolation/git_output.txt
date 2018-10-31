@@ -1,0 +1,4 @@
+[master 051478c] "ads2_m2_a1_1: 23/24 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 2 files changed, 2 insertions(+)
+ create mode 100644 assignments/m2/2.1 CC_Percolation/md5/score.txt
+ create mode 100644 assignments/m2/2.1 CC_Percolation/result/score.json
