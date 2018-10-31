@@ -1,40 +1,40 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 Graph is bipartite
 
 Your Output: 
-Error: Could not find or load main class Solution
+Graph is bipartite
 ----------------------------------------
 
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 Graph is bipartite
 
 Your Output: 
-Error: Could not find or load main class Solution
+Graph is bipartite
 ----------------------------------------
 
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 Graph is bipartite
 
 Your Output: 
-Error: Could not find or load main class Solution
+Graph is bipartite
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 Graph is not a bipartite
 
 Your Output: 
-Error: Could not find or load main class Solution
+Graph is not a bipartite
 ----------------------------------------
 
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 Graph is not a bipartite
 
 Your Output: 
-Error: Could not find or load main class Solution
+Graph is not a bipartite
 ----------------------------------------
 
