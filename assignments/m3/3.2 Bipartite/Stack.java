@@ -1,4 +1,3 @@
-
 import java.util.Iterator;
 /**
  * Stack class.
