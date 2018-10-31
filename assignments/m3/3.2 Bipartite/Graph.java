@@ -37,25 +37,28 @@ public class Graph {
     }
 
     /**
-     * Return the number of vertices in the graph.
-     * @return     vertices  {Integer}
+     * returns vertices.
+     * Time complexity is O(1).
+     * @return  vertices.
      */
     public int vertices() {
         return vertices;
     }
 
-    /**
-     * Return the number of edges in the graph.
-     * @return    edges  {Integer}
+     /**
+     * returns edges.
+     * Time complexity is O(1).
+     * @return edges.
      */
     public int edges() {
         return edges;
     }
 
-    /**
-     * Add the edge v-w to graph.
-     * @param      v       {Vertex v}
-     * @param       w      {Vertex w}
+     /**
+     * Adds an edge.
+     * Time complexity is O(1)
+     * @param      v     integer variable.
+     * @param      w     integer variable.
      */
     public void addEdge(final int v, final int w) {
         edges++;
@@ -63,10 +66,11 @@ public class Graph {
         adj[w].add(v);
     }
 
-    /**
-     * Return the list of neighbors of vertex v as in Iterable.
-     * @param      v    {Vertex}
-     * @return     {Iterable}
+     /**
+     * iterable function.
+     * @param      v integer variable.
+     * Time complexity is O(v)
+     * @return   array.
      */
     public Iterable<Integer> adj(final int v) {
         return adj[v];

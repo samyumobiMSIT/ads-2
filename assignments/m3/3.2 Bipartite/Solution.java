@@ -27,9 +27,10 @@ class Bipartite {
      */
     private Stack<Integer> stack;
     /**
-     *constructor is to initialize.
-     *
-     * @param      graph  The graph
+     * Determines whether an undirected graph
+     * is bipartite and finds either a
+     * bipartition or an odd-length cycle.
+     * @param  g the graph
      */
     Bipartite(final Graph graph) {
         flag = true;
@@ -43,11 +44,12 @@ class Bipartite {
         }
     }
     /**
-     *the depth first search is performed.
-     *time complexity is O(E)
-     *E is the number of edges.
-     * @param      graph   The graph
-     * @param      vertex  The vertex
+     * check that algorithm computes either
+     * the topological order or finds a directed cycle.
+     * @param      g     g of type Digraph.
+     * @param      v     v of type int.
+     * Time complexity for this method is O(E) where E
+     * is edges.
      */
     private void dfs(final Graph graph, final int vertex) {
         marked[vertex] = true;
@@ -71,9 +73,10 @@ class Bipartite {
         }
     }
     /**
-     *the method is to check whether it is bipartite or.
-     *not
-     * @return     True if bipartite, False otherwise.
+     * Returns true if the graph is bipartite.
+     * @return {@code true} if the graph
+     * is bipartite; {@code false} otherwise
+     * Time complexity for this method is O(1).
      */
     public boolean isBipartite() {
         return flag;
@@ -89,9 +92,9 @@ final class Solution {
     private Solution() {
     }
     /**
-     *the main to read the input.
-     *
+     * main method that drives the program.
      * @param      args  The arguments
+     * Time complexity for this method is O(N).
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);

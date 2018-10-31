@@ -8,8 +8,14 @@ Audit done.
 Checkstyle ends with 1 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:33:8: Unused @param tag for 'g'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:35:27: Expected @param tag for 'graph'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:49:8: Unused @param tag for 'g'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:50:8: Unused @param tag for 'v'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:54:34: Expected @param tag for 'graph'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:54:51: Expected @param tag for 'vertex'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 1 errors.
+Checkstyle ends with 7 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Stack.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
