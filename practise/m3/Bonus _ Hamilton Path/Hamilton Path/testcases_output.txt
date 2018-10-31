@@ -1,0 +1,88 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+True
+
+Your Output: 
+[2]
+[]
+[0]
+[]
+[false, true, false, false, false, true, false, false, false, false, false, false, false, false, false, false]
+[false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false]
+[false, false, false, false, true, true, false, false, false, false, false, false, false, false, false, false]
+[false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false]
+Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at Solution.main(Solution.java:80)
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+False
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.elementData(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at Solution.main(Solution.java:81)
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+True
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.elementData(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at Solution.main(Solution.java:81)
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+True
+
+Your Output: 
+[]
+[]
+[]
+[false, true, false, false, false, false, false, false]
+[false, false, true, false, false, false, false, false]
+[false, false, false, false, true, false, false, false]
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.elementData(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at Solution.main(Solution.java:80)
+----------------------------------------
+
+########## Testcase 4: Failed ##########
+Expected Output: 
+False
+
+Your Output: 
+[]
+[]
+[]
+[]
+[false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+[false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false]
+[false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false]
+[false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false]
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
+	at java.util.ArrayList.elementData(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at Solution.main(Solution.java:80)
+----------------------------------------
+
+########## Testcase 5: Failed ##########
+Expected Output: 
+False
+
+Your Output: 
+Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 5, Size: 5
+	at java.util.ArrayList.rangeCheck(Unknown Source)
+	at java.util.ArrayList.get(Unknown Source)
+	at Solution.main(Solution.java:80)
+----------------------------------------
+
