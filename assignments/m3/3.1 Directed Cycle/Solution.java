@@ -1,92 +1,167 @@
+/******************************************************************************
+ *  Compilation:  javac DirectedCycle.java
+ *  Execution:    java DirectedCycle input.txt
+ *  Dependencies: Digraph.java Stack.java System.out.java In.java
+ *  Data files:   https://algs4.cs.princeton.edu/42digraph/tinyDG.txt
+ *                https://algs4.cs.princeton.edu/42digraph/tinyDAG.txt
+ *
+ *  Finds a directed cycle in a digraph.
+ *  Runs in O(E + V) time.
+ *
+ *  % java DirectedCycle tinyDG.txt 
+ *  Directed cycle: 3 5 4 3 
+ *
+ *  %  java DirectedCycle tinyDAG.txt 
+ *  No directed cycle
+ *
+ ******************************************************************************/
 
-// A Java Program to detect cycle in a graph 
-import java.util.ArrayList; 
-import java.util.LinkedList; 
-import java.util.List; 
-  
-class Solution { 
-      
-    private final int V; 
-    private final List<List<Integer>> adj; 
-  
-    public Solution(int V)  
-    { 
-        this.V = V; 
-        adj = new ArrayList<>(V); 
-          
-        for (int i = 0; i < V; i++) 
-            adj.add(new LinkedList<>()); 
-    } 
-      
-    // This function is a variation of DFSUytil() in  
-    // https://www.geeksforgeeks.org/archives/18212 
-    private boolean isCyclicUtil(int i, boolean[] visited, 
-                                      boolean[] recStack)  
-    { 
-          
-        // Mark the current node as visited and 
-        // part of recursion stack 
-        if (recStack[i]) 
-            return true; 
-  
-        if (visited[i]) 
-            return false; 
-              
-        visited[i] = true; 
-  
-        recStack[i] = true; 
-        List<Integer> children = adj.get(i); 
-          
-        for (Integer c: children) 
-            if (isCyclicUtil(c, visited, recStack)) 
-                return true; 
-                  
-        recStack[i] = false; 
-  
-        return false; 
-    } 
-  
-    private void addEdge(int source, int dest) { 
-        adj.get(source).add(dest); 
-    } 
-  
-    // Returns true if the graph contains a  
-    // cycle, else false. 
-    // This function is a variation of DFS() in  
-    // https://www.geeksforgeeks.org/archives/18212 
-    private boolean isCyclic()  
-    { 
-          
-        // Mark all the vertices as not visited and 
-        // not part of recursion stack 
-        boolean[] visited = new boolean[V]; 
-        boolean[] recStack = new boolean[V]; 
-          
-          
-        // Call the recursive helper function to 
-        // detect cycle in different DFS trees 
-        for (int i = 0; i < V; i++) 
-            if (isCyclicUtil(i, visited, recStack)) 
-                return true; 
-  
-        return false; 
-    } 
-  
-    // Driver code 
-    public static void main(String[] args) 
-    { 
-        Solution graph = new Solution(4); 
-        graph.addEdge(0, 1); 
-        graph.addEdge(0, 2); 
-        graph.addEdge(1, 2); 
-        graph.addEdge(2, 0); 
-        graph.addEdge(2, 3); 
-        graph.addEdge(3, 3); 
-          
-        if(graph.isCyclic()) 
-            System.out.println("Cycle exists"); 
-        else
-            System.out.println("Cycle exists"); 
-    } 
-} 
-  
+/**
+ *  The {@code DirectedCycle} class represents a data type for 
+ *  determining whether a digraph has a directed cycle.
+ *  The <em>hasCycle</em> operation determines whether the digraph has
+ *  a simple directed cycle and, if so, the <em>cycle</em> operation
+ *  returns one.
+ *  <p>
+ *  This implementation uses depth-first search.
+ *  The constructor takes time proportional to <em>V</em> + <em>E</em>
+ *  (in the worst case),
+ *  where <em>V</em> is the number of vertices and <em>E</em> is the number of edges.
+ *  Afterwards, the <em>hasCycle</em> operation takes constant time;
+ *  the <em>cycle</em> operation takes time proportional
+ *  to the length of the cycle.
+ *  <p>
+ *  See {@link Topological} to compute a topological order if the
+ *  digraph is acyclic.
+ *  <p>
+ *  For additional documentation,
+ *  see <a href="https://algs4.cs.princeton.edu/42digraph">Section 4.2</a> of
+ *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *
+ *  @author Robert Sedgewick
+ *  @author Kevin Wayne
+ */
+import java.util.*;
+class DirectedCycle {
+    private boolean[] marked;        // marked[v] = has vertex v been marked?
+    private int[] edgeTo;            // edgeTo[v] = previous vertex on path to v
+    private boolean[] onStack;       // onStack[v] = is vertex on the stack?
+    private Stack<Integer> cycle;    // directed cycle (or null if no such cycle)
+
+    /**
+     * Determines whether the digraph {@code G} has a directed cycle and, if so,
+     * finds such a cycle.
+     * @param G the digraph
+     */
+    public DirectedCycle(Digraph G) {
+        marked  = new boolean[G.V()];
+        onStack = new boolean[G.V()];
+        edgeTo  = new int[G.V()];
+        for (int v = 0; v < G.V(); v++)
+            if (!marked[v] && cycle == null) dfs(G, v);
+    }
+
+    // check that algorithm computes either the topological order or finds a directed cycle
+    private void dfs(Digraph G, int v) {
+        onStack[v] = true;
+        marked[v] = true;
+        for (int w : G.adj(v)) {
+
+            // short circuit if directed cycle found
+            if (cycle != null) return;
+
+            // found new vertex, so recur
+            else if (!marked[w]) {
+                edgeTo[w] = v;
+                dfs(G, w);
+            }
+
+            // trace back directed cycle
+            else if (onStack[w]) {
+                cycle = new Stack<Integer>();
+                for (int x = v; x != w; x = edgeTo[x]) {
+                    cycle.push(x);
+                }
+                cycle.push(w);
+                cycle.push(v);
+                assert check();
+            }
+        }
+        onStack[v] = false;
+    }
+
+    /**
+     * Does the digraph have a directed cycle?
+     * @return {@code true} if the digraph has a directed cycle, {@code false} otherwise
+     */
+    public boolean hasCycle() {
+        return cycle != null;
+    }
+
+    /**
+     * Returns a directed cycle if the digraph has a directed cycle, and {@code null} otherwise.
+     * @return a directed cycle (as an iterable) if the digraph has a directed cycle,
+     *    and {@code null} otherwise
+     */
+    public Iterable<Integer> cycle() {
+        return cycle;
+    }
+
+
+    // certify that digraph has a directed cycle if it reports one
+    private boolean check() {
+
+        if (hasCycle()) {
+            // verify cycle
+            int first = -1, last = -1;
+            for (int v : cycle()) {
+                if (first == -1) first = v;
+                last = v;
+            }
+            if (first != last) {
+                System.err.printf("cycle begins with %d and ends with %d\n", first, last);
+                return false;
+            }
+        }
+
+
+        return true;
+    }
+
+    /**
+     * Unit tests the {@code DirectedCycle} data type.
+     *
+     * @param args the command-line arguments
+     */
+    final class Solution{
+        private Solution(){
+
+        }
+    }
+    public static void main(final String[] args) {
+        Scanner in=new Scanner(System.in);
+        int vert=Integer.parseInt(in.nextLine());
+        int edg=Integer.parseInt(in.nextLine());
+        Digraph G = new Digraph(vert);
+
+        for(int i=0; i<edg; i++) {
+            String[] tokens=in.nextLine().split(" ");
+            G.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+        }
+
+        DirectedCycle finder = new DirectedCycle(G);
+        if (finder.hasCycle()) {
+            System.out.print("Cycle exists");
+            for (int v : finder.cycle()) {
+                System.out.print(v + " ");
+            }
+            System.out.println();
+        }
+
+        else {
+            System.out.println("Cycle doesn't exists");
+        }
+        System.out.println();
+    }
+
+}
