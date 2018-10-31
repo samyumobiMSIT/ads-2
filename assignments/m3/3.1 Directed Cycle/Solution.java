@@ -151,7 +151,7 @@ class DirectedCycle {
 
         DirectedCycle finder = new DirectedCycle(G);
         if (finder.hasCycle()) {
-            System.out.print("Cycle exists");
+            System.out.print("Cycle exists.");
             for (int v : finder.cycle()) {
                 System.out.print(v + " ");
             }
