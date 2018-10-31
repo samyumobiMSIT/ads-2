@@ -3,14 +3,7 @@ Expected Output:
 True
 
 Your Output: 
-[2]
-[]
-[0]
-[]
-[false, true, false, false, false, true, false, false, false, false, false, false, false, false, false, false]
-[false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false]
-[false, false, false, false, true, true, false, false, false, false, false, false, false, false, false, false]
-[false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false]
+True
 Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
 	at java.util.ArrayList.rangeCheck(Unknown Source)
 	at java.util.ArrayList.get(Unknown Source)
@@ -44,12 +37,7 @@ Expected Output:
 True
 
 Your Output: 
-[]
-[]
-[]
-[false, true, false, false, false, false, false, false]
-[false, false, true, false, false, false, false, false]
-[false, false, false, false, true, false, false, false]
+True
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
 	at java.util.ArrayList.elementData(Unknown Source)
 	at java.util.ArrayList.get(Unknown Source)
@@ -61,14 +49,7 @@ Expected Output:
 False
 
 Your Output: 
-[]
-[]
-[]
-[]
-[false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-[false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false]
-[false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false]
-[false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false]
+True
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
 	at java.util.ArrayList.elementData(Unknown Source)
 	at java.util.ArrayList.get(Unknown Source)

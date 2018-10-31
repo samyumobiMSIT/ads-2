@@ -1,16 +1,13 @@
 Starting audit...
+Checkstyle ends with 1 errors.
+Starting audit...
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:8: Missing a Javadoc comment. [JavadocType]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:8:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:10:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:10:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:10:37: Parameter dp should be final. [FinalParameters]
-[ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:11:20: 'for' is not followed by whitespace. [WhitespaceAround]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:15: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:16:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:16:40: Parameter graph should be final. [FinalParameters]
-[ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:17:20: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:21: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:22: Line is longer than 80 characters (found 87). [LineLength]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:22:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:22:61: Parameter graph should be final. [FinalParameters]
@@ -129,4 +126,4 @@ Starting audit...
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:79:54: '-' is not followed by whitespace. [WhitespaceAround]
 [ERROR] D:\ads-2\practise\m3\Bonus _ Hamilton Path\Hamilton Path\Solution.java:83: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 129 errors.
+Checkstyle ends with 124 errors.
