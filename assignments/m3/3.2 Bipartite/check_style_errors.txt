@@ -438,6 +438,7 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:128: Line is longer than 80 characters (found 97). [LineLength]
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:128:93: '-' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:128:94: '-' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:147:22: Parameter args should be final. [FinalParameters]
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:148:13: Name 'V1' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:149:13: Name 'V2' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:150:13: Name 'E' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
@@ -446,7 +447,7 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:155:15: Name 'G' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Solution.java:171:9: '}' at column 9 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 Audit done.
-Checkstyle ends with 50 errors.
+Checkstyle ends with 51 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Stack.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m3\3.2 Bipartite\Stack.java:13: Line has trailing spaces. [RegexpSingleline]

@@ -144,7 +144,7 @@ final class Solution {
      * @param args the command-line arguments
      */
 
-    public void main(final String[] args) {
+    public void main(String[] args) {
         int V1 = Integer.parseInt(args[0]);
         int V2 = Integer.parseInt(args[1]);
         int E  = Integer.parseInt(args[2]);
