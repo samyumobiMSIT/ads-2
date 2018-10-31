@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.LinkedList; 
 import java.util.List; 
   
-class Graph { 
+class Solution { 
       
     private final int V; 
     private final List<List<Integer>> adj; 
   
-    public Graph(int V)  
+    public Solution(int V)  
     { 
         this.V = V; 
         adj = new ArrayList<>(V); 
@@ -75,7 +75,7 @@ class Graph {
     // Driver code 
     public static void main(String[] args) 
     { 
-        Graph graph = new Graph(4); 
+        Solution graph = new Solution(4); 
         graph.addEdge(0, 1); 
         graph.addEdge(0, 2); 
         graph.addEdge(1, 2); 

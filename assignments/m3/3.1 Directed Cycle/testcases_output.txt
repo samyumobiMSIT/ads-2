@@ -3,7 +3,7 @@ Expected Output:
 Cycle doesn't exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -11,7 +11,7 @@ Expected Output:
 Cycle doesn't exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -19,7 +19,7 @@ Expected Output:
 Cycle exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -27,7 +27,7 @@ Expected Output:
 Cycle exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -35,7 +35,7 @@ Expected Output:
 Cycle exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -43,7 +43,7 @@ Expected Output:
 Cycle exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
 ########## Testcase 6: Failed ##########
@@ -51,7 +51,7 @@ Expected Output:
 Cycle doesn't exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
 ########## Testcase 7: Failed ##########
@@ -59,6 +59,6 @@ Expected Output:
 Cycle exists.
 
 Your Output: 
-Error: Could not find or load main class Solution
+Cycle exists
 ----------------------------------------
 
