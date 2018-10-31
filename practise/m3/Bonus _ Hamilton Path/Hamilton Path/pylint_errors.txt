@@ -1,0 +1,18 @@
+************* Module HamiltonianPath
+HamiltonianPath.py:23:0: C0325: Unnecessary parens after 'if' keyword (superfluous-parens)
+HamiltonianPath.py:45:10: C0326: No space allowed before bracket
+    print (hamiltonian_path)
+          ^ (bad-whitespace)
+HamiltonianPath.py:48:0: C0304: Final newline missing (missing-final-newline)
+HamiltonianPath.py:1:0: C0103: Module name "HamiltonianPath" doesn't conform to snake_case naming style (invalid-name)
+HamiltonianPath.py:1:0: C0111: Missing module docstring (missing-docstring)
+HamiltonianPath.py:2:0: E0401: Unable to import 'data_structures.adjacency_list_graph' (import-error)
+HamiltonianPath.py:4:0: R0205: Class 'HamiltonianPath' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)
+HamiltonianPath.py:13:8: C0103: Variable name "N" doesn't conform to snake_case naming style (invalid-name)
+HamiltonianPath.py:33:4: C0111: Missing method docstring (missing-docstring)
+HamiltonianPath.py:39:0: C0111: Missing function docstring (missing-docstring)
+HamiltonianPath.py:40:4: C0103: Variable name "g" doesn't conform to snake_case naming style (invalid-name)
+
+-----------------------------------
+Your code has been rated at 5.31/10
+

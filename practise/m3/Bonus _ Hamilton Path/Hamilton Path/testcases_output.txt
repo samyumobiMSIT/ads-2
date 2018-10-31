@@ -3,11 +3,10 @@ Expected Output:
 True
 
 Your Output: 
-True
-Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
-	at java.util.ArrayList.rangeCheck(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at Solution.main(Solution.java:80)
+Traceback (most recent call last):
+  File "HamiltonianPath.py", line 2, in <module>
+    from data_structures.adjacency_list_graph import construct_graph
+ModuleNotFoundError: No module named 'data_structures'
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -15,10 +14,10 @@ Expected Output:
 False
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
-	at java.util.ArrayList.elementData(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at Solution.main(Solution.java:81)
+Traceback (most recent call last):
+  File "HamiltonianPath.py", line 2, in <module>
+    from data_structures.adjacency_list_graph import construct_graph
+ModuleNotFoundError: No module named 'data_structures'
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -26,10 +25,10 @@ Expected Output:
 True
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
-	at java.util.ArrayList.elementData(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at Solution.main(Solution.java:81)
+Traceback (most recent call last):
+  File "HamiltonianPath.py", line 2, in <module>
+    from data_structures.adjacency_list_graph import construct_graph
+ModuleNotFoundError: No module named 'data_structures'
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -37,11 +36,10 @@ Expected Output:
 True
 
 Your Output: 
-True
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
-	at java.util.ArrayList.elementData(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at Solution.main(Solution.java:80)
+Traceback (most recent call last):
+  File "HamiltonianPath.py", line 2, in <module>
+    from data_structures.adjacency_list_graph import construct_graph
+ModuleNotFoundError: No module named 'data_structures'
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -49,11 +47,10 @@ Expected Output:
 False
 
 Your Output: 
-True
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: -1
-	at java.util.ArrayList.elementData(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at Solution.main(Solution.java:80)
+Traceback (most recent call last):
+  File "HamiltonianPath.py", line 2, in <module>
+    from data_structures.adjacency_list_graph import construct_graph
+ModuleNotFoundError: No module named 'data_structures'
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -61,9 +58,9 @@ Expected Output:
 False
 
 Your Output: 
-Exception in thread "main" java.lang.IndexOutOfBoundsException: Index: 5, Size: 5
-	at java.util.ArrayList.rangeCheck(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at Solution.main(Solution.java:80)
+Traceback (most recent call last):
+  File "HamiltonianPath.py", line 2, in <module>
+    from data_structures.adjacency_list_graph import construct_graph
+ModuleNotFoundError: No module named 'data_structures'
 ----------------------------------------
 
