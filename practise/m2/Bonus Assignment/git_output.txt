@@ -1,0 +1,12 @@
+[master 35e3527] "ads2_m2_ba1_1: 0/4 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 12 files changed, 12396 insertions(+), 12443 deletions(-)
+ delete mode 100644 practise/m2/Bonus Assignment/ElegantPairing.class
+ delete mode 100644 practise/m2/Bonus Assignment/ElegantPairing.java
+ delete mode 100644 practise/m2/Bonus Assignment/Element.class
+ delete mode 100644 practise/m2/Bonus Assignment/Element.java
+ create mode 100644 practise/m2/Bonus Assignment/EulerSolution.class
+ create mode 100644 practise/m2/Bonus Assignment/EulerSolution.java
+ rewrite practise/m2/Bonus Assignment/Solution.java (99%)
+ create mode 100644 practise/m2/Bonus Assignment/matrix.txt
+ copy practise/m2/Bonus Assignment/{Solution.java => solutionjava.txt} (99%)
+fatal: unable to access 'https://github.com/samyumobiMSIT/ads-2.git/': Failed to connect to github.com port 443: Timed out
