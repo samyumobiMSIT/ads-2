@@ -1,0 +1,64 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+Cycle doesn't exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+Cycle doesn't exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+Cycle exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+Cycle exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
+########## Testcase 4: Failed ##########
+Expected Output: 
+Cycle exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
+########## Testcase 5: Failed ##########
+Expected Output: 
+Cycle exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
+########## Testcase 6: Failed ##########
+Expected Output: 
+Cycle doesn't exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
+########## Testcase 7: Failed ##########
+Expected Output: 
+Cycle exists.
+
+Your Output: 
+Error: Could not find or load main class Solution
+----------------------------------------
+
