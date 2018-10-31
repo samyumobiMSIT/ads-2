@@ -1,0 +1,8 @@
+Starting audit...
+[ERROR] D:\ads-2\assignments\1.1 Graph\Bag.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
+Starting audit...
+[ERROR] D:\ads-2\assignments\1.1 Graph\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.

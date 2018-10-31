@@ -1,0 +1,14 @@
+13 vertices, 13 edges
+Andaman and Nicobar: Chhattisgarh Arunachal Pradesh Andhra Pradesh Chandigarh 
+Andhra Pradesh: Andaman and Nicobar 
+Arunachal Pradesh: Andaman and Nicobar 
+Assam: Chandigarh Bihar 
+Bihar: Chandigarh Chhattisgarh Assam 
+Chandigarh: Assam Bihar Andaman and Nicobar 
+Chhattisgarh: Andaman and Nicobar Bihar 
+Dadra and Nagar Haveli: Daman and Diu 
+Daman and Diu: Dadra and Nagar Haveli 
+Delhi: Gujarat Goa Haryana 
+Goa: Delhi 
+Gujarat: Delhi Haryana 
+Haryana: Gujarat Delhi 

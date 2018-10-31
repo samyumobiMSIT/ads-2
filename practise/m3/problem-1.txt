@@ -1,0 +1,4 @@
+//problem-1
+What is the maximum number of edges in a digraph with V vertices and no parallel edges
+
+the maximum is C_n^2, and the minum in n-1
