@@ -1,0 +1,210 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+15 vertices, 14 edges 
+0: 
+1: 0 
+2: 0 
+3: 1 
+4: 1 
+5: 1 
+6: 10 
+7: 3 
+8: 3 
+9: 5 
+10: 5 
+11: 10 
+12: 10 
+13: 6 
+14: 13
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+distance = 7, ancestor = entity
+distance = 10, ancestor = entity
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+distance = 7, ancestor = macromolecule supermolecule
+distance = 7, ancestor = macromolecule supermolecule
+distance = 9, ancestor = macromolecule supermolecule
+distance = 8, ancestor = macromolecule supermolecule
+distance = 7, ancestor = lipid lipide lipoid
+distance = 1, ancestor = animal_oil
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+distance = 3, ancestor = wax
+distance = 13, ancestor = thing
+distance = 2, ancestor = wax
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 4: Failed ##########
+Expected Output: 
+distance = 0, ancestor = b
+distance = 0, ancestor = c
+distance = 0, ancestor = d
+distance = 0, ancestor = e
+distance = 0, ancestor = f
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 5: Failed ##########
+Expected Output: 
+distance = 1, ancestor = b
+distance = 2, ancestor = c
+distance = 4, ancestor = c
+distance = 3, ancestor = c
+distance = 4, ancestor = c
+distance = 4, ancestor = c
+distance = 3, ancestor = c
+distance = 3, ancestor = i
+distance = 2, ancestor = j
+distance = 1, ancestor = k
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 6: Failed ##########
+Expected Output: 
+distance = 1, ancestor = b
+distance = 2, ancestor = c
+distance = 2, ancestor = h
+distance = 5, ancestor = h
+distance = 4, ancestor = h
+distance = 3, ancestor = h
+distance = 1, ancestor = h
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 7: Failed ##########
+Expected Output: 
+distance = 1, ancestor = b
+distance = 1, ancestor = c
+distance = 1, ancestor = d
+distance = 1, ancestor = e
+distance = 2, ancestor = f
+distance = 3, ancestor = f
+distance = 3, ancestor = f
+distance = 3, ancestor = f
+distance = 3, ancestor = f
+distance = 4, ancestor = f
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 8: Failed ##########
+Expected Output: 
+8 vertices, 17 edges 
+0: 7 6 5 4 3 1 
+1: 7 
+2: 7 6 5 4 3 1 
+3: 7 
+4: 7 
+5: 7 
+6: 7 
+7:
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 9: Failed ##########
+Expected Output: 
+Multiple roots
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 10: Failed ##########
+Expected Output: 
+Multiple roots
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 11: Failed ##########
+Expected Output: 
+IllegalArgumentException
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 12: Failed ##########
+Expected Output: 
+IllegalArgumentException
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 13: Failed ##########
+Expected Output: 
+distance = 11, ancestor = whole unit
+distance = 8, ancestor = organism being
+distance = 14, ancestor = entity
+distance = 13, ancestor = object physical_object
+distance = 2, ancestor = decade decennary decennium
+distance = 8, ancestor = substance
+distance = 2, ancestor = port
+distance = 2, ancestor = letter letter_of_the_alphabet alphabetic_character
+distance = 2, ancestor = letter letter_of_the_alphabet alphabetic_character
+distance = 12, ancestor = person individual someone somebody mortal soul
+distance = 15, ancestor = abstraction abstract_entity
+distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
+distance = 2, ancestor = digit figure
+distance = 13, ancestor = abstraction abstract_entity
+distance = 12, ancestor = abstraction abstract_entity
+distance = 0, ancestor = era epoch
+distance = 8, ancestor = abstraction abstract_entity
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+
+########## Testcase 14: Failed ##########
+Expected Output: 
+Cycle detected
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at WordNet.main(WordNet.java:128)
+----------------------------------------
+

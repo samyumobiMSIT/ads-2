@@ -1,0 +1,20 @@
+synsets.txt
+hypernyms.txt
+Queries
+zoospore zooplankton
+young_bird yeoman
+xerostomia xerox
+workspace workstation
+1530s 1750s
+22-karat_gold pure_gold
+Aberdeen port
+p q
+x y
+Cleopatra Antony
+9/11 September
+9/11 Sep_11
+1 2
+1 a
+z 1530s
+era era
+graph tree

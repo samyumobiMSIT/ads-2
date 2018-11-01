@@ -1,0 +1,6 @@
+distance = 7, ancestor = macromolecule supermolecule
+distance = 7, ancestor = macromolecule supermolecule
+distance = 9, ancestor = macromolecule supermolecule
+distance = 8, ancestor = macromolecule supermolecule
+distance = 7, ancestor = lipid lipide lipoid
+distance = 1, ancestor = animal_oil

@@ -1,0 +1,10 @@
+synsets8.txt
+hypernyms8WrongBFS.txt
+Queries
+a b
+a c
+a d
+a e
+a f
+a g
+a h

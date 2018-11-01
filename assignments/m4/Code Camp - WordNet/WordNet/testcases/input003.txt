@@ -1,0 +1,6 @@
+synsets1000-subgraph.txt
+hypernyms1000-subgraph.txt
+Queries
+Ghedda_wax Japan_wax
+pleura bayberry_wax
+gondang_wax candelilla_wax

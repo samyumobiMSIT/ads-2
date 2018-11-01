@@ -1,0 +1,4 @@
+synsets15.txt
+hypernyms15Tree.txt
+Queries
+null null 

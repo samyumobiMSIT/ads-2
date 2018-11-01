@@ -1,0 +1,3 @@
+synsets8.txt
+hypernyms8ManyAncestors.txt
+Graph

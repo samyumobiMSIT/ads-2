@@ -1,0 +1,3 @@
+synsets6.txt
+hypernyms6InvalidCycle+Path.txt
+Graph

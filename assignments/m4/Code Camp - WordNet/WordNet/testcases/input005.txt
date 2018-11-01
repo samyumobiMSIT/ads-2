@@ -1,0 +1,13 @@
+synsets11.txt
+hypernyms11AmbiguousAncestor.txt
+Queries
+a b
+a c
+a d
+a e
+a f
+a g
+a h
+a i
+a j
+a k

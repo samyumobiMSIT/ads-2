@@ -1,0 +1,9 @@
+synsets500-subgraph.txt
+hypernyms500-subgraph.txt
+Queries
+DNA_polymerase animal_fat
+DNA_polymerase animal_oil
+DNA_polymerase coconut_oil
+DNA_polymerase wool_oil
+wool_oil coconut_oil
+wool_oil animal_oil

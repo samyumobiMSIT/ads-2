@@ -1,0 +1,17 @@
+distance = 11, ancestor = whole unit
+distance = 8, ancestor = organism being
+distance = 14, ancestor = entity
+distance = 13, ancestor = object physical_object
+distance = 2, ancestor = decade decennary decennium
+distance = 8, ancestor = substance
+distance = 2, ancestor = port
+distance = 2, ancestor = letter letter_of_the_alphabet alphabetic_character
+distance = 2, ancestor = letter letter_of_the_alphabet alphabetic_character
+distance = 12, ancestor = person individual someone somebody mortal soul
+distance = 15, ancestor = abstraction abstract_entity
+distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
+distance = 2, ancestor = digit figure
+distance = 13, ancestor = abstraction abstract_entity
+distance = 12, ancestor = abstraction abstract_entity
+distance = 0, ancestor = era epoch
+distance = 8, ancestor = abstraction abstract_entity

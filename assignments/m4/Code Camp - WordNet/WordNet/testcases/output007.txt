@@ -1,0 +1,10 @@
+distance = 1, ancestor = b
+distance = 1, ancestor = c
+distance = 1, ancestor = d
+distance = 1, ancestor = e
+distance = 2, ancestor = f
+distance = 3, ancestor = f
+distance = 3, ancestor = f
+distance = 3, ancestor = f
+distance = 3, ancestor = f
+distance = 4, ancestor = f

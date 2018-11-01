@@ -1,0 +1,5 @@
+synsets100-subgraph.txt
+hypernyms100-subgraph.txt
+Queries
+enzyme entity
+change casein

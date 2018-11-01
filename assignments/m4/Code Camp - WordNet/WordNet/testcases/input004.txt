@@ -1,0 +1,8 @@
+synsets6.txt
+hypernyms6TwoAncestors.txt
+Queries
+b b
+c c
+d d
+e e
+f f

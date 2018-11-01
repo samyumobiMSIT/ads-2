@@ -1,0 +1,3 @@
+distance = 3, ancestor = wax
+distance = 13, ancestor = thing
+distance = 2, ancestor = wax
