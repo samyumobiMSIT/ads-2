@@ -13,11 +13,11 @@ public class Solution {
             switch(option) {
                 case "Graph":
                     wn = new WordNet(hypernym, synset);
-                    if(wn.multiple_root) {
-                        System.out.println("Multiple roots");
-                    } else {
+                  // if(wn.multiple_root) {
+                    //    System.out.println("Multiple roots");
+                  //  } else {
                         System.out.println(wn);
-                    }
+                   // }
                 break;
                 case "Queries":
                     wn = new WordNet(hypernym, synset);
