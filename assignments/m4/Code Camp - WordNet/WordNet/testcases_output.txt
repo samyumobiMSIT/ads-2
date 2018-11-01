@@ -18,8 +18,12 @@ Expected Output:
 14: 13
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:15)
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -28,8 +32,12 @@ distance = 7, ancestor = entity
 distance = 10, ancestor = entity
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "C-reactive_protein CRP"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -42,8 +50,12 @@ distance = 7, ancestor = lipid lipide lipoid
 distance = 1, ancestor = animal_oil
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "ABO_antibodies"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -53,8 +65,12 @@ distance = 13, ancestor = thing
 distance = 2, ancestor = wax
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "ABO_antibodies"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -66,8 +82,9 @@ distance = 0, ancestor = e
 distance = 0, ancestor = f
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at WordNet.<init>(WordNet.java:23)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -84,8 +101,12 @@ distance = 2, ancestor = j
 distance = 1, ancestor = k
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 6: Failed ##########
@@ -99,8 +120,12 @@ distance = 3, ancestor = h
 distance = 1, ancestor = h
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 7: Failed ##########
@@ -117,8 +142,12 @@ distance = 3, ancestor = f
 distance = 4, ancestor = f
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 8: Failed ##########
@@ -134,8 +163,12 @@ Expected Output:
 7:
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:15)
 ----------------------------------------
 
 ########## Testcase 9: Failed ##########
@@ -143,8 +176,12 @@ Expected Output:
 Multiple roots
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:15)
 ----------------------------------------
 
 ########## Testcase 10: Failed ##########
@@ -152,8 +189,12 @@ Expected Output:
 Multiple roots
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:15)
 ----------------------------------------
 
 ########## Testcase 11: Failed ##########
@@ -161,8 +202,12 @@ Expected Output:
 IllegalArgumentException
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 12: Failed ##########
@@ -170,8 +215,12 @@ Expected Output:
 IllegalArgumentException
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 13: Failed ##########
@@ -195,8 +244,9 @@ distance = 0, ancestor = era epoch
 distance = 8, ancestor = abstraction abstract_entity
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at WordNet.<init>(WordNet.java:23)
+	at Solution.main(Solution.java:23)
 ----------------------------------------
 
 ########## Testcase 14: Failed ##########
@@ -204,7 +254,11 @@ Expected Output:
 Cycle detected
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at WordNet.main(WordNet.java:122)
+Exception in thread "main" java.lang.NumberFormatException: For input string: "a"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at WordNet.<init>(WordNet.java:56)
+	at Solution.main(Solution.java:15)
 ----------------------------------------
 

@@ -1,133 +1,122 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Hashtable;
-import java.util.Scanner;
+import java.util.HashMap;
 
 public class WordNet {
-    private Hashtable<String, Bag<Integer>> words;
-    private ArrayList<String> synsetsList;
-    private Digraph G;
-    private SAP sap;
+
+    private final HashMap<Integer, String> idSynset;
+    private final HashMap<String, Bag<Integer>> nounId;
+    private final Digraph G;
+    public boolean multiple_root = false;
+
     // constructor takes the name of the two input files
-   public WordNet(String synsets, String hypernyms) {
-       this.words = new Hashtable<String, Bag<Integer>>();
-       this.synsetsList = new ArrayList<String>();
-       int synsetsNum = parseSynsets(synsets);
-//     synsetsNum = 6;////////////////////////////set a value to test
-       this.G = new Digraph(synsetsNum);
-       parseHypernyms(synsetsNum, hypernyms);
-       this.sap = new SAP(this.G);
-   }
+    public WordNet(String synsets, String hypernyms) {
+        In in = new In(synsets);
+        idSynset = new  HashMap<Integer, String>();
+        nounId =  new HashMap<String, Bag<Integer>>();
 
-   private int parseSynsets (String synsets) {
-       In synsetsIn = new In(synsets);
-       int synsetsNum = 0;
-       
-       while(!synsetsIn.isEmpty()) {
-           String []fields = synsetsIn.readLine().split(",");
-           if (fields.length < 3)
-               throw new java.lang.IllegalArgumentException();
-           
-           int synsetID = Integer.parseInt(fields[0]);
-           synsetsList.add(synsetID, fields[1]);// add the second field and the corresponding synsetid to arraylist;
-           synsetsNum++;
-//         StdOut.println(fields[1]);
-           
-           String []fields1 = fields[1].split(" ");//split the synsets to each synword and store them in fields1;
-           int synsetNum = fields1.length;
-           for (int i = 0; i < synsetNum; i++) {
-               if(this.words.containsKey(fields1[i])) { //if the synword has already been in the hashtable, then just add its int id;
-                   this.words.get(fields1[i]).add(synsetID);
-               }
-               else {
-                   Bag newIntList = new Bag<Integer>();
-                   newIntList.add(synsetID);
-                   words.put(fields1[i], newIntList);
-               }
-           }
-//         StdOut.println("length "+fields1.length);       
-//         StdOut.println(fields[0]);
-//         StdOut.println(fields[2]);
-       }
-       synsetsIn.close();
-       return synsetsNum;
-   }
-   
-   private void parseHypernyms(int synsetsNum, String hypernyms) {
-       boolean [] notRoot = new boolean[synsetsNum];    //initial values are false, means all of them are roots;
-       In hypernymsIn = new In(hypernyms);
-       while(!hypernymsIn.isEmpty()) {  //add the relationships to Digraph G;
-           String []fields = hypernymsIn.readLine().split(",");
-//         StdOut.print(fields.length+ " length\n");///////////////////////////
-//         if(fields.length < 2) //38003 has only one num =.=
-//             throw new java.lang.IllegalArgumentException();
-           int sourceNode = Integer.parseInt(fields[0]);
-           notRoot[sourceNode] = true;  //mark this node as noRoot;
-//         StdOut.print("sourceNode: "+ sourceNode+" others are: ");
-           for (int j = 1; j < fields.length; j++) {
-//             StdOut.print(Integer.parseInt(fields[j])+" ");
-               this.G.addEdge(sourceNode, Integer.parseInt(fields[j]));
-           }
-//         StdOut.print("\n");
-       }
-       hypernymsIn.close();
-       
-       DirectedCycle cycle = new DirectedCycle(this.G);//check if there are any cycle;
-       if (cycle.hasCycle())
-           throw new java.lang.IllegalArgumentException("Cycle detected!");
-       
-       int rootN = 0;
-       for (boolean noRoot : notRoot) {
-           if (!noRoot)
-               rootN++;
-       }
-       if(rootN > 1)
-           throw new java.lang.IllegalArgumentException("Multiple roots detected!");
-   }
-   
-   // returns all WordNet nouns
-   public Iterable<String> nouns() {
-       return Collections.list(this.words.keys());
-   }
+        // Synsets
+        while (in.hasNextLine()) {
 
-   // is the word a WordNet noun?
-   public boolean isNoun(String word) {
-       return this.words.containsKey(word);
-   }
+            String parsingLine = in.readLine();
+            String[] fields = parsingLine.split(",");
+            // get id
+            int id = Integer.parseInt(fields[0]);
+            String synsetField = fields[1];
+            idSynset.put(id, synsetField);
 
-   // distance between nounA and nounB (defined below)
-   public int distance(String nounA, String nounB) {
-       if(!isNoun(nounA) || !isNoun(nounB))
-           throw new java.lang.IllegalArgumentException();//("noun is an invalid WordNet noun");
-//     Bag nounAid = new Bag<Integer>();
-//     Bag nounBid = new Bag<Integer>();
-       Bag<Integer> nounAid = words.get(nounA);
-       Bag<Integer> nounBid = words.get(nounB);
-       return this.sap.length(nounAid, nounBid);
-   }
+            // parsing nouns
+            String[] nouns = synsetField.split(" ");
 
-   // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
-   // in a shortest ancestral path (defined below)
-   public String sap(String nounA, String nounB) {
-       if(!isNoun(nounA) || !isNoun(nounB))
-           throw new java.lang.IllegalArgumentException();//("noun is an invalid WordNet noun");
-       Bag<Integer> nounAid = words.get(nounA);
-       Bag<Integer> nounBid = words.get(nounB);
-       int ancestorId = this.sap.ancestor(nounAid, nounBid);
-       return synsetsList.get(ancestorId);
-   }
+            for (String noun : nouns) {
+                if (nounId.containsKey(noun)) {
+                    Bag<Integer> b = nounId.get(noun);
+                    b.add(id);
+                    nounId.put(noun, b);
+                }
+                else {
+                    Bag<Integer> b = new Bag<Integer>();
+                    b.add(id);
+                    nounId.put(noun, b);
+                }
+            }
+        }
 
-   
-   public static void main(String[] args) {
-    In in = new In(args[0]);
-    Digraph G = new Digraph(in);
-    SAP sap = new SAP(G);
-    while (!StdIn.isEmpty()) {
-        int v = StdIn.readInt();
-        int w = StdIn.readInt();
-        int length   = sap.length(v, w);
-        int ancestor = sap.ancestor(v, w);
-       System.out.printf("length = %d, ancestor = %d\n", length, ancestor);
+        Digraph digraph = new Digraph(idSynset.size());
+        G = digraph;
+
+        in = new In(hypernyms);
+        // Get the hypernynms and add edges to digraph
+        while (in.hasNextLine()) {
+            // parse
+            String parsingLine = in.readLine();
+            String[] fields = parsingLine.split(",");
+
+            int id = Integer.parseInt(fields[0]);
+
+            for (int i = 1; i < fields.length; i++) {
+                int hypernymId = Integer.parseInt(fields[i]);
+                digraph.addEdge(id, hypernymId);
+            }
+        }
+
+        // Check for cycles
+        DirectedCycle cycle = new DirectedCycle(this.G);
+        if (cycle.hasCycle()) {
+            throw new IllegalArgumentException("Not a valid DAG");
+        }
+
+        // Check if not rooted
+        int rootCount = 0;
+        for (int i = 0; i < G.V(); i++) {
+            if (!this.G.adj(i).iterator().hasNext())
+                rootCount++;
+        }
+
+        if (rootCount != 1) {
+            throw new IllegalArgumentException("Not a rooted DAG");
+        }
+
+
+        }
+
+    // returns all WordNet nouns
+    public Iterable<String> nouns() {
+        return nounId.keySet();
     }
-  }
-}
+
+    // is the word a WordNet noun?
+    public boolean isNoun(String word) {
+        if (word == null) {
+            throw new java.lang.IllegalArgumentException();
+        }
+        return nounId.containsKey(word);
+    }
+
+    // distance between nounA and nounB (defined below)
+    public int distance(String nounA, String nounB) {
+        if (!isNoun(nounA) || !isNoun(nounB)) {
+            throw new java.lang.IllegalArgumentException();
+        }
+        SAP sap = new SAP(G);
+        //get id of vertice
+
+        Bag<Integer> bag1 =  nounId.get(nounA);
+        Bag<Integer> bag2 =  nounId.get(nounB);
+
+        return sap.length(bag1, bag2);
+    }
+
+    // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
+    // in a shortest ancestral path (defined below)
+    public String sap(String nounA, String nounB) {
+        if (!isNoun(nounA) || !isNoun(nounB)) {
+            throw new java.lang.IllegalArgumentException();
+        }
+
+        Bag<Integer> bag1 =  nounId.get(nounA);
+        Bag<Integer> bag2 =  nounId.get(nounB);
+        SAP sap = new SAP(G);
+
+        return idSynset.get(sap.ancestor(bag1, bag2));
+    }
+
+   }
