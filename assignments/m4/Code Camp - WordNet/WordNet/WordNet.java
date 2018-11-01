@@ -1,154 +1,140 @@
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class WordNet {
-	
-	private final Digraph graph;
-	private final Map<String, Bag<Integer>> words;
-	private final Map<Integer, String> synsetsTable;
-	private final SAP sap;
-	
-	/**
-	 *  constructor takes the name of the two input files
-	 * @param synsets synset file name
-	 * @param hypernyms hypernyms file name
-	 * @throws IllegalArgumentException
-	 */
-	public WordNet(String synsets, String hypernyms) {
-
-		words = new HashMap<String, Bag<Integer>>();
-		synsetsTable = new HashMap<Integer, String>();
-		
-		In synsetsInput = new In(synsets);
-		String line;
-		int n = 0;
-		while ((line = synsetsInput.readLine()) != null) {
-			String[] parts = line.split(",");
-			if (parts.length >= 2) {
-				n = Integer.parseInt(parts[0]);
-				String[] syns = parts[1].split(" ");
-				for (String syn : syns) {
-					Bag<Integer> ids = words.get(syn);
-					if (ids == null) {
-						ids = new Bag<Integer>();
-						words.put(syn, ids);
-					} 
-					ids.add(n);
-				}
-				synsetsTable.put(n, parts[1]);
-			}
-		}
-		
-		graph = new Digraph(n+1);
-		
-		In hypernymsInput = new In(hypernyms);
-		while ((line = hypernymsInput.readLine()) != null) {
-			String[] parts = line.split(",");
-			if (parts.length >= 2) {
-				int from = Integer.parseInt(parts[0]);
-				for (int i = 1; i < parts.length; i++) {
-					int to = Integer.parseInt(parts[i]);
-					graph.addEdge(from, to);
-				}
-			}
-		}
-		
-		
-        int roots = -1;
-        for (int i = 0; i < graph.V(); i++) {
-        	if (!graph.adj(i).iterator().hasNext()) {
-        		if (roots != -1) {
-        			throw new IllegalArgumentException("More than one roots (" + roots + " and " + i + ")");
-        		} else {
-        			roots = i;
-        		}
-        	}
-        }
-        
-        sap = new SAP(graph);
-	}
-
-	/**
-	 * the set of nouns (no duplicates), returned as an Iterable
-	 * @return a set of nouns
-	 */
-	public Iterable<String> nouns() {
-		return words.keySet();
-	}
-
-	/**
-	 *  is the word a WordNet noun?
-	 * @param word a word
-	 * @return true if it is a wordnet noun
-	 */
-	public boolean isNoun(String word) {
-		return words.containsKey(word);
-	}
-
-	/**
-	 *  distance between nounA and nounB (defined below)
-	 * @param nounA a noun
-	 * @param nounB noun
-	 * @return the distance
-	 */
-	public int distance(String nounA, String nounB) {
-		Iterable<Integer> nA = words.get(nounA);
-		Iterable<Integer> nB = words.get(nounB);
-		if (nA == null || nB == null) {
-			throw new IllegalArgumentException("words are not member");
-		}
-		return sap.length(nA, nB);
-	}
-
-	/**
-	 * a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
-	 * in a shortest ancestral path (defined below)
-	 * @param nounA a noun
-	 * @param nounB a noun
-	 * @return the shortest ancestral path
-	 */
-	// 
-	public String sap(String nounA, String nounB) {
-		Iterable<Integer> nA = words.get(nounA);
-		Iterable<Integer> nB = words.get(nounB);
-		if (nA == null || nB == null) {
-			throw new IllegalArgumentException("words are not member");
-		}
-		int ancestor = sap.ancestor(nA, nB);
-		if (ancestor == -1) {
-			throw new IllegalArgumentException("Fields are not synset");
-		}
-		return synsetsTable.get(ancestor);
-		
-	}
-
-	// for unit testing of this class
-	public static void main(String[] args) {
-		new WordNet(args[0], args[1]);
-		
-	}
-	
-}
-/*public class WordNet {
+    
+    private Digraph net;
+    private TreeMap<String, ArrayList<Integer>> map;
+    private ArrayList<String> list;
+    private int V;
+    private SAP sap;
 
     // constructor takes the name of the two input files
-    public WordNet(String synsets, String hypernyms)
+    public WordNet(String synsets, String hypernyms) {
+        if (synsets == null || hypernyms == null)
+            throw new NullPointerException();
+        
+        initSynsets(synsets);
+        initHypernyms(hypernyms);
+     // is a DAG
+        DirectedCycle cycle = new DirectedCycle(net);
+        if (cycle.hasCycle())
+            throw new IllegalArgumentException("have cycle");
+        // is one root
+        for (int i = 0, count = 0; i < V; i++) {
+            if (net.outdegree(i) == 0) {
+                if (count == 0) count++;
+                else throw new IllegalArgumentException("too many root");
+            }
+        }
+        // init sap
+        sap = new SAP(net);
+    }
 
+    private void initSynsets(String synsets) {
+        V = 0;
+        list = new ArrayList<>();
+        map = new TreeMap<>();
+        
+        In in = new In(synsets);
+        String[] fields, keySet; 
+        String key; 
+        int val;
+        ArrayList<Integer> temp;
+        for (String line = in.readLine(); line != null; line = in.readLine(), V++) {
+            fields = line.split(",");
+            keySet = fields[1].split(" ");
+            val = Integer.parseInt(fields[0]);
+            for (int j = 0; j < keySet.length; j++) {
+                key = keySet[j];
+//                map.put(key, val);
+                if (map.containsKey(key)) {
+                    temp = map.get(key);
+                    if (temp.add(val))
+                        map.put(key, temp);
+                } 
+                else {
+                    temp = new ArrayList<>();
+                    if (temp.add(val))
+                        map.put(key, temp);
+                }
+                    
+            }
+            list.add(fields[1]);
+        }
+    }
+    
+    private void initHypernyms(String hypernyms) {
+        net = new Digraph(V);
+        In in = new In(hypernyms);
+        String[] fields;
+        for (String line = in.readLine(); line != null; line = in.readLine()) {
+            fields = line.split(",");
+            for (int i = 1, k = Integer.parseInt(fields[0]); i < fields.length; i++)
+                net.addEdge(k, Integer.parseInt(fields[i])); 
+        }
+    }
+    
     // returns all WordNet nouns
-    public Iterable<String> nouns()
+    public Iterable<String> nouns() {
+        return map.keySet();
+    }
 
     // is the word a WordNet noun?
-    public boolean isNoun(String word)
+    public boolean isNoun(String word) {
+        if (word == null)
+            throw new NullPointerException();
+        return map.containsKey(word);
+    }
 
     // distance between nounA and nounB (defined below)
-    public int distance(String nounA, String nounB)
+    public int distance(String nounA, String nounB) {
+        if (!isNoun(nounA) || !isNoun(nounB))
+            throw new IllegalArgumentException();
+        return helper(nounA, nounB)[0];
+    }
 
     // a synset (second field of synsets.txt) that is the common ancestor of nounA and nounB
     // in a shortest ancestral path (defined below)
-    public String sap(String nounA, String nounB)
+    public String sap(String nounA, String nounB) {
+        if (!isNoun(nounA) || !isNoun(nounB))
+            throw new IllegalArgumentException();
+        return list.get(helper(nounA, nounB)[1]);
+    }
 
+    // helper func for get distance, sap
+    private int[] helper(String nounA, String nounB) {
+        int length = Integer.MAX_VALUE, temp = 0, ancestor = 0;
+        for (int val1 : map.get(nounA)) {
+            for (int val2 : map.get(nounB)) {
+                temp = sap.length(val1, val2);    
+                
+                if (temp < length) {
+                    length = temp;
+                    ancestor = sap.ancestor(val1, val2);
+                }
+            } 
+        }
+        return new int[] {length, ancestor};
+    }
+    
     // do unit testing of this class
-    public static void main(String[] args)
+    public static void main(String[] args) {
+        WordNet test = new WordNet(args[0], args[1]);
+        
+     //    test for isNoun
+        System.out.println(test.isNoun("c"));
+       System.out.println(test.isNoun("g"));
+        
+        // test for nouns
+//        for (String temp : test.nouns())
+//            System.out.println(temp);
+//        
+        // test for distance
+        System.out.println(test.distance("harakiri", "mute"));
+        // test for sap
+        System.out.println(test.sap("harakiri", "mute"));
+        
+    }
+
 }
-*/
