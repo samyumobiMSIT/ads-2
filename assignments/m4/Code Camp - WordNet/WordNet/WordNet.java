@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
+import java.util.Scanner;
 
 public class WordNet {
     private Hashtable<String, Bag<Integer>> words;
@@ -116,17 +117,17 @@ public class WordNet {
        return synsetsList.get(ancestorId);
    }
 
-   // do unit testing of this class
+   
    public static void main(String[] args) {
-       String synsets = args[0];
-       String hypernyms = args[1];
-       WordNet net = new WordNet(synsets, hypernyms);
-        while (!StdIn.isEmpty()) {
-            String v = StdIn.readString();
-            String w = StdIn.readString();
-            int length   = net.distance(v, w);
-            String ancestor = net.sap(v, w);
-            System.out.printf("length = %d, ancestor = %s\n", length, ancestor);
-        }
-   }
+    In in = new In(args[0]);
+    Digraph G = new Digraph(in);
+    SAP sap = new SAP(G);
+    while (!StdIn.isEmpty()) {
+        int v = StdIn.readInt();
+        int w = StdIn.readInt();
+        int length   = sap.length(v, w);
+        int ancestor = sap.ancestor(v, w);
+       System.out.printf("length = %d, ancestor = %d\n", length, ancestor);
+    }
+  }
 }
