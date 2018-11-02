@@ -461,6 +461,7 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:10:16: Parameter G should be final. [FinalParameters]
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:10:24: Expected @param tag for 'G'. [JavadocMethod]
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:10:24: Name 'G' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
+[ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:11: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:15: First sentence should end with a period. [JavadocStyle]
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:17: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:19: Line has trailing spaces. [RegexpSingleline]
@@ -513,7 +514,7 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:167: Line is longer than 80 characters (found 104). [LineLength]
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\SAP.java:170: Line is longer than 80 characters (found 89). [LineLength]
 Audit done.
-Checkstyle ends with 60 errors.
+Checkstyle ends with 61 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m4\Code Camp - WordNet\WordNet\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.

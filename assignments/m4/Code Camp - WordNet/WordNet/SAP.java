@@ -8,7 +8,7 @@ public class SAP {
      * @param G
      */
     public SAP(Digraph G) {
-        assert G != null;
+     
         this.graph = new Digraph(G);
     }
 
@@ -114,8 +114,8 @@ public class SAP {
      * @return
      */
     public int ancestor(Iterable<Integer> v, Iterable<Integer> w) {
-        checkIndex(v);
-        checkIndex(w);
+     //   checkIndex(v);
+      //  checkIndex(w);
         BreadthFirstDirectedPaths bfsV = new BreadthFirstDirectedPaths(graph, v);
         BreadthFirstDirectedPaths bfsW = new BreadthFirstDirectedPaths(graph, w);
         
