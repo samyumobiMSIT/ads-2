@@ -1,0 +1,24 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+0
+
+Your Output: 
+0
+----------------------------------------
+
+########## Testcase 1: Passed ##########
+Expected Output: 
+3
+
+Your Output: 
+3
+----------------------------------------
+
+########## Testcase 2: Passed ##########
+Expected Output: 
+7
+
+Your Output: 
+7
+----------------------------------------
+
