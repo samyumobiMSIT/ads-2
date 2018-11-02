@@ -36,17 +36,16 @@ Your Output:
 14: 13
 ----------------------------------------
 
-########## Testcase 1: Passed ##########
+########## Testcase 1: Failed ##########
 Expected Output: 
 distance = 7, ancestor = entity
 distance = 10, ancestor = entity
 
 Your Output: 
-distance = 7, ancestor = entity
-distance = 10, ancestor = entity
+
 ----------------------------------------
 
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 distance = 7, ancestor = macromolecule supermolecule
 distance = 7, ancestor = macromolecule supermolecule
@@ -56,27 +55,20 @@ distance = 7, ancestor = lipid lipide lipoid
 distance = 1, ancestor = animal_oil
 
 Your Output: 
-distance = 7, ancestor = macromolecule supermolecule
-distance = 7, ancestor = macromolecule supermolecule
-distance = 9, ancestor = macromolecule supermolecule
-distance = 8, ancestor = macromolecule supermolecule
-distance = 7, ancestor = lipid lipide lipoid
-distance = 1, ancestor = animal_oil
+
 ----------------------------------------
 
-########## Testcase 3: Passed ##########
+########## Testcase 3: Failed ##########
 Expected Output: 
 distance = 3, ancestor = wax
 distance = 13, ancestor = thing
 distance = 2, ancestor = wax
 
 Your Output: 
-distance = 3, ancestor = wax
-distance = 13, ancestor = thing
-distance = 2, ancestor = wax
+
 ----------------------------------------
 
-########## Testcase 4: Passed ##########
+########## Testcase 4: Failed ##########
 Expected Output: 
 distance = 0, ancestor = b
 distance = 0, ancestor = c
@@ -85,14 +77,10 @@ distance = 0, ancestor = e
 distance = 0, ancestor = f
 
 Your Output: 
-distance = 0, ancestor = b
-distance = 0, ancestor = c
-distance = 0, ancestor = d
-distance = 0, ancestor = e
-distance = 0, ancestor = f
+
 ----------------------------------------
 
-########## Testcase 5: Passed ##########
+########## Testcase 5: Failed ##########
 Expected Output: 
 distance = 1, ancestor = b
 distance = 2, ancestor = c
@@ -106,19 +94,10 @@ distance = 2, ancestor = j
 distance = 1, ancestor = k
 
 Your Output: 
-distance = 1, ancestor = b
-distance = 2, ancestor = c
-distance = 4, ancestor = c
-distance = 3, ancestor = c
-distance = 4, ancestor = c
-distance = 4, ancestor = c
-distance = 3, ancestor = c
-distance = 3, ancestor = i
-distance = 2, ancestor = j
-distance = 1, ancestor = k
+
 ----------------------------------------
 
-########## Testcase 6: Passed ##########
+########## Testcase 6: Failed ##########
 Expected Output: 
 distance = 1, ancestor = b
 distance = 2, ancestor = c
@@ -129,16 +108,10 @@ distance = 3, ancestor = h
 distance = 1, ancestor = h
 
 Your Output: 
-distance = 1, ancestor = b
-distance = 2, ancestor = c
-distance = 2, ancestor = h
-distance = 5, ancestor = h
-distance = 4, ancestor = h
-distance = 3, ancestor = h
-distance = 1, ancestor = h
+
 ----------------------------------------
 
-########## Testcase 7: Passed ##########
+########## Testcase 7: Failed ##########
 Expected Output: 
 distance = 1, ancestor = b
 distance = 1, ancestor = c
@@ -152,16 +125,7 @@ distance = 3, ancestor = f
 distance = 4, ancestor = f
 
 Your Output: 
-distance = 1, ancestor = b
-distance = 1, ancestor = c
-distance = 1, ancestor = d
-distance = 1, ancestor = e
-distance = 2, ancestor = f
-distance = 3, ancestor = f
-distance = 3, ancestor = f
-distance = 3, ancestor = f
-distance = 3, ancestor = f
-distance = 4, ancestor = f
+
 ----------------------------------------
 
 ########## Testcase 8: Passed ##########
@@ -188,32 +152,20 @@ Your Output:
 7:
 ----------------------------------------
 
-########## Testcase 9: Failed ##########
+########## Testcase 9: Passed ##########
 Expected Output: 
 Multiple roots
 
 Your Output: 
-6 vertices, 5 edges 
-0: 
-1: 2 0 
-2: 3 
-3: 4 
-4: 5 
-5:
+Multiple roots
 ----------------------------------------
 
-########## Testcase 10: Failed ##########
+########## Testcase 10: Passed ##########
 Expected Output: 
 Multiple roots
 
 Your Output: 
-6 vertices, 4 edges 
-0: 1 
-1: 2 
-2: 3 
-3: 
-4: 5 
-5:
+Multiple roots
 ----------------------------------------
 
 ########## Testcase 11: Passed ##########
@@ -253,33 +205,14 @@ distance = 0, ancestor = era epoch
 distance = 8, ancestor = abstraction abstract_entity
 
 Your Output: 
-distance = 11, ancestor = unit whole
-distance = 8, ancestor = being organism
-distance = 14, ancestor = entity
-distance = 13, ancestor = object physical_object
-distance = 2, ancestor = decennary decennium
-distance = 8, ancestor = substance
-distance = 16, ancestor = physical_entity
-distance = 2, ancestor = alphabetic_character letter_of_the_alphabet
-distance = 2, ancestor = alphabetic_character letter_of_the_alphabet
-distance = 12, ancestor = individual mortal person somebody someone
-distance = 15, ancestor = abstract_entity
-distance = 0, ancestor = 9-11 9/11 Sep_11 Sept._11 September_11
-distance = 2, ancestor = 
-distance = 13, ancestor = abstract_entity
-distance = 12, ancestor = abstract_entity
-distance = 0, ancestor = era geological_era
-distance = 8, ancestor = abstract_entity
+
 ----------------------------------------
 
-########## Testcase 14: Failed ##########
+########## Testcase 14: Passed ##########
 Expected Output: 
 Cycle detected
 
 Your Output: 
-3 vertices, 2 edges 
-0: 1 
-1: 0 
-2:
+Cycle detected
 ----------------------------------------
 
