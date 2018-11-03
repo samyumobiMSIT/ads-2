@@ -70,12 +70,12 @@ class PageRank {
 
 */
    public String toString()  {
-		StringBuilder s = new StringBuilder();
+		String s = "";
 
 		for(int i = 0; i<vertices; i++) {
-			s.append(i+" - "+PR_value[i]+"\n");
+			s = s + i+" - "+PR_value[i]+"\n";
 		}
-		return s.toString();
+		return s;
 	}
 
 
@@ -103,8 +103,10 @@ public class Solution {
 		// Create page rank object and pass the graph object to the constructor
 
         Scanner input  = new Scanner(System.in);
+         // number of iterations
         int vertices = Integer.parseInt(input.nextLine());
         Digraph digraph = new Digraph(vertices);
+         // number of pages
         String[] incoming = new String[vertices];
 
         for(int j = 0; j<vertices; j++) {
@@ -140,6 +142,30 @@ public class Solution {
 		// remove the q= prefix and extract the search word
 		// pass the word to iAmFeelingLucky method of web search
 		// print the return value of iAmFeelingLucky
+        // Use the power method to compute page ranks. 
+       /* double[] rank = new double[incoming]; 
+        rank[0] = 1.0; 
+        for (int t = 0; t < vertices; t++) {
 
-	}
-}
+            // Compute effect of next move on page ranks. 
+            double[] newRank = new double[incoming]; 
+            for (int j = 0; j < incoming; j++) {
+                //  New rank of page j is dot product of old ranks and column j of p[][]. 
+                for (int k = 0; k < incoming; k++) 
+                   newRank[j] += rank[k]*p[k][j]; 
+            } 
+
+            // Update page ranks.
+            rank = newRank;
+        } 
+
+
+        // print page ranks
+        for (int i = 0; i < incoming; i++) {
+            System.out.printf("%8.5f", rank[i]);  
+        }
+        System.out.println(); */
+    } 
+} 
+        
+	
