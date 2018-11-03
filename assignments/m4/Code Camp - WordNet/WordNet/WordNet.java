@@ -1,4 +1,4 @@
-import java.util.Arrays;
+/*import java.util.Arrays;
 import java.util.*;
 
 public class WordNet {
@@ -17,8 +17,8 @@ public class WordNet {
    
     public int readsyn(String file) {
         In in = new In("./Files/" + file);
-        String[] s1 = null;
-        String[] s = null;
+        String[] s1 = null; 
+        String[] s = null; 
         while (!in.isEmpty()) {
         ArrayList<Integer> ids = new ArrayList<Integer>();
             vertices++;
@@ -93,4 +93,4 @@ public class WordNet {
     // public static void main(String[] args) {
 
     // }
-}
+}*/
