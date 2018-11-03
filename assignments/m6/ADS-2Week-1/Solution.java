@@ -1,8 +1,53 @@
 
+import java.util.Scanner;
 class PageRank {
-	
+	Digraph graph;
+	int no_v;
+	int no_e;
+	int od;
+	int id;
+	int[] odarr;
+	PageRank() {
+    }
+	PageRank(Digraph gr) {
+		graph = gr;
+		no_v = gr.V();
+		no_e = gr.E();
+    }
+	public double getPR(int v1) {
+		od = graph.outdegree(v1);
+		if (od == 0) {
+			return 0.0;
+		}
+		for (int i = 0; i < no_v; i++) {
+			for (int v : graph.adj(i)) {
+				if (v == v1)
+                odarr[i++] = v;
+		    }
+		}
+		double initialPR = 1/no_e;
+		double pr = initialPR;
+		double newPR;
+		for (int k = 0; k < odarr.length; k++) {
+		    for (int i = 0; i < 1000; i++) {
+			newPR = pr / graph.outdegree(odarr[k++]);
+			pr = newPR;
+		}
+		}
+		return pr;
+    }
+	public String toString() {
+		String str = "";
+		System.out.println(no_v + " vertices" +", "+no_e + " edges");
+        for (int i = 0; i < no_v; i++) {
+            str = i + ": ";
+            for (int k : graph.adj(i)) {
+                str = str + k + " ";
+            }
+        }
+        return str;
+	}
 }
-
 class WebSearch {
 
 }
@@ -10,16 +55,25 @@ class WebSearch {
 
 public class Solution {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//Digraph gph = new Digraph();
 		// read the first line of the input to get the number of vertices
-
-		// iterate count of vertices times 
-		// to read the adjacency list from std input
+		int v = Integer.parseInt(sc.nextLine());
+		Digraph gph = new Digraph(v);
+        // iterate count of vertices times
+        // to read the adjacency list from std input
 		// and build the graph
-		
-		
+        for (int i = 0; i < v; i++) {
+        	String input = sc.nextLine();
+        	String[] tokens = input.split(" ");
+        	for (int j = 1; j < tokens.length; j++) {
+                gph.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[j]));
+        	}
+        } 
 		// Create page rank object and pass the graph object to the constructor
-		
+		PageRank pr = new PageRank(gph);
 		// print the page rank object
+		System.out.println(pr);
 		
 		// This part is only for the final test case
 		
@@ -34,49 +88,5 @@ public class Solution {
 		// pass the word to iAmFeelingLucky method of web search
 		// print the return value of iAmFeelingLucky
 		
-		
-	int T = Integer.parseInt(args[0]); // number of moves
-		int M = StdIn.readInt(); // number of pages - ignore since M = N
-		int N = StdIn.readInt(); // number of pages
-		
-		// Read transition matrix.
-		double[][] p = new double[N][N]; // p[i][j] = prob. that surfer moves
-											// from page i to page j
-		for (int i = 0; i < N; i++)
-			for (int j = 0; j < N; j++)
-				p[i][j] = StdIn.readDouble();
-		
-		int[] freq = new int[N]; // freq[i] = # times surfer hits page i
-		
-		// Start at page 0.
-		int page = 0;
-		
-		for (int t = 0; t < T; t++)
-		{
-			
-			// Make one random move.
-			double r = Math.random();
-			double sum = 0.0;
-			for (int j = 0; j < N; j++)
-			{
-				// Find interval containing r.
-				sum += p[page][j];
-				if (r < sum)
-				{
-					page = j;
-					break;
-				}
-			}
-			freq[page]++;
-		}
-		
-		// Print page ranks.
-		for (int i = 0; i < N; i++)
-		{
-			System.out.printf("%8.5f", (double) freq[i] / T);
-		}
-		System.out.println();
 	}
-		
-	}
-
+}
