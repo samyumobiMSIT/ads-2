@@ -1,0 +1,32 @@
+warning: LF will be replaced by CRLF in practise/m5/Bonus-1/README.md.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m5/Bonus-1/testcases/input000.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m5/Bonus-1/testcases/input001.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m5/Bonus-1/testcases/input002.txt.
+The file will have its original line endings in your working directory.
+[master e96b5df] "ads2_m5_ba1_1: 3/3 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 22 files changed, 200 insertions(+)
+ create mode 100644 practise/m5/Bonus-1/README.md
+ create mode 100644 practise/m5/Bonus-1/Solution$DepthFirstSearch.class
+ create mode 100644 practise/m5/Bonus-1/Solution$Graph.class
+ create mode 100644 practise/m5/Bonus-1/Solution.class
+ create mode 100644 practise/m5/Bonus-1/Solution.java
+ create mode 100644 practise/m5/Bonus-1/check_style_errors.txt
+ create mode 100644 practise/m5/Bonus-1/git_output.txt
+ create mode 100644 practise/m5/Bonus-1/md5/input000.txt
+ create mode 100644 practise/m5/Bonus-1/md5/input001.txt
+ create mode 100644 practise/m5/Bonus-1/md5/input002.txt
+ create mode 100644 practise/m5/Bonus-1/md5/output000.txt
+ create mode 100644 practise/m5/Bonus-1/md5/output001.txt
+ create mode 100644 practise/m5/Bonus-1/md5/output002.txt
+ create mode 100644 practise/m5/Bonus-1/md5/problem_id.txt
+ create mode 100644 practise/m5/Bonus-1/testcases/input000.txt
+ create mode 100644 practise/m5/Bonus-1/testcases/input001.txt
+ create mode 100644 practise/m5/Bonus-1/testcases/input002.txt
+ create mode 100644 practise/m5/Bonus-1/testcases/output000.txt
+ create mode 100644 practise/m5/Bonus-1/testcases/output001.txt
+ create mode 100644 practise/m5/Bonus-1/testcases/output002.txt
+ create mode 100644 practise/m5/Bonus-1/testcases/problem_id.txt
+ create mode 100644 practise/m5/Bonus-1/testcases_output.txt
