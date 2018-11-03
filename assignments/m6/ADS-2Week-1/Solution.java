@@ -1,58 +1,79 @@
 import java.util.Scanner;
 import java.util.Arrays;
-
+/*PageRank class
+*/
 class PageRank {
 	Digraph digraph;
 	int vertices;
-	double[] prValues;
+	double[] PR_value;
 	double[] outlinks;
     // Bag<Integer>[] adj;    // adj[v] = adjacency list for vertex v
-
-
-
+/*
+    PageRank constructor
+    @param   digraph g
+    @param  vertices v
+    Time complexity: Constant 1
+*/
 	PageRank(Digraph digraph, int vertices) {
 		this.digraph = digraph;
 		this.vertices = vertices;
-		prValues = new double[vertices];
+		PR_value = new double[vertices];
 	    outlinks = new double[vertices];
         // adj = (Bag<Integer>[]) new Bag[vertices];
 
 
 	}
-
+ /*
+ initializePR 
+  Corner case method 
+  Complexity :
+  Worst: O(V) , Best: O(1)
+  */
 	public void initializePR(String[] incoming) {
         for(int i = 0; i<vertices; i++) {
         	outlinks[i] = digraph.outdegree(i);
-        	prValues[i] = 1.0/4;
+        	PR_value[i] = 1.0/4;
         }
     // System.out.println(Arrays.toString(outlinks));
     // System.out.println(Arrays.toString(incoming));
-    // System.out.println(Arrays.toString(prValues));
+    // System.out.println(Arrays.toString(PR_value));
 
 
 
 
 	}
+  /* 
+   getPR method 
+   @param incoming String(vert)
+   Complexity :
+   Worst: O(V) , Best: O(1)
 
-	public void calculatePR(String[] incoming) {
+	*/
+   public void getPR(String[] incoming) {
         for(int i = 0; i<999; i++) {
         	for(int j = 0; j<vertices; j++) {
         		// System.out.println(incoming[j]);
                 String[] tokens = incoming[j].split(" ");
                 double a = 0;
                 for(int k = 1; k<tokens.length; k++) {
-                	a += prValues[Integer.parseInt(tokens[k])] / outlinks[Integer.parseInt(tokens[k])];
+                	a += PR_value[Integer.parseInt(tokens[k])] / outlinks[Integer.parseInt(tokens[k])];
                 }
-                prValues[j] = a;
+                PR_value[j] = a;
         	}
         }
 	}
+/*
+  toString method:
+  @param incoming String(vert)
+   Complexity :
+   Worst: O(V) , Best: O(1)
 
-	public String toString()  {
+*/
+   public String toString()  {
 		StringBuilder s = new StringBuilder();
 
 		for(int i = 0; i<vertices; i++) {
-			s.append(i+" - "+prValues[i]+"\n");
+			s.append(i+" - "+PR_value[i]+"\n");
 		}
 		return s.toString();
 	}
@@ -60,12 +81,16 @@ class PageRank {
 
 
 }
-
+/*
+ WebSearch Method 
+ */
 class WebSearch {
 
 }
+/*
+Solution class
 
-
+*/
 public class Solution {
 	public static void main(String[] args) {
 		// read the first line of the input to get the number of vertices
@@ -96,7 +121,7 @@ public class Solution {
         // System.out.println();
         PageRank page = new PageRank(digraph, vertices);
         page.initializePR(incoming);
-        page.calculatePR(incoming);
+        page.getPR(incoming);
 
         System.out.println(page);
 
