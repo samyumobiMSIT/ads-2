@@ -24,7 +24,7 @@ class PageRank {
 
 	}
  /*
- initializePR 
+ initializePR updates vert value 
   Corner case method 
   Complexity :
   Worst: O(V) , Best: O(1)
@@ -34,13 +34,7 @@ class PageRank {
         	outlinks[i] = digraph.outdegree(i);
         	PR_value[i] = 1.0/4;
         }
-    // System.out.println(Arrays.toString(outlinks));
-    // System.out.println(Arrays.toString(incoming));
-    // System.out.println(Arrays.toString(PR_value));
-
-
-
-
+   
 	}
   /* 
    getPR method 
@@ -89,6 +83,7 @@ class WebSearch {
 }
 /*
 Solution class
+
 
 */
 public class Solution {
