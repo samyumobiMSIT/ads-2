@@ -1,0 +1,15 @@
+warning: LF will be replaced by CRLF in assignments/m4/Code Camp - WordNet/WordNet/Digraph.java.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in assignments/m4/Code Camp - WordNet/WordNet/SAP.java.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in assignments/m4/Code Camp - WordNet/WordNet/WordNet.java.
+The file will have its original line endings in your working directory.
+[master 58a9cda] "ads2_m4_a1_1: 15/15 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 12 files changed, 518 insertions(+), 458 deletions(-)
+ rewrite assignments/m4/Code Camp - WordNet/WordNet/BreadthFirstDirectedPaths.class (94%)
+ rewrite assignments/m4/Code Camp - WordNet/WordNet/Digraph.class (97%)
+ rewrite assignments/m4/Code Camp - WordNet/WordNet/SAP.class (100%)
+ rewrite assignments/m4/Code Camp - WordNet/WordNet/SAP.java (96%)
+ rewrite assignments/m4/Code Camp - WordNet/WordNet/Solution.class (100%)
+ rewrite assignments/m4/Code Camp - WordNet/WordNet/Solution.java (88%)
+ rewrite assignments/m4/Code Camp - WordNet/WordNet/result/score.json (88%)

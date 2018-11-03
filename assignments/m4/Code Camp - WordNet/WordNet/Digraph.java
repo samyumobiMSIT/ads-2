@@ -11,7 +11,7 @@
  *
  *  % java Digraph tinyDG.txt
  *  13 vertices, 22 edges
- *  0: 5 1
+ *  0:  5 1
  *  1:
  *  2: 0 3
  *  3: 5 2
