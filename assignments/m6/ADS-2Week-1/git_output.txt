@@ -1,0 +1,6 @@
+warning: LF will be replaced by CRLF in assignments/m6/ADS-2Week-1/Solution.java.
+The file will have its original line endings in your working directory.
+[master b67cee7] "ads2_m6_a1_1: 2/12 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 7 files changed, 57 insertions(+), 138 deletions(-)
+ rewrite assignments/m6/ADS-2Week-1/result/score.json (86%)
+ delete mode 100644 assignments/m6/ADS-2Week-1/sol
