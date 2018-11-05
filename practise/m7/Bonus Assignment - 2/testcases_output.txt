@@ -1,0 +1,63 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+6-2 4
+0-7 16
+2-3 17
+1-7 19
+0-2 26
+5-7 28
+4-5 35
+
+Your Output: 
+Exception in thread "main" java.lang.IllegalArgumentException: Could not open resource/4.3/tinyEWG.txt
+	at In.<init>(In.java:194)
+	at Solution.main(Solution.java:44)
+Caused by: java.net.MalformedURLException: no protocol: resource/4.3/tinyEWG.txt
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at In.<init>(In.java:180)
+	... 1 more
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+2-3 4
+0-3 5
+0-1 10
+
+Your Output: 
+Exception in thread "main" java.lang.IllegalArgumentException: Could not open resource/4.3/tinyEWG.txt
+	at In.<init>(In.java:194)
+	at Solution.main(Solution.java:44)
+Caused by: java.net.MalformedURLException: no protocol: resource/4.3/tinyEWG.txt
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at In.<init>(In.java:180)
+	... 1 more
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+6-7 1
+2-8 2
+5-6 2
+0-1 4
+2-5 4
+1-2 6
+2-3 7
+3-4 9
+
+Your Output: 
+Exception in thread "main" java.lang.IllegalArgumentException: Could not open resource/4.3/tinyEWG.txt
+	at In.<init>(In.java:194)
+	at Solution.main(Solution.java:44)
+Caused by: java.net.MalformedURLException: no protocol: resource/4.3/tinyEWG.txt
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at In.<init>(In.java:180)
+	... 1 more
+----------------------------------------
+
