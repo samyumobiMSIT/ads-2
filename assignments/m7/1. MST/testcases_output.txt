@@ -1,0 +1,54 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+614708.00000
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:17)
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+1.81000
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:17)
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+10.46351
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:17)
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+37.00000
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:17)
+----------------------------------------
+
+########## Testcase 4: Failed ##########
+Expected Output: 
+19.00000
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:17)
+----------------------------------------
+
+########## Testcase 5: Failed ##########
+Expected Output: 
+2.00000
+
+Your Output: 
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:17)
+----------------------------------------
+
