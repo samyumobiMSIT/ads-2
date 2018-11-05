@@ -1,39 +1,22 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 public class Solution {
 
-    public static void main(String[] args) throws NumberFormatException, IOException {
+    public static void main(String[] args) {
         // TODO Auto-generated method stub
         
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in)); 
-        int T=Integer.parseInt(br.readLine());
-        String s;
-        StringTokenizer st;     
-        while(T>0)
-        {
-            if((s=br.readLine().trim())!=null)
-            {
-                st=new StringTokenizer(s);
-                int a=Integer.parseInt(st.nextToken());
-                int b=Integer.parseInt(st.nextToken());
-                System.out.println(a-1);
-                while(b>0)
-                {
-                    if((s=br.readLine().trim())!=null)
-                    {
-                    
-                        b--;
-                    }
-                }
-                
-                T--;
-                
-                    
-            }
+       Scanner s = new Scanner(System.in);
+        int vertices = Integer.parseInt(s.nextLine());
+        int edges = Integer.parseInt(s.nextLine());
+        EdgeWeightedGraph edgeobj = new EdgeWeightedGraph(vertices);
+        while (s.hasNextLine()) {
+            String[] tokens = s.nextLine().split(" ");
+            Edge obj = new Edge(
+                Integer.parseInt(tokens[0]),
+                Integer.parseInt(tokens[1]),
+                Double.parseDouble(tokens[2]));
+            edgeobj.addEdge(obj);
         }
-
+        LazyPrimMST mst = new LazyPrimMST(edgeobj);
+        System.out.printf("%.5f\n", mst.weight());
     }
-
 }

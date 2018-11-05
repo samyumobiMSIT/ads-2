@@ -1,60 +1,48 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 614708.00000
 
 Your Output: 
-Exception in thread "main" java.util.NoSuchElementException
-	at java.util.StringTokenizer.nextToken(Unknown Source)
-	at Solution.main(Solution.java:20)
+614708.00000
 ----------------------------------------
 
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 1.81000
 
 Your Output: 
-Exception in thread "main" java.util.NoSuchElementException
-	at java.util.StringTokenizer.nextToken(Unknown Source)
-	at Solution.main(Solution.java:20)
+1.81000
 ----------------------------------------
 
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 10.46351
 
 Your Output: 
-Exception in thread "main" java.util.NoSuchElementException
-	at java.util.StringTokenizer.nextToken(Unknown Source)
-	at Solution.main(Solution.java:20)
+10.46351
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 37.00000
 
 Your Output: 
-Exception in thread "main" java.util.NoSuchElementException
-	at java.util.StringTokenizer.nextToken(Unknown Source)
-	at Solution.main(Solution.java:20)
+37.00000
 ----------------------------------------
 
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 19.00000
 
 Your Output: 
-Exception in thread "main" java.util.NoSuchElementException
-	at java.util.StringTokenizer.nextToken(Unknown Source)
-	at Solution.main(Solution.java:20)
+19.00000
 ----------------------------------------
 
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 2.00000
 
 Your Output: 
-Exception in thread "main" java.util.NoSuchElementException
-	at java.util.StringTokenizer.nextToken(Unknown Source)
-	at Solution.main(Solution.java:20)
+2.00000
 ----------------------------------------
 
