@@ -1,0 +1,4 @@
+Proposition: If all the edge weights in G are distinct, then G has a
+unique MST.
+Proof. If T = (V, S) and T' = (V, S') are two distinct MSTs for G, let e = xy be the cheapest edge of G that is in one of T or T', but not both. 
+Since all the edge weights are distinct, there is a unique cheapest edge with this property.

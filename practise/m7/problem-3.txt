@@ -1,0 +1,1 @@
+Negative the weight of each edge then we can find the maximum spanning tree.

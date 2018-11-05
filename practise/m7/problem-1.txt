@@ -1,0 +1,1 @@
+graph's edges all have distinct weights, the MST is unique.
