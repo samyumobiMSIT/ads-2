@@ -1,4 +1,4 @@
-public class UF {
+class UF {
 
     private int[] parent;  // parent[i] = parent of i
     private byte[] rank;   // rank[i] = rank of subtree rooted at i (never more than 31)
