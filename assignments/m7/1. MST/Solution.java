@@ -1,29 +1,36 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 
-public class Solution
-{
-	 public static void main(String args[]) throws NumberFormatException, IOException
-	    
-	 {       
-		 	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		 	int t=Integer.parseInt(br.readLine());
-		 	while(t>0)
-		 	{
-		 		String b[]=br.readLine().split(" ");
-		 		int a=Integer.parseInt(b[1]);
-		 		while(a>0)
-		 		{
-		 			String op[]=br.readLine().split(" ");
-		 			a--;
-		 			
-		 		}
-		 		System.out.println(Integer.parseInt(b[0])-1);
-		 		
-		 		t--;
-		 	}
- 	}
- }
+public class Solution {
+
+    public static void main(String[] args) throws NumberFormatException, IOException {
+        // TODO Auto-generated method stub
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        String s;
+        StringTokenizer st;
+        while (T > 0) {
+            if ((s = br.readLine().trim()) != null) {
+                st = new StringTokenizer(s);
+                int a = Integer.parseInt(st.nextToken());
+                int b = Integer.parseInt(st.nextToken());
+                System.out.println(a - 1);
+                while (b > 0) {
+                    if ((s = br.readLine().trim()) != null) {
+
+                        b--;
+                    }
+                }
+
+                T--;
+
+            }
+        }
+
+    }
+
+}
