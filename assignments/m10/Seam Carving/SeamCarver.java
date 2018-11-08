@@ -130,7 +130,7 @@ public class SeamCarver {
     private void relaxVertical(Pair[][] energies, int row, int col){
         double myEnergy = energy(col, row);
         Pair[] paths = {
-            new Pair( isValidPixel(col - 1, row -1) ? myEnergy + energies[row - 1][col - 1].energy : Double.MAX_VALUE, col - 1),
+            new Pair( isValidPixel(col, row -1) ? myEnergy + energies[row - 1][col - 1].energy : Double.MAX_VALUE, col - 1),
             new Pair( isValidPixel(col, row - 1) ? myEnergy + energies[row - 1][col].energy : Double.MAX_VALUE, col),
             new Pair( isValidPixel(col + 1, row - 1) ? myEnergy + energies[row - 1][col + 1].energy : Double.MAX_VALUE, col + 1)
         };
