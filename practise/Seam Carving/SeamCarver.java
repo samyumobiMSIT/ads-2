@@ -1,221 +1,253 @@
+import java.util.*;
+import java.lang.*;
 import java.awt.Color;
-import java.lang.Math;
+//import edu.princeton.cs.algs4.*;
 
 public class SeamCarver {
-        
-    private Picture pic;
 
-    private class Node {
-        public double dist;
-        public int minFather;
-        public final double energy;
+    private double[][] energies;
+    private Color[][] colors;
+    private int width;
+    private int height;
+    private enum ORIENTATION { HORIZONTAL, VERTICAL };
+    private ORIENTATION orientation;
 
-        public Node (int x, int y) {
-            dist = Double.POSITIVE_INFINITY;
-            energy = energy(x, y);
-            minFather = -1;
-        }
-    }
 
-    // create a seam carver object based on the given picture
-    public SeamCarver(Picture picture) {
+    public SeamCarver(Picture picture){
         if (picture == null)
-            throw new java.lang.NullPointerException();
-        
-        this.pic = picture;
+            throw new java.lang.IllegalArgumentException("Null picture");
+
+        width = picture.width();
+        height = picture.height();
+        colors = new Color[height][width];
+        orientation = ORIENTATION.VERTICAL;
+
+
+        for (int row=0; row < height; row++) {
+            for (int col=0; col < width; col++) {
+                colors[row][col] = picture.get(col, row);
+            }
+        }
+
+        fillEnergies();
     }
-   
-    // current picture
+
     public Picture picture() {
-        return pic;
-    }   
-    
-    // width of current picture
+        transposeV();
+
+        Picture picture = new Picture(width, height);
+        for (int row=0; row < height; row++) {
+            for (int col=0; col < width; col++) {
+                picture.set(col, row, colors[row][col]);
+            }
+        }
+
+        return picture;
+    }
+
     public int width() {
-        return pic.width();
-    }
-   
-    // height of current picture
-    public int height() {
-        return pic.height();
-    }
-   
-    // energy of pixel at column x and row y
-    public double energy(int x, int y) {
-        if (x < 0 || x >= width() || y < 0 || y >= height())
-            throw new java.lang.IndexOutOfBoundsException();
-
-        int nextX = (x + 1)%width();
-        int nextY = (y + 1)%height();
-        int prevX = x - 1 >= 0 ? (x - 1)%height() : width() - x - 1;
-        int prevY = y - 1 >= 0 ? (y - 1)%height() : height() - y - 1;
-
-        int red, blue, green;
-        red = pic.get(prevX, y).getRed() - pic.get(nextX, y).getRed();
-        blue = pic.get(prevX, y).getBlue() - pic.get(nextX, y).getBlue();
-        green = pic.get(prevX, y).getGreen() - pic.get(nextX, y).getGreen();
-       
-        int deltaX = (red*red) + (blue*blue) + (green*green);
-        
-        red = pic.get(x, prevY).getRed() - pic.get(x, nextY).getRed();
-        blue = pic.get(x, prevY).getBlue() - pic.get(x, nextY).getBlue();
-        green = pic.get(x, prevY).getGreen() - pic.get(x, nextY).getGreen();
-        
-        int deltaY = (red*red) + (blue*blue) + (green*green);
-        
-        return Math.sqrt(deltaX + deltaY);
+        return orientation == ORIENTATION.VERTICAL ? width : height;
     }
 
-    // sequence of indices for horizontal seam (vector of y's)
+
+    public int height()  {
+        return orientation == ORIENTATION.VERTICAL ? height : width;
+    }
+
+
+    private double gradient(int col, int row) {
+        Color left = colors[row][col - 1];
+        Color right = colors[row][col + 1];
+        Color top = colors[row - 1][col];
+        Color bottom = colors[row + 1][col];
+
+        return Math.pow((centralDifferences(left, right) +
+                         centralDifferences(top, bottom)), 0.5);
+    }
+
+    private double centralDifferences(Color c1, Color c2) {
+        return Math.pow(c1.getRed() - c2.getRed(), 2) +
+               Math.pow(c1.getBlue() - c2.getBlue(), 2) +
+               Math.pow(c1.getGreen() - c2.getGreen(), 2);
+    }
+
     public int[] findHorizontalSeam() {
-        int[] path = new int[width()];
+        transposeH();
 
-        Node[][] matrix = findSeam(false);
-        double min = Double.POSITIVE_INFINITY;
-        int y = 0;
-        
-        for (int i = width() - 1, j = 0; j < height(); j++) {
-            if (matrix[i][j].dist < min) {
-                min = matrix[i][j].dist;
-                y = j;
+        int[] seam = findVerticalSeam();
+
+        orientation = ORIENTATION.HORIZONTAL;
+        return seam;
+    }
+
+    public int[] findVerticalSeam()  {
+        Point2D edgeTo[][];
+        double distTo[][];
+
+        transposeV();
+
+        edgeTo = new Point2D[height][width];
+        distTo = new double[height][width];
+
+        initDistToAndEdgeTo(edgeTo, distTo);
+        for (int row=0; row < height; row++){
+            for (int col=0; col < width; col++) {
+                relaxVertex(row, col, edgeTo, distTo);
             }
         }
 
-        for (int i = width() - 1; i >= 0; y = matrix[i][y].minFather, i--) {
-            path[i] = y;
-        }
-        
-        return path;
 
+        return trace(edgeTo, distTo);
     }
-   
-    // sequence of indices for vertical seam (vector of x's)
-    public int[] findVerticalSeam() {
-        int[] path = new int[height()];
 
-        Node[][] matrix = findSeam(true);
+    private int[] trace(Point2D edgeTo[][], double[][] distTo) {
+        int curCol = -1;
+        double minDist = Double.MAX_VALUE;
+        int[] seam = new int[height];
 
-        double min = Double.POSITIVE_INFINITY;
-        int x = 0;
-
-        for (int i = 0, j = height() - 1; i < width(); i++) {
-            if (matrix[i][j].dist < min) {
-                min = matrix[i][j].dist;
-                x = i;
+        for (int col=0; col < width; col++) {
+            if (distTo[height - 1][col] < minDist) {
+                curCol = col;
+                minDist = distTo[height - 1][curCol];
             }
         }
 
-        for (int i = height() - 1; i >= 0; x = matrix[x][i].minFather, i--) {
-            path[i] = x;
+        for (int row= height - 1; row > 0; row--){
+            seam[row] = curCol;
+            curCol = (int) edgeTo[row][curCol].y();
         }
-        
-        return path;
+        seam[0] = curCol;
+
+        return seam;
     }
 
-    // remove horizontal seam from current picture
+
+    private void initDistToAndEdgeTo(Point2D[][] edgeTo, double[][] distTo) {
+        for (int row=0; row < height; row++) {
+            for (int col=0; col < width; col++) {
+                distTo[row][col] = Double.MAX_VALUE;
+                edgeTo[row][col] = null;
+            }
+        }
+        for (int col=0; col < width; col++)
+            distTo[0][col] = 0;
+    }
+
+    private ArrayList<Point2D> reachableVertices(int row, int col) {
+        ArrayList<Point2D> reachable = new ArrayList<Point2D>();
+
+        if (row == height - 1) return reachable;
+
+        if (col > 0) reachable.add(new Point2D (row + 1, col - 1));
+        if (col < width - 1) reachable.add(new Point2D(row + 1, col + 1));
+        reachable.add(new Point2D(row + 1, col));
+
+        return reachable;
+    }
+
+    private void relaxVertex(int row, int col, Point2D[][] edgeTo, double[][] distTo) {
+
+        ArrayList<Point2D> reachable = reachableVertices(row, col);
+        for (Point2D sink : reachable)
+            relaxEdge((int) sink.x(), (int) sink.y(), row, col, edgeTo, distTo);
+    }
+
+    private void relaxEdge(int row, int col, int sourceRow, int sourceCol, Point2D[][]edgeTo, double[][] distTo){
+        double sourceDist = distTo[sourceRow][sourceCol];
+        if (energies[row][col] + sourceDist < distTo[row][col]) {
+            edgeTo[row][col] = new Point2D(sourceRow, sourceCol);
+            distTo[row][col] = energies[row][col] + sourceDist;
+        }
+    }
+
     public void removeHorizontalSeam(int[] seam) {
-        if (seam == null)
-            throw new java.lang.NullPointerException();
-
-        if (width() == 1)
-            throw new java.lang.IllegalArgumentException();
-        
-        for (int i = 0; i < seam.length - 1; i++)
-            if (Math.abs(seam[i] - seam[i+1]) > 1)
-                throw new java.lang.IllegalArgumentException();
-
-        removeSeam(seam, false);
+        transposeH();
+        removeVerticalSeam(seam);
+        orientation = ORIENTATION.HORIZONTAL;
     }
-   
-    // remove vertical seam from current picture
+
     public void removeVerticalSeam(int[] seam) {
-        if (seam == null)
-            throw new java.lang.NullPointerException();
-        
-        if (height() == 1)
-            throw new java.lang.IllegalArgumentException();
+        transposeV();
+        validateSeam(seam);
 
-        for (int i = 0; i < seam.length - 1; i++)
-            if (Math.abs(seam[i] - seam[i+1]) > 1)
-                throw new java.lang.IllegalArgumentException();
-        
-        removeSeam(seam, true);
-    }
-
-    private void removeSeam(int[] seam, boolean vertical) {
-        
-        
-        int firstLim = vertical ? height() : width();
-        int secondLim = vertical ? width() : height();
-
-        Picture tmp = vertical ? 
-                    new Picture(width() - 1, height()) : 
-                    new Picture(width(), height() - 1);
-        
-        for (int i = 0; i < firstLim; i++) {
-            for (int j = 0, offset = 0; j < secondLim - 1; j++) {
-                if (j == seam[i])
-                    offset = 1;
-                
-                int curLin = vertical ? i : j; 
-                int curCol = vertical ? j : i;
-
-                int lin = vertical ? i : j+offset;
-                int col = vertical ? j+offset : i;
-                
-                tmp.set(curCol, curLin, pic.get(col, lin));
+        Color[][] newColors = new Color[height][width - 1];
+        for (int row=0; row < height; row++) {
+            for (int col=0; col < width; col++) {
+                if (col < seam[row])
+                    newColors[row][col] = colors[row][col];
+                else if (col > seam[row])
+                    newColors[row][col - 1] = colors[row][col];
             }
         }
-        
-        this.pic = tmp;
+        width--;
+        colors = newColors;
+        fillEnergies();
     }
-    
-    private Node[][] findSeam(boolean vertical) {
-        Node[][] matrix = new Node[width()][height()];
-        int lin, col;
 
-        int firstLim = vertical ? height() : width();
-        int secondLim = vertical ? width() : height();
+    private void validateSeam(int[] seam){
+        if (width <= 1 ) throw new java.lang.IllegalArgumentException("Cannot remove seam");
 
-        for (int i = 0; i < firstLim; i++)
-            for (int j = 0; j < secondLim; j++) {
-                lin = vertical ? j : i;
-                col = vertical ? i : j;
-                matrix[lin][col] = new Node(lin, col);
+        if (seam == null || seam.length != height) throw new java.lang.IllegalArgumentException("Invalid seam: wrong length");
+
+        for (int i = 0; i < height - 2; i++) { 
+
+            if (seam[i] < 0 || seam[i] >= width) throw new java.lang.IllegalArgumentException("Invalid seam: seam out of bound");
+
+            boolean adjacentVertices = Math.abs(seam[i+1] - seam[i]) <= 1;
+            if (!adjacentVertices) {
+                throw new java.lang.IllegalArgumentException("Invalid seam: unadjacent vertex");
             }
 
-        for (int i = 0; i < firstLim; i++) {
-            for (int j = 0; j < secondLim && i+1 < firstLim; j++) {
+        }
+    }
 
-                for (int k = -1; k < 2; k++) {
+    public double energy(int col,  int row)  {
+        if (col < 0 || col >= width() || row < 0 || row >= height()){
+            throw new java.lang.IllegalArgumentException("Coordinates out of bounds");
+        }
 
-                    lin = vertical ? j+k : i+1;
-                    col = vertical ? i+1 : j+k;
-                    
-                    int curLin = vertical ? j : i;
-                    int curCol = vertical ? i : j;
-                    
-                    if (i == 0 && matrix[curLin][curCol].dist == Double.POSITIVE_INFINITY)
-                        matrix[curLin][curCol].dist = matrix[curLin][curCol].energy;
-                    
-                    if (j+k < secondLim && j+k >= 0) {
-                        
-                        double dist = matrix[curLin][curCol].dist;
-                        double energy = matrix[lin][col].energy;
-                        double nextDist = matrix[lin][col].dist;
-                 
-                        if (dist + energy < nextDist) {
-                            matrix[lin][col].dist = dist + energy;
-                            matrix[lin][col].minFather = j;
-                        }
-                    }
-                }
+        if (col == 0 || col == width() - 1 || row == 0 || row == height() - 1)
+            return 1000;
+
+        return orientation == ORIENTATION.VERTICAL ? gradient(col, row) : gradient(row, col);
+    }
+
+    private void fillEnergies() {
+        energies = new double[height][width];
+        for (int row=0; row < height; row++){
+            for (int col=0; col < width; col++) {
+                if (orientation == ORIENTATION.VERTICAL)
+                    energies[row][col] = energy(col, row);
+                else
+                    energies[row][col] = energy(row, col);
+            }
+        }
+    }
+
+    private void transposeH(){
+        if (orientation == ORIENTATION.VERTICAL) transpose();
+        orientation = ORIENTATION.VERTICAL;
+    }
+
+    private void transposeV() {
+        if (orientation == ORIENTATION.HORIZONTAL) transpose();
+        orientation = ORIENTATION.VERTICAL;
+    }
+
+    private void transpose() {
+        int tmp = height;
+        height = width;
+        width = tmp;
+
+        Color[][] transposed = new Color[height][width];
+        for (int row=0; row < height; row++) {
+            for (int col=0; col < width; col++){
+                transposed[row][col] = colors[col][row];
             }
         }
 
-        return matrix;
+        colors = transposed;
+        fillEnergies();
     }
 
-    // do unit testing of this class
-    public static void main(String[] args) {}
 }
