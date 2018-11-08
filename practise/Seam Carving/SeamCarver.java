@@ -72,6 +72,8 @@ public class SeamCarver {
     }
     // energy of pixel at column x and row y
     public  double energy(int x, int y) {
+        if (x >= width() || y >= height() || x < 0 || y < 0)
+            throw new java.lang.IndexOutOfBoundsException("picture is null");
         return energy[y][x];
     }
     //rgb number of col x, row y
