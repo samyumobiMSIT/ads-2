@@ -12,7 +12,8 @@ public class SeamCarver {
 
     public SeamCarver(Picture picture){
         if (picture == null){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("picture is null");
+            
         }
         this.pic = new Picture(picture);
     }
@@ -80,7 +81,8 @@ public class SeamCarver {
 
     public void removeHorizontalSeam(int[] seam){
         if (!isValidSeam(seam, HORIZONTAL)){
-            throw new IllegalArgumentException("Illegal seam!");
+            throw new IllegalArgumentException("picture is null");
+           
         }
         Picture seamedPicture = new Picture(width(), height() - 1);
 
@@ -98,7 +100,8 @@ public class SeamCarver {
 
     public void removeVerticalSeam(int[] seam){
         if (!isValidSeam(seam, VERTICAL)){
-            throw new IllegalArgumentException("Illegal seam!");
+            throw new IllegalArgumentException("picture is null");
+            
         }
         Picture seamedPicture = new Picture(width() - 1, height());
         for(int row = 0; row < height(); row++){
@@ -115,7 +118,8 @@ public class SeamCarver {
 
     private void validatePixel(int col, int row){
         if (!isValidPixel(col, row)){
-            throw new IllegalArgumentException("Invalid pixel: col: " + col + ", row: " + row );
+            throw new IllegalArgumentException("picture is null");
+           
         }
     }
 
