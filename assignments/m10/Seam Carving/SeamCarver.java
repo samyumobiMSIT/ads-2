@@ -1,246 +1,240 @@
-import java.awt.Color;
+import java.util.Arrays;
 
 
-/**
- * Assignment 2.
- * 
- * @author lcanet
- *
- */
 public class SeamCarver {
 
-    private Picture picture;
+    private static final double BORDER_PIXEL_ENERGY = 1000d;
 
-    /**
-     * Construct a new carver.
-     * @param picture a non-null picture
-     */
-    public SeamCarver(Picture picture) {
-        if (picture == null) {
+    private static final boolean VERTICAL = true, HORIZONTAL = false;
+
+
+    private Picture pic;
+
+    public SeamCarver(Picture picture){
+        if (picture == null){
             throw new IllegalArgumentException("picture is null");
+            
         }
-        this.picture = new Picture(picture);
+        this.pic = new Picture(picture);
     }
 
-    /**
-     * the current picture
-     * @return the current picture
-     */
-    public Picture picture() {
-        return picture;
+    public Picture picture(){
+        return new Picture(this.pic);
     }
 
-    /**
-     * Width of current picture
-     * @return width
-     */
-    public int width() {
-        return picture.width();
+    public int width(){
+        return pic.width();
     }
 
-    /**
-     * height of current picture
-     * @return height
-     */
-    public int height() {
-        return picture.height();
+    public int height(){
+        return pic.height();
     }
-    
-    /**
-     * calculate the energy of a pixel
-     * @param x a pixel x coordinate
-     * @param y a pixel y coordinate
-     * @return energy value
-     */
-    public double energy(int x, int y) {
-        if (x < 0 || x >= width()) {
-            throw new IndexOutOfBoundsException("x must be between 0 and " + (width()-1));
+
+
+    public  double energy(int col, int row){
+        validatePixel(col, row);
+
+        if (col == 0 || col == width() -1 || row == 0 || row == height() - 1){
+            return BORDER_PIXEL_ENERGY;
         }
-        if (y < 0 || y >= height()) {
-            throw new IndexOutOfBoundsException("y must be between 0 and " + (height()-1));
+
+        double
+                rx = pic.get(col + 1, row).getRed() - pic.get(col - 1, row).getRed(),
+                gx = pic.get(col + 1, row).getGreen() - pic.get(col - 1, row).getGreen(),
+                bx = pic.get(col + 1, row).getBlue() - pic.get(col - 1, row).getBlue(),
+                ry = pic.get(col, row + 1).getRed() - pic.get(col, row - 1).getRed(),
+                gy = pic.get(col, row + 1).getGreen() - pic.get(col, row - 1).getGreen(),
+                by = pic.get(col, row + 1).getBlue() - pic.get(col, row - 1).getBlue();
+
+        return Math.sqrt(rx * rx + gx * gx + bx * bx + ry * ry + gy * gy + by * by);
+    }
+
+    public int[] findHorizontalSeam(){
+        Pair[][] energies = new Pair[height()][width()];
+        for (int i = 0; i < height(); i++){
+            energies[i][0] = new Pair(BORDER_PIXEL_ENERGY, -1);
         }
-        // border case
-        if (x == 0 || y == 0 || x == (width() - 1) || y == (height() - 1)) {
-            return 3 * 255 * 255;
+        for (int col = 1; col < width(); col++){
+            energies[0][col] = new Pair(BORDER_PIXEL_ENERGY, -1);
+            for (int row = 0; row < height(); row++){
+                relaxHorizontal(energies, row, col);
+            }
         }
-        
-        return deltaX(x, y) + deltaY(x, y);
+        return extractHorizontalSeam(energies);
     }
 
-    private double deltaX(int x, int y) {
-        Color c1 = picture.get(x - 1, y);
-        Color c2 = picture.get(x + 1, y);
-        return Math.pow(c2.getRed() - c1.getRed(), 2) +
-                Math.pow(c2.getBlue() - c1.getBlue(), 2) +
-                Math.pow(c2.getGreen() - c1.getGreen(), 2);
+    public int[] findVerticalSeam(){
+        Pair[][] energies = new Pair[height()][width()];
+        for (int i = 0; i < width(); i++){
+            energies[0][i] = new Pair(BORDER_PIXEL_ENERGY, -1);
+        }
+
+        for (int row = 1; row < height(); row++){
+            energies[row][0] = new Pair(BORDER_PIXEL_ENERGY, -1);
+            for (int col = 0; col < width(); col++){
+                relaxVertical(energies, row, col);
+            }
+        }
+        return extractVerticalSeam(energies);
     }
 
-    private double deltaY(int x, int y) {
-        Color c1 = picture.get(x, y - 1);
-        Color c2 = picture.get(x, y + 1);
-        return Math.pow(c2.getRed() - c1.getRed(), 2) +
-                Math.pow(c2.getBlue() - c1.getBlue(), 2) +
-                Math.pow(c2.getGreen() - c1.getGreen(), 2);
-    }
 
-    /**
-     * sequence of indices for horizontal seam.
-     * @return the sequence of indices for horizontal seam
-     */
-    public int[] findHorizontalSeam() {
-        // energy matrix
-        double[][] energyMatrix = buildEnergyMatrix();
-        return findSeam(energyMatrix, width(), height());
-    }
+    public void removeHorizontalSeam(int[] seam){
+        if (!isValidSeam(seam, HORIZONTAL)){
+            throw new IllegalArgumentException("picture is null");
+           
+        }
+        Picture seamedPicture = new Picture(width(), height() - 1);
 
-    private int[] findSeam(double[][] energyMatrix, int w, int h) {
-        double[][] distTo = new double[w][h];
-        int[][] from = new int[w][h];
-
-        // initializ
-        initMatrices(distTo, from, w, h);
-
-        for (int i = 1; i < w; i++) {
-            // for each column
-            for (int j = 0; j < h; j++) {
-                double e = Double.POSITIVE_INFINITY;
-                int eFrom = -1;
-
-                // relax i-1, j
-                if (j != 0) {
-                    if (distTo[i-1][j-1] < e) {
-                        e = distTo[i-1][j-1];
-                        eFrom = j-1;
-                    }
+        for (int col = 0; col < width(); col++){
+            int rowBias = 0;
+            for (int row = 0; row < height() - 1; row++){
+                if (seam[col] == row){
+                    rowBias = 1;
                 }
-                if (distTo[i-1][j] < e) {
-                    e = distTo[i-1][j];
-                    eFrom = j;
+                seamedPicture.set(col, row, pic.get(col, row + rowBias));
+            }
+        }
+        this.pic = seamedPicture;
+    }
+
+    public void removeVerticalSeam(int[] seam){
+        if (!isValidSeam(seam, VERTICAL)){
+            throw new IllegalArgumentException("picture is null");
+            
+        }
+        Picture seamedPicture = new Picture(width() - 1, height());
+        for(int row = 0; row < height(); row++){
+            int colBias = 0;
+            for(int col = 0; col < width() - 1; col++){
+                if (seam[row] == col){
+                    colBias = 1;
                 }
-                if (j != (h - 1)) {
-                    if (distTo[i-1][j+1] < e) {
-                        e = distTo[i-1][j+1];
-                        eFrom = j+1;
-                    }
-                }
-                distTo[i][j] = e + energyMatrix[i][j];
-                from[i][j] = eFrom;
+                seamedPicture.set(col, row, pic.get(col + colBias, row));
+            }
+        }
+        this.pic = seamedPicture;
+    }
+
+    private void validatePixel(int col, int row){
+        if (!isValidPixel(col, row)){
+            throw new IllegalArgumentException("picture is null");
+           
+        }
+    }
+
+    private boolean isValidPixel(int col, int row){
+        return col > -1 && col < width() && row > -1 && row < height();
+    }
+
+    private void relaxVertical(Pair[][] energies, int row, int col){
+        double myEnergy = energy(col, row);
+        Pair[] paths = {
+            new Pair( isValidPixel(col - 1, row -1) ? myEnergy + energies[row - 1][col - 1].energy : Double.MAX_VALUE, col - 1),
+            new Pair( isValidPixel(col, row - 1) ? myEnergy + energies[row - 1][col].energy : Double.MAX_VALUE, col),
+            new Pair( isValidPixel(col + 1, row - 1) ? myEnergy + energies[row - 1][col + 1].energy : Double.MAX_VALUE, col + 1)
+        };
+        Arrays.sort(paths);
+        energies[row][col] = paths[0];
+    }
+
+
+    private void relaxHorizontal(Pair[][] energies, int row, int col){
+        double myEnergy = energy(col, row);
+        Pair[] paths = {
+                new Pair( isValidPixel(col - 1, row - 1) ? myEnergy + energies[row - 1][col - 1].energy : Double.MAX_VALUE, row - 1),
+                new Pair( isValidPixel(col - 1, row) ? myEnergy + energies[row][col - 1].energy : Double.MAX_VALUE, row),
+                new Pair( isValidPixel(col - 1, row + 1) ? myEnergy + energies[row + 1][col - 1].energy : Double.MAX_VALUE, row + 1)
+        };
+        Arrays.sort(paths);
+        energies[row][col] = paths[0];
+    }
+
+    private int[] extractVerticalSeam(Pair[][] energies){
+        int[] seam = new int[height()];
+        double lowestEnergy = Double.MAX_VALUE;
+        int index = -1;
+        // find lowest energy
+        for (int col = 0; col < width(); col++){
+            if (energies[height() - 1][col].energy < lowestEnergy){
+                lowestEnergy = energies[height() - 1][col].energy;
+                index = col;
             }
         }
 
-        // find min value for last column
-        double minCell = Double.POSITIVE_INFINITY;
-        int argMinCell = -1;
-        for (int j = 0; j < h; j++) {
-            double e = distTo[w - 1][j];
-            if (e < minCell) {
-                minCell = e;
-                argMinCell = j;
+        int row = height() - 1;
+        while (row > -1){
+            seam[row] = index;
+            index = energies[row][index].prev;
+            row--;
+        }
+        return seam;
+    }
+
+    private int[] extractHorizontalSeam(Pair[][] energies){
+        int[] seam = new int[width()];
+        double lowestEnergy = Double.MAX_VALUE;
+        int index = -1;
+        // find lowest energy
+        for (int row = 0; row < height(); row++){
+            if (energies[row][width() - 1].energy < lowestEnergy){
+                lowestEnergy = energies[row][width() - 1].energy;
+                index = row;
             }
         }
-        
-        int[] seam = new int[w];
-        seam[w - 1] = argMinCell;
-        for (int i = w - 2; i >= 0; i--) {
-            seam[i] = from[i+1][seam[i + 1]];
+
+        int col = width() - 1;
+        while (col > -1){
+            seam[col] = index;
+            index = energies[index][col].prev;
+            col--;
         }
-        
         return seam;
     }
 
 
-    private void initMatrices(double[][] distTo, int[][] from, int w, int h) {
-        for (int i = 0; i < w; i++) {
-            for (int j = 0; j < h; j++) {
-                distTo[i][j] = i == 0 ?  0 : Double.POSITIVE_INFINITY; 
-                from[i][j] = i == 0 ? 0 : -1;
+    private boolean isValidSeam(int[] seam, boolean vertical){
+
+        if (seam == null){
+            return false;
+        }
+
+        if ((vertical && seam.length != height()) || (!vertical && seam.length != width())){
+            return false;
+        }
+
+        for(int i : seam){
+            if ((i < 0 ) || (vertical && i >= width()) || (!vertical && i>= height())){
+                return false;
             }
+        }
+        for (int i = 0; i < seam.length - 1; i++){
+            if (Math.abs(seam[i] - seam[i + 1]) > 1){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    private static class Pair implements Comparable<Pair>{
+        public final double energy;
+        public final int prev;
+
+        public Pair(double energy, int prev) {
+            this.energy = energy;
+            this.prev = prev;
+        }
+
+        @Override
+        public int compareTo(Pair o) {
+            if (this.energy > o.energy){
+                return 1;
+            } else if (this.energy < o.energy){
+                return -1;
+            }
+            return 0;
         }
     }
 
-    private double[][] buildEnergyMatrix() {
-        double[][] energy = new double[width()][height()];
-        for (int i = 0; i < width(); i++) {
-            for (int j = 0; j < height(); j++) {
-                energy[i][j] = energy(i, j);
-            }
-        }
-        return energy;
-    }
-
-    
-    /**
-     * Find a vertical seam
-     * @return seam index
-     */
-    public int[] findVerticalSeam() {
-        // energy matrix
-        double[][] energyMatrix = transpose(buildEnergyMatrix());
-        return findSeam(energyMatrix, height(), width());
-    }
-
-    private double[][] transpose(double[][] m) {
-        double[][] mt = new double[m[0].length][m.length];
-        for (int i = 0; i < mt.length; i++) {
-            for (int j = 0; j < mt[0].length; j++) {
-                mt[i][j] = m[j][i];
-            }
-        }
-        return mt;
-    }
-
-    /**
-     * Remove an horizontal seam of pixels
-     * @param seam pixel seam
-     */
-    public void removeHorizontalSeam(int[] seam) {
-        if (seam == null || seam.length != width()) {
-            throw new IllegalArgumentException("Invalid seam");
-        }
-        checkSeam(seam);
-        
-        Picture newPicture = new Picture(width(), height()  - 1);
-        for (int i = 0; i < width(); i++) {
-            for (int j = 0, jn = 0; j < height(); j++) {
-                if (j != seam[i]) {
-                    newPicture.set(i, jn, picture.get(i, j));
-                    jn++;
-                }
-            }
-        }
-        
-        this.picture = newPicture;
-    }
-
-    /**
-     * Remove a vertical seam
-     * @param seam
-     */
-    public void removeVerticalSeam(int[] seam) {
-        if (seam == null || seam.length != height()) {
-            throw new IllegalArgumentException("picture is null");
-        }
-        checkSeam(seam);
-        
-        Picture newPicture = new Picture(width() - 1, height() );
-        for (int j = 0; j < height(); j++) {
-            for (int i = 0, in = 0; i < width(); i++) {
-                if (i != seam[j]) {
-                    newPicture.set(in, j, picture.get(i, j));
-                    in++;
-                }
-            }
-        }
-        
-        this.picture = newPicture;
-    }
-
-    private void checkSeam(int[] seam) {
-        for (int i = 1; i < seam.length; i++) {
-            if (Math.abs(seam[i] - seam[i-1]) > 1) {
-                throw new IllegalArgumentException("picture is null");
-                
-            }
-        }
-    }
 }
