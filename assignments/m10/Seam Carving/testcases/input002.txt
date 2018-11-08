@@ -1,0 +1,8 @@
+energy
+6x5.png
+1x8.png
+8x1.png
+1x1.png
+7x10.png
+12x10.png
+stripes.png
