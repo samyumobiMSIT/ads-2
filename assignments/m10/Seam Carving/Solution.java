@@ -120,11 +120,11 @@ public class Solution {
 
             default:
                 seamCarver = new SeamCarver(null);
-                System.out.println("picture is null");
                 break;
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+            System.out.println();
         }
     }
 }
