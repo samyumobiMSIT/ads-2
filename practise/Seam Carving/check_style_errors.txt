@@ -347,6 +347,7 @@ Starting audit...
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:48: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:52:23: Parameter picture should be final. [FinalParameters]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:53: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:53: Line is longer than 80 characters (found 89). [LineLength]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:54: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:58: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:63: Line has trailing spaces. [RegexpSingleline]
@@ -464,9 +465,7 @@ Starting audit...
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:457: 'if' construct must use '{}'s. [NeedBraces]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:459: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:462: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:463: Line is longer than 80 characters (found 84). [LineLength]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:464: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:465: Line is longer than 80 characters (found 83). [LineLength]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:468: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:472: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:480: Line has trailing spaces. [RegexpSingleline]
@@ -504,7 +503,7 @@ Starting audit...
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:588:29: Parameter args should be final. [FinalParameters]
 [ERROR] D:\ads-2\practise\Seam Carving\SeamCarver.java:591: Line has trailing spaces. [RegexpSingleline]
 Audit done.
-Checkstyle ends with 176 errors.
+Checkstyle ends with 175 errors.
 Starting audit...
 [ERROR] D:\ads-2\practise\Seam Carving\ShowEnergy.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\practise\Seam Carving\ShowEnergy.java:5: Line has trailing spaces. [RegexpSingleline]

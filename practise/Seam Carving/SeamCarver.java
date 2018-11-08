@@ -50,7 +50,7 @@ public class SeamCarver {
      * @throws NullPointerException if the given picture is {@code null}.
      */
     public SeamCarver(Picture picture) {
-        if (picture == null) throw new java.lang.NullPointerException();
+        if (picture == null) throw new java.lang.NullPointerException("picture is null");
         
         // Initialize the dimensions of the picture
         w = picture.width();
@@ -132,7 +132,7 @@ public class SeamCarver {
      */
     public double energy(int x, int y) {        
         if (x >= width() || y >= height() || x < 0 || y < 0)
-            throw new java.lang.IndexOutOfBoundsException();
+            throw new java.lang.IndexOutOfBoundsException("picture is null");
         
         return energy[y][x];
     }
@@ -155,7 +155,7 @@ public class SeamCarver {
      */
     private double calcEnergy(int x, int y) {        
         if (x >= width() || y >= height() || x < 0 || y < 0)
-            throw new java.lang.IndexOutOfBoundsException();
+            throw new java.lang.IndexOutOfBoundsException("picture is null");
                 
         // Return 1000.0 for border pixels
         if (x == 0 || y == 0 || x == width() - 1 || y == height() - 1)
@@ -452,17 +452,17 @@ public class SeamCarver {
         
         // Check for bad input
         if (height() <= 1)
-            throw new java.lang.IllegalArgumentException("Picture too short");
+            throw new java.lang.IllegalArgumentException("picture is null");
         if (seam == null) throw new java.lang.NullPointerException();
         if (seam.length != width())
-            throw new java.lang.IllegalArgumentException("Invalid seam length");
+            throw new java.lang.IllegalArgumentException("picture is null");
         
         int yLast = seam[0];
         for (int y: seam) {
             if (y >= height() || y < 0)
-                throw new java.lang.IllegalArgumentException("Index out of bounds");
+                throw new java.lang.IllegalArgumentException("picture is null");
             if (Math.abs(y - yLast) > 1)
-                throw new java.lang.IllegalArgumentException("Index not adjacent");
+                throw new java.lang.IllegalArgumentException("picture is null");
             yLast = y;
         }
         
@@ -523,7 +523,7 @@ public class SeamCarver {
         
         // Check for bad input
         if (width() <= 1)
-            throw new java.lang.IllegalArgumentException("Picture too narrow");
+            throw new java.lang.IllegalArgumentException("picture is null");
         if (seam == null) throw new java.lang.NullPointerException();
         if (seam.length != height())
             throw new java.lang.IllegalArgumentException("Invalid seam length");
