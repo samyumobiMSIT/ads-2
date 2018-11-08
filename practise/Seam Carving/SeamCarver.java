@@ -1,177 +1,272 @@
+import java.awt.Color;
+
 public class SeamCarver {
- 
-    private Picture pic; 
-    private double[] energy; 
-    private int[] pathTo; 
- 
-    public SeamCarver(Picture picture) { 
-        pic = new Picture(picture); 
-    } 
- 
-    // current picture 
-    public Picture picture() { 
-        return new Picture(pic); 
-    } 
- 
-    // width of current picture 
-    public     int width() { 
-        return pic.width(); 
-    } 
- 
-    // height of current picture 
-    public     int height() { 
-        return pic.height(); 
-    } 
-     
-    private double gradient(java.awt.Color x, java.awt.Color y) { 
-        double r = x.getRed() - y.getRed(); 
-        double g = x.getGreen() - y.getGreen(); 
-        double b = x.getBlue() - y.getBlue(); 
-        return r*r + g*g + b*b; 
-    } 
- 
-    // energy of pixel at column x and row y 
-    public double energy(int x, int y) { 
-        if (x < 0 || x >= width() || y < 0 || y >= height()) 
-            throw new IndexOutOfBoundsException(); 
-        if (x == 0 || y == 0 || x == width()-1 || y == height()-1) 
-            return 195075; 
-        return gradient(pic.get(x-1, y), pic.get(x+1, y)) + gradient(pic.get(x, y-1), pic.get(x, y+1)); 
-    } 
- 
-    private double energy(int x, int y, int flag) { 
-        if (flag == 1) 
-            return energy(y, x); 
-        else 
-            return energy(x, y); 
-    } 
- 
-    private void computeEnergy(int w, int h, int flag) { 
-        //double maxE = 0; 
-        energy = new double[w*h]; 
-        for (int r = 0; r < h; r++) 
-            for (int c = 0; c < w; c++) { 
-                energy[r*w + c] = energy(c, r, flag); 
-                //maxE = Math.max(maxE, energy[r*w + c]); 
-            } 
-        /*
-        Picture energyPic = new Picture(w, h); 
-        for (int r = 0; r < h; r++) 
-            for (int c = 0; c < w; c++) { 
-                float color = (float)(energy[r*w + c] / maxE); 
-                energyPic.set(c, r, new java.awt.Color(color, color, color)); 
-            } 
-        energyPic.show(); 
-        */ 
-    } 
- 
-    private int[] computePath(int w, int h) { 
-        pathTo = new int[w*h]; 
-        for (int i = 0; i < w; i++) 
-            pathTo[i] = -1; 
-        for (int r = 1, i = w; r < h; r++) { 
-            if (energy[i-w] <= energy[i-w+1]) pathTo[i] = i-w; 
-            else pathTo[i] = i-w+1; 
-            energy[i] += energy[pathTo[i]]; i++; 
-            for (int c = 1; c < w-1; c++, i++) { 
-                if (energy[i-w-1] <= energy[i-w]) { 
-                    if (energy[i-w-1] <= energy[i-w+1]) pathTo[i] = i-w-1; 
-                    else pathTo[i] = i-w+1; 
-                } else { 
-                    if (energy[i-w] <= energy[i-w+1]) pathTo[i] = i-w; 
-                    else pathTo[i] = i-w+1; 
-                } 
-                energy[i] += energy[pathTo[i]]; 
-            } 
-            if (energy[i-w-1] <= energy[i-w]) pathTo[i] = i-w-1; 
-            else pathTo[i] = i-w; 
-            energy[i] += energy[pathTo[i]]; i++; 
-        } 
- 
-        int pathEnd = w*(h-1); 
-        double minE = energy[w*(h-1)]; 
-        for (int i = w*(h-1); i < w*h; i++) { 
-            if (minE > energy[i]) { 
-                minE = energy[i]; 
-                pathEnd = i; 
-            } 
-        } 
- 
-        int[] path = new int[h]; 
-        for (int p = pathEnd; p >= 0; p = pathTo[p]) 
-            path[p/w] = p % w; 
-        return path; 
-    } 
- 
-    // sequence of indices for horizontal seam 
-    public   int[] findHorizontalSeam() { 
-        int w = height(), h = width(); 
-        computeEnergy(w, h, 1); 
-        return computePath(w, h); 
-    } 
- 
-    // sequence of indices for vertical seam 
-    public   int[] findVerticalSeam() { 
-        int w = width(), h = height(); 
-        computeEnergy(w, h, 0); 
-        return computePath(w, h); 
-    } 
- 
-    // remove horizontal seam from picture 
-    public    void removeHorizontalSeam(int[] a) { 
-        if (height() <= 1) 
-            throw new IllegalArgumentException(); 
-        if (a.length != width()) 
-            throw new IllegalArgumentException("Wrong Length"); 
- 
-        Picture p = new Picture(width(), height()-1); 
-        //Picture seamPic = new Picture(pic); 
-        int prerow = a[0]; 
-        for (int c = 0; c < width(); c++) { 
-            if (Math.abs(a[c] - prerow) > 1) 
-                throw new IllegalArgumentException("Non-valid seam"); 
-            if (a[c] < 0 || a[c] >= height()) 
-                throw new IndexOutOfBoundsException(); 
-            //seamPic.set(c, a[c], java.awt.Color.red); 
-            prerow = a[c]; 
-            for (int r = 0; r < height()-1; r++) 
-                if (r < a[c]) 
-                    p.set(c, r, pic.get(c, r)); 
-                else 
-                    p.set(c, r, pic.get(c, r+1)); 
-        } 
-        pic = p; 
-        energy = null; 
-        pathTo = null; 
-        //seamPic.show(); 
-    } 
- 
-    // remove vertical seam from picture 
-    public    void removeVerticalSeam(int[] a) { 
-        if (width() <= 1) 
-            throw new IllegalArgumentException(); 
-        if (a.length != height()) 
-            throw new IllegalArgumentException("Wrong Length"); 
- 
-        Picture p = new Picture(width()-1, height()); 
-        //Picture seamPic = new Picture(pic); 
-        int precol = a[0]; 
-        for (int r = 0; r < height(); r++) { 
-            if (Math.abs(a[r] - precol) > 1) 
-                throw new IllegalArgumentException("Non-valid seam"); 
-            if (a[r] < 0 || a[r] >= width()) 
-                throw new IndexOutOfBoundsException(); 
-            //seamPic.set(a[r], r, java.awt.Color.red); 
-            precol = a[r]; 
-            for (int c = 0; c < width()-1; c++) 
-                if (c < a[r]) 
-                    p.set(c, r, pic.get(c, r)); 
-                else 
-                    p.set(c, r, pic.get(c+1, r)); 
-        } 
-        pic = p; 
-        energy = null; 
-        pathTo = null; 
-        //seamPic.show(); 
-    } 
- }
+    private Picture picture;
+    private double[] energy;
+    private double[] distTo;
+    private int[] edgeTo;
+
+    public SeamCarver(Picture picture) {
+        this.picture = new Picture(picture);
+    }
+
+    public Picture picture() {
+        return new Picture(this.picture);
+    }
+
+    public int width() {
+        return picture.width();
+    }
+
+    public int height() {
+        return picture.height();
+    }
+
+    // energy of pixel at COLUMN x and ROW y
+    public double energy(int x, int y) {
+        if (x < 0 || y < 0 || x >= width() || y >= height()) {
+            throw new java.lang.IndexOutOfBoundsException();
+        }
+
+        if (x == 0 || x == width() - 1 || y == 0 || y == height() - 1) {
+            return 255 * 255 + 255 * 255 + 255 * 255;
+        }
+
+        return squareGradient(picture.get(x-1, y), picture.get(x+1, y))
+             + squareGradient(picture.get(x, y-1), picture.get(x, y+1));
+    }
+
+    private int squareGradient(Color one, Color two) {
+        int r = Math.abs(one.getRed() - two.getRed());
+        int g = Math.abs(one.getGreen() - two.getGreen());
+        int b = Math.abs(one.getBlue() - two.getBlue());
+
+        return r * r + g * g + b * b;
+    }
+
+    public int[] findHorizontalSeam() {
+        int size = width() * height();
+
+        energy = new double[size];
+        distTo = new double[size];
+        edgeTo = new int[size];
+        int p;
+
+        for (int row = 0; row < height(); row++) {
+            for (int col = 0; col < width(); col++) {
+                p = position(col, row);
+
+                if (col == 0) {
+                    distTo[p] = 0;
+                } else {
+                    distTo[p] = Double.POSITIVE_INFINITY;
+                }
+
+                energy[p] = energy(col, row);
+                edgeTo[p] = -1;
+            }
+        }
+
+        for (int col = 0; col < width() - 1; col++) {
+            for (int row = 0; row < height(); row++) {
+                p = position(col, row);
+
+                if (row - 1 >= 0) {
+                    relax(p, position(col+1, row-1));
+                }
+
+                relax(p, position(col+1, row));
+
+                if (row + 1 < height()) {
+                    relax(p, position(col+1, row+1));
+                }
+            }
+        }
+
+
+        double min = Double.POSITIVE_INFINITY;
+        int end = 0;
+
+        for (int row = 0; row < height(); row++) {
+            if (distTo[position(width() - 1, row)] < min) {
+                min = distTo[position(width() - 1, row)];
+                end = position(width() - 1, row);
+            }
+        }
+        
+        return horizontalSeam(end);
+    }
+
+    public int[] findVerticalSeam() {
+        int size = width() * height();
+
+        energy = new double[size];
+        distTo = new double[size];
+        edgeTo = new int[size];
+        int p;
+
+        for (int col = 0; col < width(); col++) {
+            for (int row = 0; row < height(); row++) {
+                p = position(col, row);
+
+                if (row == 0) {
+                    distTo[p] = 0;
+                } else {
+                    distTo[p] = Double.POSITIVE_INFINITY;
+                }
+
+                energy[p] = energy(col, row);
+                edgeTo[p] = -1;
+            }
+        }
+
+        for (int row = 0; row < height() - 1; row++) {
+            for (int col = 0; col < width(); col++) {
+                p = position(col, row);
+
+                if (col - 1 >= 0) {
+                    relax(p, position(col-1, row+1));
+                }
+
+                relax(p, position(col, row+1));
+
+                if (col + 1 < width()) {
+                    relax(p, position(col+1, row+1));
+                }
+            }
+        }
+
+        double min = Double.POSITIVE_INFINITY;
+        int end = 0;
+
+        for (int col = 0; col < width(); col++) {
+            if (distTo[position(col, height()-1)] < min) {
+                min = distTo[position(col, height()-1)];
+                end = position(col, height() - 1);
+            }
+        }
+        
+        return verticalSeam(end);
+    }
+
+    private int position(int col, int row) {
+        return width() * row + col;
+    }
+    
+    private int positionRow(int position) {
+        return position / width();
+    }
+
+    private int positionColumn(int position) {
+        return position % width();
+    }
+
+    private void relax(int from, int to) {
+        if (distTo[to] > distTo[from] + energy[to]) {
+            distTo[to] = distTo[from] + energy[to];
+            edgeTo[to] = from;
+        }
+    }
+
+    private int[] horizontalSeam(int end) {
+        int[] result = new int[width()];
+        int tmp = end;
+
+        while (tmp >= 0) {
+            result[positionColumn(tmp)] = positionRow(tmp);
+            tmp = edgeTo[tmp];
+        }
+
+        return result;
+    }
+
+    private int[] verticalSeam(int end) {
+        int[] result = new int[height()];
+        int tmp = end;
+
+        while (tmp >= 0) {
+            result[positionRow(tmp)] = positionColumn(tmp);
+            tmp = edgeTo[tmp];
+        }
+
+        return result;
+    }
+
+    public void removeHorizontalSeam(int[] a) {
+        if (height() <= 1) {
+            throw new java.lang.IllegalArgumentException();
+        }
+
+        if (a.length != width()) {
+            throw new java.lang.IllegalArgumentException();
+        }
+
+        Picture result = new Picture(width(), height() - 1);
+        int prev = a[0];
+
+        for (int col = 0; col < width(); col++) {
+            if (a[col] < 0 || a[col] >= height()) {
+                throw new java.lang.IndexOutOfBoundsException();
+            }
+
+            if (a[col] < prev - 1 || a[col] > prev + 1) {
+                throw new java.lang.IllegalArgumentException();
+            }
+
+            prev = a[col];
+
+            for (int row = 0; row < height() - 1; row++) {
+                if (row < prev) {
+                    result.set(col, row, picture.get(col, row));
+                } else {
+                    result.set(col, row, picture.get(col, row+1));
+                }
+            }
+        }
+
+        picture = result;
+
+        distTo = null;
+        edgeTo = null;
+        energy = null;
+    }
+
+    public void removeVerticalSeam(int[] a) {
+        if (width() <= 1) {
+            throw new java.lang.IllegalArgumentException();
+        }
+
+        if (a.length != height()) {
+            throw new java.lang.IllegalArgumentException();
+        }
+
+        Picture result = new Picture(width() - 1, height());
+        int prev = a[0];
+
+        for (int row = 0; row < height(); row++) {
+            if (a[row] < 0 || a[row] >= width()) {
+                throw new java.lang.IndexOutOfBoundsException();
+            }
+
+            if (a[row] < prev - 1 || a[row] > prev + 1) {
+                throw new java.lang.IllegalArgumentException();
+            }
+
+            prev = a[row];
+
+            for (int col = 0; col < width() - 1; col++) {
+                if (col < prev) {
+                    result.set(col, row, picture.get(col, row));
+                } else {
+                    result.set(col, row, picture.get(col+1, row));
+                }
+            }
+        }
+
+        picture = result;
+
+        distTo = null;
+        edgeTo = null;
+        energy = null;
+    }
+}
