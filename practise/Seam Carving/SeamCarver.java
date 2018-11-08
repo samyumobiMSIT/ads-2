@@ -1,233 +1,254 @@
-/**
- * Auto Generated Java Class.
- */
-
-import java.awt.Color;
-import java.awt.FileDialog;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.KeyStroke;
-import static java.lang.Math.*;
+import java.util.Arrays;
 
 public class SeamCarver {
-    int w,h;
-    Picture pic;
-    public SeamCarver(Picture picture){
-        this.pic=picture;
-        w=picture.width();
-        h=picture.height();
+    private Picture picture;
+    private double[][] energyTo;
+    private int[][] xTo;
+
+    // create a seam carver object based on the given picture
+    public SeamCarver(Picture picture) {
+        this.picture = picture;
     }
-    public Picture picture(){
-        return pic;
+
+    // current picture
+    public Picture picture() {
+        return picture;
     }
-    public int width(){
-        return w;
+
+    // width of current picture
+    public int width() {
+        return picture.width();
     }
-    public int height(){
-        return h;
+
+    // height of current picture
+    public int height() {
+        return picture.height();
     }
-    private void validateVertices(int x,int y){
-        if ((x<0 || x>=w) || (y<0 || y>=h))
-            throw new IndexOutOfBoundsException("vertex is not in range ");
-    }
-    public double energy(int x,int y){
-        validateVertices(x,y);
-        if(x==0 || y==0 || x==w-1 || y==h-1 )
+
+    /// energy of pixel at column x and row y
+    public double energy(int x, int y) {
+        if (x < 0 || x >= width()) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        if (y < 0 || y >= height()) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        if (x == 0 || x == width() - 1
+            || y == 0 || y == height() - 1) {
             return 195075;
-        else{
-            Color color1=pic.get(x+1,y);
-            Color color2=pic.get(x-1,y);
-            Color color3=pic.get(x,y-1);
-            Color color4=pic.get(x,y+1);
-            int xGrad=0,yGrad=0;
-            xGrad+=(color1.getRed()-color2.getRed())*(color1.getRed()-color2.getRed());
-            xGrad+=(color1.getGreen()-color2.getGreen())*(color1.getGreen()-color2.getGreen());
-            xGrad+=(color1.getBlue()-color2.getBlue())*(color1.getBlue()-color2.getBlue());
-           
-            
-            yGrad+=(color3.getRed()-color4.getRed())*(color3.getRed()-color4.getRed());
-            yGrad+=(color3.getGreen()-color4.getGreen())*(color3.getGreen()-color4.getGreen());
-            yGrad+=(color3.getBlue()-color4.getBlue())*(color3.getBlue()-color4.getBlue());
-            return xGrad+yGrad;
+        } else {
+            return xGradientSquared(x, y) + yGradientSquared(x, y);
         }
     }
-    public int[] findHorizontalSeam(){
-        double[][] dist = new double[w][h];
-        double[][] energyArr = new double[w][h];
-        int[][] parent=new int[w][h];
-        int i,j;
-        double minim;
-        for(i=0;i<w;i++){
-            for(j=0;j<h;j++){
-                dist[i][j]=energy(i,j);
-            }
-        }
-        for(j=0;j<h;j++){
-            energyArr[0][j]=dist[0][j];
-        }
-        for(i=1;i<w;i++){
-            for(j=0;j<h;j++){
-                double x=dist[i][j];
-                if(j==0){
-                   minim=min(energyArr[i-1][j+1],energyArr[i-1][j]);
-                     if(minim==energyArr[i-1][j+1]){
-                        parent[i][j]=1;
-                    }
-                    else if(minim==energyArr[i-1][j]){
-                        parent[i][j]=0;
-                    } 
-                }
-                else if(j==h-1){
-                    minim=min(energyArr[i-1][j-1],energyArr[i-1][j]);
-                     if(minim==energyArr[i-1][j-1]){
-                        parent[i][j]=-1;
-                    }
-                    else if(minim==energyArr[i-1][j]){
-                        parent[i][j]=0;
-                    }
-                }
-                else{
-                    minim=min(min(energyArr[i-1][j-1],energyArr[i-1][j]),energyArr[i-1][j+1]);
-                    if(minim==energyArr[i-1][j-1]){
-                        parent[i][j]=-1;
-                    }
-                    else if(minim==energyArr[i-1][j]){
-                        parent[i][j]=0;
-                    }
-                    else if(minim==energyArr[i-1][j+1]){
-                        parent[i][j]=1;
-                    }
-                }
-                energyArr[i][j]=x+minim;
-            }    
-        }
-        minim=1e9;
-        int minpos=0;
-        for(j=0;j<h;j++){
-            if(energyArr[w-1][j]<minim){
-                minim=energyArr[w-1][j];
-                minpos=j;
-            }    
-        }
-        int res[]=new int[w];
-        j=minpos;
-        for(i=w-1;i>=0;i--){
-            res[i]=j;
-            j=j+parent[i][j];
-        }
-        return res;
+
+    private int xGradientSquared(int x, int y) {
+        int redDiff = Math.abs(picture.get(x - 1, y).getRed()
+                               - picture.get(x + 1, y).getRed());
+
+        int greenDiff = Math.abs(picture.get(x - 1, y).getGreen()
+                               - picture.get(x + 1, y).getGreen());
+
+        int blueDiff = Math.abs(picture.get(x - 1, y).getBlue()
+                               - picture.get(x + 1, y).getBlue());
+
+        return redDiff * redDiff + greenDiff * greenDiff + blueDiff * blueDiff;
     }
-    public int[] findVerticalSeam(){
-        double[][] dist = new double[w][h];
-        double[][] energyArr = new double[w][h];
-        int[][] parent=new int[w][h];
-        int i,j;
-        double minim;
-        for(i=0;i<w;i++){
-            for(j=0;j<h;j++){
-                dist[i][j]=energy(i,j);
-            }
-        }
-        for(i=0;i<w;i++){
-            energyArr[i][0]=dist[i][0];
-        }
-        for(j=1;j<h;j++){
-            for(i=0;i<w;i++){
-                double x=dist[i][j];
-                if(i==0){
-                   minim=min(energyArr[i+1][j-1],energyArr[i][j-1]);
-                     if(minim==energyArr[i+1][j-1]){
-                        parent[i][j]=1;
-                    }
-                    else if(minim==energyArr[i][j-1]){
-                        parent[i][j]=0;
-                    } 
-                }
-                else if(i==w-1){
-                    minim=min(energyArr[i-1][j-1],energyArr[i][j-1]);
-                     if(minim==energyArr[i-1][j-1]){
-                        parent[i][j]=-1;
-                    }
-                    else if(minim==energyArr[i][j-1]){
-                        parent[i][j]=0;
-                    }
-                }
-                else{
-                    minim=min(min(energyArr[i-1][j-1],energyArr[i][j-1]),energyArr[i+1][j-1]);
-                    if(minim==energyArr[i-1][j-1]){
-                        parent[i][j]=-1;
-                    }
-                    else if(minim==energyArr[i][j-1]){
-                        parent[i][j]=0;
-                    }
-                    else if(minim==energyArr[i+1][j-1]){
-                        parent[i][j]=1;
-                    }
-                }
-                energyArr[i][j]=x+minim;
-            }
-        }
-        minim=1e9;
-        int minpos=0;
-        for(i=0;i<w;i++){
-            if(energyArr[i][h-1]<minim){
-                minim=energyArr[i][h-1];
-                minpos=i;
-            }    
-        }
-        int res[]=new int[h];
-        i=minpos;
-        for(j=h-1;j>=0;j--){
-            res[j]=i;
-            i=i+parent[i][j];
-        }
-        return res;
+
+    private int yGradientSquared(int x, int y) {
+        int redDiff = Math.abs(picture.get(x, y - 1).getRed()
+                               - picture.get(x, y + 1).getRed());
+
+        int greenDiff = Math.abs(picture.get(x, y - 1).getGreen()
+                               - picture.get(x, y + 1).getGreen());
+
+        int blueDiff = Math.abs(picture.get(x, y - 1).getBlue()
+                               - picture.get(x, y + 1).getBlue());
+
+        return redDiff * redDiff + greenDiff * greenDiff + blueDiff * blueDiff;
     }
-    public void removeHorizontalSeam(int[] seam){
-        if(h==0)
-            throw new IndexOutOfBoundsException("Nothing to carve \n");
-        Picture newpic=new Picture(w,h-1);
-        int i,j;
-        for(i=0;i<w;i++){
-            int pos=0;
-            for(j=0;j<h;j++){
-                if(j==seam[i]) continue;
-                newpic.set(i,pos,pic.get(i,j));
-                pos++;
+
+    // sequence of indices for horizontal seam
+    public int[] findHorizontalSeam() {
+        // Transpose picture.
+        Picture original = picture;
+        Picture transpose = new Picture(original.height(), original.width());
+
+        for (int w = 0; w < transpose.width(); w++) {
+            for (int h = 0; h < transpose.height(); h++) {
+                transpose.set(w, h, original.get(h, w));
             }
-        }    
-        pic=newpic;
-        newpic=null;
-        h--;
+        }
+
+        this.picture = transpose;
+
+        // call findVerticalSeam
+        int[] seam = findVerticalSeam();
+
+        // Transpose back.
+        this.picture = original;
+
+        return seam;
     }
-    public void removeVerticalSeam(int[] seam){
-        if(w==0)
-            throw new IndexOutOfBoundsException("Nothing to carve \n");
-        Picture newpic=new Picture(w-1,h);
-        int i,j;
-        for(i=0;i<h;i++){
-            int pos=0;
-            for(j=0;j<w;j++){
-                if(j==seam[i]) continue;
-                newpic.set(pos,i,pic.get(j,i));
-                pos++;
+
+    // sequence of indices for vertical seam
+    public int[] findVerticalSeam() {
+        energyTo = new double[width()][height()];
+        xTo = new int[width()][height()];
+
+        for (int x = 0; x < width(); x++) {
+            for (int y = 0; y < height(); y++) {
+                energyTo[x][y] = Double.POSITIVE_INFINITY;
             }
-        }    
-        pic=newpic;
-        newpic=null;    
-        w--;
+        }
+
+        for (int x = 0; x < width(); x++) {
+            energyTo[x][0] = 195075;
+        }
+
+        for (int y = 0; y < height() - 1; y++) {
+            for (int x = 0; x < width(); x++) {
+                if (x > 0) {
+                    relax(x, y, x - 1, y + 1);
+                }
+
+                relax(x, y, x, y + 1);
+
+                if (x < width() - 1) {
+                    relax(x, y, x + 1, y + 1);
+                }
+            }
+        }
+
+        // find minimum energy path
+        double minEnergy = Double.POSITIVE_INFINITY;
+        int minEnergyX = -1;
+        for (int w = 0; w < width(); w++) {
+            if (energyTo[w][height() - 1] < minEnergy) {
+                minEnergyX = w;
+                minEnergy = energyTo[w][height() - 1];
+            }
+        }
+        assert minEnergyX != -1;
+
+        int[] seam = new int[height()];
+        seam[height() - 1] = minEnergyX;
+        int prevX = xTo[minEnergyX][height() - 1];
+
+        for (int h = height() - 2; h >= 0; h--) {
+            seam[h] = prevX;
+            prevX = xTo[prevX][h];
+        }
+
+        return seam;
+    }
+
+    private void relax(int x1, int y1, int x2, int y2) {
+        if (energyTo[x2][y2] > energyTo[x1][y1] + energy(x2, y2)) {
+            energyTo[x2][y2] = energyTo[x1][y1] + energy(x2, y2);
+            xTo[x2][y2] = x1;
+        }
+    }
+
+    // remove horizontal seam from current picture
+    public void removeHorizontalSeam(int[] seam) {
+        // Transpose picture.
+        Picture original = picture;
+        Picture transpose = new Picture(original.height(), original.width());
+
+        for (int w = 0; w < transpose.width(); w++) {
+            for (int h = 0; h < transpose.height(); h++) {
+                transpose.set(w, h, original.get(h, w));
+            }
+        }
+
+        this.picture = transpose;
+        transpose = null;
+        original = null;
+
+        // call removeVerticalSeam
+        removeVerticalSeam(seam);
+
+        // Transpose back.
+        original = picture;
+        transpose = new Picture(original.height(), original.width());
+
+        for (int w = 0; w < transpose.width(); w++) {
+            for (int h = 0; h < transpose.height(); h++) {
+                transpose.set(w, h, original.get(h, w));
+            }
+        }
+
+        this.picture = transpose;
+        transpose = null;
+        original = null;
+    }
+
+    // remove vertical seam from current picture
+    public void removeVerticalSeam(int[] seam) {
+        if (seam == null) {
+            throw new NullPointerException();
+        }
+
+        if (seam.length != height()) {
+            throw new IllegalArgumentException();
+        }
+
+        Picture original = this.picture;
+        Picture carved = new Picture(original.width() - 1, original.height());
+
+        for (int h = 0; h < carved.height(); h++) {
+            for (int w = 0; w < seam[h]; w++) {
+                carved.set(w, h, original.get(w, h));
+            }
+            for (int w = seam[h]; w < carved.width(); w++) {
+                carved.set(w, h, original.get(w + 1, h));
+            }
+        }
+
+        this.picture = carved;
+    }
+
+    public static void main(String[] args) {
+        Picture picture;
+        SeamCarver seamCarver;
+        int[] seam;
+
+        picture = new Picture("seamCarving/4x6.png");
+        // picture = new Picture("seamCarving/6x5.png");
+
+        seamCarver = new SeamCarver(picture);
+        // StdOut.println(seamCarver.energy(0, 0));  // should be 195075.0
+        // StdOut.println(seamCarver.energy(1, 1));  // should be 56334.0
+        for (int i = 0; i < seamCarver.width(); i++) {
+            for (int j = 0; j < seamCarver.height(); j++) {
+                StdOut.println("energy(" + i + "," + j + "): "
+                               + seamCarver.energy(i, j));
+            }
+        }
+
+        // should be 6
+        StdOut.println(seamCarver.width());
+        // should be 5
+        StdOut.println(seamCarver.height());
+
+        // should be 5
+        seam = seamCarver.findVerticalSeam();
+        StdOut.println(seam.length);
+        StdOut.println(Arrays.toString(seam));
+        seamCarver.removeVerticalSeam(seam);
+
+        for (int i = 0; i < seamCarver.width(); i++) {
+            for (int j = 0; j < seamCarver.height(); j++) {
+                StdOut.println("energy(" + i + "," + j + "): "
+                               + seamCarver.energy(i, j));
+            }
+        }
+
+        seam = seamCarver.findHorizontalSeam();
+        StdOut.println(Arrays.toString(seam));
+        StdOut.println(seam.length);
+        seamCarver.removeHorizontalSeam(seam);
     }
 }
