@@ -1,0 +1,2 @@
+removeHorizontalSeam removeVerticalSeam
+logo.png

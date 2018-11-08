@@ -1,0 +1,8 @@
+findHorizontalSeam
+4x6.png
+3x7.png
+7x3.png
+12x10.png
+diagonals.png
+HJoceanSmall.png
+8x1.png

@@ -1,0 +1,3 @@
+removeHorizontalSeam
+1x8.png
+3x4.png
