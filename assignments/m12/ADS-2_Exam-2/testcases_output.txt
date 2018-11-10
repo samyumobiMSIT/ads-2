@@ -9,12 +9,8 @@ Expected Output:
 5:
 
 Your Output: 
-4
-0
 Exception in thread "main" java.lang.NullPointerException
-	at Set.findSet(Set.java:201)
-	at Set.findSet(Set.java:196)
-	at Set.main(Set.java:233)
+	at Prims.main(Prims.java:306)
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -33,9 +29,7 @@ Expected Output:
 
 Your Output: 
 Exception in thread "main" java.lang.NullPointerException
-	at Set.findSet(Set.java:201)
-	at Set.findSet(Set.java:196)
-	at Set.main(Set.java:233)
+	at Prims.main(Prims.java:306)
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -43,12 +37,8 @@ Expected Output:
 No Path Found.
 
 Your Output: 
-4
-0
 Exception in thread "main" java.lang.NullPointerException
-	at Set.findSet(Set.java:201)
-	at Set.findSet(Set.java:196)
-	at Set.main(Set.java:233)
+	at Prims.main(Prims.java:306)
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -57,9 +47,7 @@ Expected Output:
 
 Your Output: 
 Exception in thread "main" java.lang.NullPointerException
-	at Set.findSet(Set.java:201)
-	at Set.findSet(Set.java:196)
-	at Set.main(Set.java:233)
+	at Prims.main(Prims.java:306)
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -67,12 +55,8 @@ Expected Output:
 No Path Found.
 
 Your Output: 
-4
-0
 Exception in thread "main" java.lang.NullPointerException
-	at Set.findSet(Set.java:201)
-	at Set.findSet(Set.java:196)
-	at Set.main(Set.java:233)
+	at Prims.main(Prims.java:306)
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -82,8 +66,6 @@ Expected Output:
 
 Your Output: 
 Exception in thread "main" java.lang.NullPointerException
-	at Set.findSet(Set.java:201)
-	at Set.findSet(Set.java:196)
-	at Set.main(Set.java:233)
+	at Prims.main(Prims.java:306)
 ----------------------------------------
 
