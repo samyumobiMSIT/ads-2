@@ -14,14 +14,13 @@ public final class Solution {
         Scanner scan = new Scanner(System.in);
         int vertices = Integer.parseInt(scan.nextLine());
         int edges = Integer.parseInt(scan.nextLine());
-        EdgeWeightedGraph graph
-        = new EdgeWeightedGraph(vertices, edges);
+        EdgeWeightedGraph ewg = new EdgeWeightedGraph(edges,vertices);
         int i = edges;
         while (i > 0) {
             String[] arr = scan.nextLine().split(" ");
             Edge ed = new Edge(Integer.parseInt(arr[0]),
                                Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
-            graph.addEdge(ed);
+            ewg.addEdge(ed);
             i--;
         }
         // Self loops are not allowed...
@@ -33,7 +32,7 @@ public final class Solution {
         case "Graph":
             //Print the Graph Object.
             // System.out.println(vertices + "vertices" + edges + "edges");
-            System.out.println(graph);
+            System.out.println(ewg);
             break;
 
         case "DirectedPaths":
@@ -44,7 +43,7 @@ public final class Solution {
             String[] directedPaths = scan.nextLine().split(" ");
             int source = Integer.parseInt(directedPaths[0]);
             int dest = Integer.parseInt(directedPaths[1]);
-            DijkstraUndirectedSP dsp = new DijkstraUndirectedSP(graph, source);
+            DijkstraUndirectedSP dsp = new DijkstraUndirectedSP(ewg, source);
             if (dsp.hasPathTo(dest)) {
                 System.out.println(dsp.distTo(dest));
             } else {
@@ -63,12 +62,12 @@ public final class Solution {
             source = Integer.parseInt(viaPaths[0]);
             int via = Integer.parseInt(viaPaths[1]);
             dest = Integer.parseInt(viaPaths[viaPaths.length - 1]);
-            DijkstraUndirectedSP dsp2 = new DijkstraUndirectedSP(graph, source);
+            DijkstraUndirectedSP dsp2 = new DijkstraUndirectedSP(ewg, source);
             if (dsp2.hasPathTo(dest)) {
                 for (Edge e : dsp2.pathTo(via)) {
                     System.out.print(e + "   ");
                 }
-                DijkstraUndirectedSP dsp1 = new DijkstraUndirectedSP(graph, via);
+                DijkstraUndirectedSP dsp1 = new DijkstraUndirectedSP(ewg, via);
                 for (Edge e : dsp1.pathTo(dest)) {
                     System.out.print(e + "   ");
                 }

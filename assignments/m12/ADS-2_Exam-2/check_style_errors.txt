@@ -37,8 +37,8 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:6: First sentence should end with a period. [JavadocStyle]
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:12: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:13:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:23: Line is longer than 80 characters (found 83). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:71: Line is longer than 80 characters (found 81). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:17:61: ',' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:22: Line is longer than 80 characters (found 83). [LineLength]
 Audit done.
 Checkstyle ends with 7 errors.
 Starting audit...

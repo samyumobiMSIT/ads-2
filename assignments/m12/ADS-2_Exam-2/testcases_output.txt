@@ -33,7 +33,7 @@ Expected Output:
 9: 7-9 157.00000  2-9 237.00000
 
 Your Output: 
-10 vertices 11 edges
+11 vertices 10 edges
 0: Edge@1f96302  Edge@14eac69  
 1: Edge@a57993  Edge@1b84c92  Edge@1c7c054  
 2: Edge@12204a1  Edge@a298b7  Edge@14991ad  
@@ -43,7 +43,8 @@ Your Output:
 6: Edge@1c7c054  
 7: Edge@154617c  Edge@d93b30  Edge@a57993  Edge@1b84c92  Edge@1f96302  
 8: 
-9: Edge@154617c  Edge@12204a1
+9: Edge@154617c  Edge@12204a1  
+10:
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -53,7 +54,7 @@ No Path Found.
 Your Output: 
 Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
 	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:47)
+	at Solution.main(Solution.java:46)
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -63,7 +64,7 @@ Expected Output:
 Your Output: 
 Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
 	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:47)
+	at Solution.main(Solution.java:46)
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -73,7 +74,7 @@ No Path Found.
 Your Output: 
 Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
 	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:66)
+	at Solution.main(Solution.java:65)
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -84,6 +85,6 @@ Expected Output:
 Your Output: 
 Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
 	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:66)
+	at Solution.main(Solution.java:65)
 ----------------------------------------
 
