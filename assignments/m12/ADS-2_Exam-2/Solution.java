@@ -49,9 +49,9 @@ public final class Solution {
             String[] inputs = scan.nextLine().split(" ");
             int source = Integer.parseInt(inputs[0]);
             int dest = Integer.parseInt(inputs[1]);
-            DijkstraUndirectedSP dusp = new DijkstraUndirectedSP(eg, source);
-            if (dusp.hasPathTo(dest)) {
-                System.out.println(dusp.distTo(dest));
+            DijkstraUndirectedSP dp = new DijkstraUndirectedSP(eg, source);
+            if (dp.hasPathTo(dest)) {
+                System.out.println(dp.distTo(dest));
             } else {
                 System.out.println("No Path Found.");
             }
@@ -68,14 +68,14 @@ public final class Solution {
             int src = Integer.parseInt(input[0]);
             int via = Integer.parseInt(input[1]);
             int dst = Integer.parseInt(input[2]);
-            DijkstraUndirectedSP dusp1 = new DijkstraUndirectedSP(eg, src);
+            DijkstraUndirectedSP dp1 = new DijkstraUndirectedSP(eg, src);
             double totalSum = 0.0;
             ArrayList<Integer> path = new ArrayList<>();
-            if (dusp1.hasPathTo(dst)) {
-                if (dusp1.hasPathTo(via)) {
+            if (dp1.hasPathTo(dst)) {
+                if (dp1.hasPathTo(via)) {
                     path.add(src);
-                    totalSum += dusp1.distTo(via);
-                    for (Edge e : dusp1.pathTo(via)) {
+                    totalSum += dp1.distTo(via);
+                    for (Edge e : dp1.pathTo(via)) {
                         int temp = e.either();
                         if (!path.contains(temp)) {
                             path.add(temp);
@@ -84,10 +84,10 @@ public final class Solution {
                             path.add(e.other(temp));
                         }
                     }
-                    dusp1 = new DijkstraUndirectedSP(eg, via);
-                    if (dusp1.hasPathTo(dst)) {
-                        totalSum += dusp1.distTo(dst);
-                        for (Edge e : dusp1.pathTo(dst)) {
+                    dp1 = new DijkstraUndirectedSP(eg, via);
+                    if (dp1.hasPathTo(dst)) {
+                        totalSum += dp1.distTo(dst);
+                        for (Edge e : dp1.pathTo(dst)) {
                             int temp = e.either();
                             if (!path.contains(temp)) {
                                 path.add(temp);

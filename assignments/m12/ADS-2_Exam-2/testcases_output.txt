@@ -70,13 +70,20 @@ Your Output:
 No Path Found.
 ----------------------------------------
 
-########## Testcase 5: Passed ##########
+########## Testcase 5: Failed ##########
 Expected Output: 
 692.0
 5 2 4 0 7 1
 
 Your Output: 
-692.0
-5 2 4 0 7 1
+Exception in thread "main" java.lang.NoClassDefFoundError: Stack
+	at DijkstraUndirectedSP.pathTo(DijkstraUndirectedSP.java:110)
+	at Solution.main(Solution.java:78)
+Caused by: java.lang.ClassNotFoundException: Stack
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 2 more
 ----------------------------------------
 

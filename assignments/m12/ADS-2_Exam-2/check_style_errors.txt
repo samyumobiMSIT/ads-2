@@ -31,24 +31,6 @@ Starting audit...
 Audit done.
 Checkstyle ends with 3 errors.
 Starting audit...
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:5: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:9: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:14:8: Unused import - java.util.Iterator. [UnusedImports]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:15:8: Unused import - java.util.NoSuchElementException. [UnusedImports]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:29: Line is longer than 80 characters (found 95). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:32: Line is longer than 80 characters (found 106). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:131: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:134: Line is longer than 80 characters (found 84). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:136: Line is longer than 80 characters (found 83). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:139: Line has trailing spaces. [RegexpSingleline]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:150: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:151: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Queue.java:156: Line has trailing spaces. [RegexpSingleline]
-Audit done.
-Checkstyle ends with 13 errors.
-Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
 Checkstyle ends with 1 errors.
-Starting audit...
-Audit done.
