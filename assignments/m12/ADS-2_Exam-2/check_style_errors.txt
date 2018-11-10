@@ -2,28 +2,12 @@ Starting audit...
 Audit done.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:27:50: Name 'G' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:29: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:39: 'for' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:48: 'for' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:66: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:67: 'else' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:109: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:126:51: Name 'G' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:142: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:149: Line is longer than 80 characters (found 83). [LineLength]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:161: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:163: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:178:13: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:179: 'if' construct must use '{}'s. [NeedBraces]
-Audit done.
-Checkstyle ends with 15 errors.
-Starting audit...
-Audit done.
-Starting audit...
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\EdgeWeightedGraph.java:42:16: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
 Audit done.
 Checkstyle ends with 1 errors.
+Starting audit...
+Audit done.
+Starting audit...
+Audit done.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:265:23: Parameter k should be final. [FinalParameters]
@@ -34,3 +18,36 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
 Checkstyle ends with 1 errors.
+Starting audit...
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:13: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:14: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:27: Line is longer than 80 characters (found 89). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:28: Line is longer than 80 characters (found 87). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:29: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:36: Line is longer than 80 characters (found 88). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:49:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:50:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:53: Missing a Javadoc comment. [JavadocType]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:54:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:55:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:89:22: Parameter item should be final. [FinalParameters]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:104: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:119: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:126: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:136: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:139: Line is longer than 80 characters (found 87). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:141: Line is longer than 80 characters (found 86). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:148: Missing a Javadoc comment. [JavadocType]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:149:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:151:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:151:9: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:151:29: Parameter first should be final. [FinalParameters]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:151:40: 'first' hides a field. [HiddenField]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:155:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:159:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:163:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:164: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:166: Line has trailing spaces. [RegexpSingleline]
+Audit done.
+Checkstyle ends with 30 errors.

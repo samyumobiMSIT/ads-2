@@ -39,7 +39,7 @@ class EdgeWeightedGraph {
      *
      * @return     { int }
      */
-    public int V() {
+    public int vertices() {
         return this.vertices;
     }
     /**.
