@@ -1,4 +1,4 @@
-########## Testcase 0: Passed ##########
+########## Testcase 0: Failed ##########
 Expected Output: 
 6 vertices 6 edges
 0: 0-3 1.00000  0-1 2.00000  
@@ -9,7 +9,7 @@ Expected Output:
 5:
 
 Your Output: 
-6 vertices 6 edges
+6 6
 0: 0-3 1.00000  0-1 2.00000  
 1: 1-2 4.00000  1-4 5.00000  0-1 2.00000  
 2: 2-4 1.00000  3-2 3.00000  1-2 4.00000  
@@ -18,7 +18,7 @@ Your Output:
 5:
 ----------------------------------------
 
-########## Testcase 1: Passed ##########
+########## Testcase 1: Failed ##########
 Expected Output: 
 10 vertices 11 edges
 0: 0-7 221.00000  0-4 78.00000  
@@ -33,7 +33,7 @@ Expected Output:
 9: 7-9 157.00000  2-9 237.00000
 
 Your Output: 
-10 vertices 11 edges
+10 11
 0: 0-7 221.00000  0-4 78.00000  
 1: 1-7 158.00000  1-7 159.00000  1-6 92.00000  
 2: 2-9 237.00000  2-5 179.00000  2-4 55.00000  
@@ -46,44 +46,37 @@ Your Output:
 9: 7-9 157.00000  2-9 237.00000
 ----------------------------------------
 
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 No Path Found.
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.vertices()I
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:37)
-	at Solution.main(Solution.java:52)
+No Path Found.
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 370.0
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.vertices()I
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:37)
-	at Solution.main(Solution.java:52)
+370.0
 ----------------------------------------
 
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 No Path Found.
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.vertices()I
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:37)
-	at Solution.main(Solution.java:71)
+No Path Found.
 ----------------------------------------
 
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 692.0
 5 2 4 0 7 1
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.vertices()I
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:37)
-	at Solution.main(Solution.java:71)
+692.0
+5 2 4 0 7 1
 ----------------------------------------
 
