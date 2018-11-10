@@ -9,7 +9,13 @@ Expected Output:
 5:
 
 Your Output: 
-EdgeWeightedGraph@1f96302
+6 6
+0: Edge@1f96302  Edge@14eac69  
+1: Edge@a57993  Edge@1b84c92  Edge@14eac69  
+2: Edge@1c7c054  Edge@12204a1  Edge@a57993  
+3: Edge@12204a1  Edge@1f96302  
+4: Edge@1c7c054  Edge@1b84c92  
+5:
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -27,7 +33,17 @@ Expected Output:
 9: 7-9 157.00000  2-9 237.00000
 
 Your Output: 
-EdgeWeightedGraph@1f96302
+10 11
+0: Edge@1f96302  Edge@14eac69  
+1: Edge@a57993  Edge@1b84c92  Edge@1c7c054  
+2: Edge@12204a1  Edge@a298b7  Edge@14991ad  
+3: Edge@d93b30  
+4: Edge@16d3586  Edge@14991ad  Edge@14eac69  
+5: Edge@16d3586  Edge@a298b7  
+6: Edge@1c7c054  
+7: Edge@154617c  Edge@d93b30  Edge@a57993  Edge@1b84c92  Edge@1f96302  
+8: 
+9: Edge@154617c  Edge@12204a1
 ----------------------------------------
 
 ########## Testcase 2: Passed ##########
@@ -46,12 +62,12 @@ Your Output:
 370.0
 ----------------------------------------
 
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 No Path Found.
 
 Your Output: 
-
+No Path Found.
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -60,6 +76,6 @@ Expected Output:
 5 2 4 0 7 1
 
 Your Output: 
-
+Edge@1f96302   Edge@14eac69   Edge@a57993   Edge@1b84c92   Edge@1c7c054   513.0
 ----------------------------------------
 

@@ -2,18 +2,14 @@ import java.util.Scanner;
 /**
  * Class for Solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
     private Solution() {
         //empty constructor.
     }
-    /**
-     * Client program.
-     *
-     * @param      args  The arguments
-     */
+   
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int vertices = Integer.parseInt(scan.nextLine());
@@ -23,7 +19,7 @@ public class Solution {
         while (i > 0) {
             String[] arr = scan.nextLine().split(" ");
             Edge ed = new Edge(Integer.parseInt(arr[0]),
-                        Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
+                               Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
             ewg.addEdge(ed);
             i--;
         }
@@ -57,15 +53,32 @@ public class Solution {
 
         case "ViaPaths":
             // Handle the case of ViaPaths, where three integers are given.
-            // First is the source and second is the via is the one where path should pass throuh.
+            // First is the source and second is the via is the one where
+            // path should pass throuh.
             // third is the destination.
             // If the path exists print the distance between them.
             // Other wise print "No Path Found."
+            String[] viaPaths = scan.nextLine().split(" ");
+            source = Integer.parseInt(viaPaths[0]);
+            int via = Integer.parseInt(viaPaths[1]);
+            dest = Integer.parseInt(viaPaths[viaPaths.length - 1]);
+            DijkstraUndirectedSP dsp2 = new DijkstraUndirectedSP(ewg, source);
+            if (dsp2.hasPathTo(dest)) {
+                for (Edge e : dsp2.pathTo(via)) {
+                    System.out.print(e + "   ");
+                }
+                DijkstraUndirectedSP dsp1 = new DijkstraUndirectedSP(ewg, via);
+                for (Edge e : dsp1.pathTo(dest)) {
+                    System.out.print(e + "   ");
+                }
+                System.out.println(dsp1.distTo(dest));
+            } else {
+                System.out.println("No Path Found.");
+            }
             break;
 
         default:
             break;
         }
-
     }
 }
