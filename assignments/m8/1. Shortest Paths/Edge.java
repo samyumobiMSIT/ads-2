@@ -1,67 +1,73 @@
-/**
- * Class for edge.
+/**.
+ * Edge class
+ * Complexty is O(1)
  */
-public class Edge implements Comparable<Edge> {
-    /**
-     * vertex v source.
+class Edge implements Comparable<Edge> {
+    /**.
+     * variable for first vertex
      */
-    private final int v;
-    /**
-     * vertex w destination.
+    private int firstVertex;
+    /**.
+     * variable for sedcond vertex
      */
-    private final int w;
-    /**
-     * weight of edge.
+    private int secondVertex;
+    /**.
+     * variable for weight
      */
-    private final double weight;
-    /**
-     *constructor.
-     * @param      v1  integer
-     * @param      w1  integer
-     * @param      weight1  The weight
+    private Double weight;
+    /**.
+     * constructor
+     *
+     * @param      v     { of type int }
+     * @param      w     { of type int }
+     * @param      wei   The wei of type dounle
      */
-    public Edge(final int v1, final int w1, final double weight1) {
-        this.v = v1;
-        this.w = w1;
-        this.weight = weight1;
+    Edge(final int v, final int w, final Double wei) {
+        this.firstVertex = v;
+        this.secondVertex = w;
+        this.weight = wei;
     }
-    /**
-     *weight method.
-     * @return weight.
+    /**.
+     * method to return the weight
+     * complexity is O(1)
+     *
+     * @return     { Double }
      */
-    public double weight() {
-        return weight;
+    public Double weight() {
+        return this.weight;
     }
-    /**
-     *that vertex.
-     * @return vertex.
+    /**.
+     * either method to return one vertex
+     * complexity is O(1)
+     *
+     * @return     { int }
      */
     public int either() {
-        return v;
+        return firstVertex;
     }
-    /**
-     *next vertex.
-     * @param      vertex  The vertex
+    /**.
+     * other method to find the other vertex
+     * complexity is O(1)
      *
-     * @return other vertex.
+     * @param      v     { of type int }
+     *
+     * @return     { int }
      */
-    public int other(final int vertex) {
-        if (vertex == v) {
-            return w;
-        } else if (vertex == w) {
-            return v;
-        }  else {
-            throw new IllegalArgumentException("Illegal endpoint");
+    public int other(final int v) {
+        if (firstVertex == v) {
+            return secondVertex;
         }
+        return firstVertex;
     }
-    /**
-     * compare to method.
+    /**.
+     * method to compare the two Edge objects
+     * complexity is O(1)
      *
      * @param      that  The that
      *
-     * @return  integer.
+     * @return     { int }
      */
     public int compareTo(final Edge that) {
-        return Double.compare(this.weight, that.weight);
+        return this.weight().compareTo(that.weight());
     }
 }

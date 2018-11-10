@@ -3,33 +3,33 @@
  */
 public class DijkstraUndirectedSP {
     /**
-     * {distTo[v] = distance  of shortest s->v path}.
+     * double array.
      */
     private double[] distTo;
     /**
-     * {edgeTo[v] = last edge on shortest s->v path}.
+     * Edge array.
      */
     private Edge[] edgeTo;
     /**
-     * {priority queue of vertices}.
+     * IndexMinPQ.
      */
     private IndexMinPQ<Double> pq;
-
     /**
+     * Computes a shortest-paths tree from the source vertex to every
+     * other vertex in the edge-weighted graph.
+     * Complexity O(ELogV)
      *
-     * @param  g the edge-weighted digraph
-     * @param  s the source vertex
+     * @param      g     the edge-weighted digraph
+     * @param      s     the source vertex
      */
     public DijkstraUndirectedSP(final EdgeWeightedGraph g, final int s) {
-        this.distTo = new double[g.vertex()];
-        this.edgeTo = new Edge[g.vertex()];
-        for (int v = 0; v < g.vertex(); v++) {
+        distTo = new double[g.vertices()];
+        edgeTo = new Edge[g.vertices()];
+        for (int v = 0; v < g.vertices(); v++) {
             distTo[v] = Double.POSITIVE_INFINITY;
         }
         distTo[s] = 0.0;
-
-        // relax vertices in order of distance from s
-        pq = new IndexMinPQ<Double>(g.vertex());
+        pq = new IndexMinPQ<Double>(g.vertices());
         pq.insert(s, distTo[s]);
         while (!pq.isEmpty()) {
             int v = pq.delMin();
@@ -38,12 +38,12 @@ public class DijkstraUndirectedSP {
             }
         }
     }
-
     /**
-     * {relax edge e and update pq if changed}.
+     * relax.
+     * Complexity O(E)
      *
-     * @param      e     {Edge object}
-     * @param      v     {Source vertex}
+     * @param      e     Edge object.
+     * @param      v     Integer variable.
      */
     private void relax(final Edge e, final int v) {
         int w = e.other(v);
@@ -57,26 +57,48 @@ public class DijkstraUndirectedSP {
             }
         }
     }
-
     /**
+     * distTo.
+     * Complexity O(1)
      *
-     * @param  v the destination vertex.
-     * @return the length of a shortest path between the source vertex
-     * and the vertex.
+     * @param      v     Integer variable.
      *
+     * @return     distance.
      */
     public double distTo(final int v) {
         return distTo[v];
     }
 
     /**
+     * Returns true if there is a path between the source vertex and
+     * vertex.
+     * Complexity O(1)
      *
-     * @param  v the destination vertex
-     * @return {@code true} if there is a path between vertex
-     * {@code s} to vertex {@code v};
-     * {@code false} otherwise
+     * @param      v     the
+     *
+     * @return     True if has path to, False otherwise.
      */
     public boolean hasPathTo(final int v) {
         return distTo[v] < Double.POSITIVE_INFINITY;
+    }
+    /**
+     * Iterable.
+     * Complexity O(ELogV)
+     *
+     * @param      v     Integer variable.
+     *
+     * @return     path.
+     */
+    public Iterable<Edge> pathTo(final int v) {
+        if (!hasPathTo(v)) {
+            return null;
+        }
+        Stack<Edge> path = new Stack<Edge>();
+        int x = v;
+        for (Edge e = edgeTo[v]; e != null; e = edgeTo[x]) {
+            path.push(e);
+            x = e.other(x);
+        }
+        return path;
     }
 }

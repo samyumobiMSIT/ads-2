@@ -1,46 +1,44 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
 /**.
- * bag class
+ * List of .
  * Complexity O(1)
  *
  * @param      <Item>  The item
  */
-public class Bag<Item> implements Iterable<Item> {
+public class Stack<Item> implements Iterable<Item> {
     /**.
-     * variable N
+     * Integer variable.
      */
-    private int n;         // number of elements in bag
+    private int n;
     /**.
-     * First Node
+     * Node variable.
      */
-    private Node first;    // beginning of bag
+    private Node first;
     /**.
-     * Node class
+     * Class for node.
      */
     private class Node {
         /**.
-         * item
+         * Item.
          */
         private Item item;
         /**.
-         * next node
+         * Node variable.
+         * Complexity O(1)
          */
         private Node next;
     }
-
     /**.
-      * Create an empty stack.
-      * Complexity O(1)
-      */
-    public Bag() {
+     * Constructs the object.
+     * Complexity O(1)
+     */
+    public Stack() {
         first = null;
         n = 0;
     }
-
     /**.
-     * method to check empty
+     * Determines if empty.
      * Complexity O(1)
      *
      * @return     True if empty, False otherwise.
@@ -48,53 +46,89 @@ public class Bag<Item> implements Iterable<Item> {
     public boolean isEmpty() {
         return first == null;
     }
-
     /**.
-     * size method
+     * size.
      * Complexity O(1)
      *
-     * @return     { int }
+     * @return     size.
      */
     public int size() {
         return n;
     }
-
     /**.
-     * { method to add item }
+     * Push.
      * Complexity O(1)
      *
-     * @param      item  Item
+     * @param      item  The item
      */
-    public void add(final Item item) {
+    public void push(final Item item) {
         Node oldfirst = first;
         first = new Node();
         first.item = item;
         first.next = oldfirst;
         n++;
     }
-
-
     /**.
-     * Iterator
+     * Pop.
      * Complexity O(1)
      *
-     * @return     { Iterator }
+     * @return     item.
      */
-    public Iterator<Item> iterator()  {
+    public Item pop() {
+        if (isEmpty()) {
+            throw new RuntimeException("Stack underflow");
+        }
+        Item item = first.item;
+        first = first.next;
+        n--;
+        return item;
+    }
+    /**.
+     * peek.
+     * Complexity O(1)
+     *
+     * @return     item.
+     */
+    public Item peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("Stack underflow");
+        }
+        return first.item;
+    }
+    /**.
+     * Returns a string representation of the object.
+     * Complexity O(1)
+     *
+     * @return     String representation of the object.
+     */
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (Item item : this) {
+            s.append(item + " ");
+        }
+        return s.toString();
+    }
+    /**.
+     * Iterator.
+     * Complexity O(1)
+     *
+     * @return   list iterator.
+     */
+    public Iterator<Item> iterator() {
         return new ListIterator();
     }
-
     /**.
-     * class LIste Iteraator
+     * Class for list iterator.
      * Complexity O(1)
      */
     private class ListIterator implements Iterator<Item> {
         /**.
-         * node
+         * Node variable.
+         * Complexity O(1)
          */
         private Node current = first;
         /**.
-         * method to check next
+         * Determines if it has next.
          * Complexity O(1)
          *
          * @return     True if has next, False otherwise.
@@ -103,17 +137,17 @@ public class Bag<Item> implements Iterable<Item> {
             return current != null;
         }
         /**.
-         * { method to remove }
+         * remove.
          * Complexity O(1)
          */
         public void remove() {
             throw new UnsupportedOperationException();
         }
         /**.
-         * method for next
+         * next.
          * Complexity O(1)
          *
-         * @return     { Item }
+         * @return     item.
          */
         public Item next() {
             if (!hasNext()) {
@@ -125,4 +159,6 @@ public class Bag<Item> implements Iterable<Item> {
         }
     }
 }
+
+
 
