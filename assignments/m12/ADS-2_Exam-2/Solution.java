@@ -1,18 +1,14 @@
 import java.util.Scanner;
-import java.util.ArrayList;
-
-/**
+/**.
  * Class for solution.
  */
-public final class Solution {
-    /**
+public class Solution {
+    /**.
      * Constructs the object.
      */
-    private Solution() {
-        // unused constructor
-    }
-    /**
-     * main method.
+    private Solution() { }
+    /**.
+     * { function_description }
      *
      * @param      args  The arguments
      */
@@ -20,91 +16,92 @@ public final class Solution {
         // Self loops are not allowed...
         // Parallel Edges are allowed...
         // Take the Graph input here...
-        Scanner scan = new Scanner(System.in);
-
-        int vertices = Integer.parseInt(scan.nextLine());
-        int edges = Integer.parseInt(scan.nextLine());
-        EdgeWeightedGraph eg = new EdgeWeightedGraph(vertices);
-
-        for (int i = 0; i < edges; i++) {
-            String[] inputs = scan.nextLine().split(" ");
-            int v = Integer.parseInt(inputs[0]);
-            int w = Integer.parseInt(inputs[1]);
-            double wght = Double.parseDouble(inputs[2]);
-            Edge e = new Edge(v, w, wght);
-            eg.addEdge(e);
+        Scanner s = new Scanner(System.in);
+        int cities = Integer.parseInt(s.nextLine());
+        int roadLines = Integer.parseInt(s.nextLine());
+        EdgeWeightedGraph graph = new EdgeWeightedGraph(cities);
+        for (int i = 0; i < roadLines; i++) {
+            String[] inp = s.nextLine().split(" ");
+            graph.addEdge(new Edge(
+                              Integer.parseInt(
+                                  inp[0]), Integer.parseInt(
+                                  inp[1]), Double.parseDouble(
+                                  inp[2])));
         }
-
-        String caseToGo = scan.nextLine();
+        DijkstraSP shortestPath;
+        String caseToGo = s.nextLine();
         switch (caseToGo) {
         case "Graph":
-            System.out.println(eg);
+            System.out.println(graph);
+            //Print the Graph Object.
             break;
 
         case "DirectedPaths":
-            // Handle the case of DirectedPaths, where two integers are given.
+            String[] path = s.nextLine().split(" ");
+            shortestPath = new DijkstraSP(
+                graph, Integer.parseInt(path[0]));
+            if (shortestPath.hasPathTo(
+                        Integer.parseInt(path[1]))) {
+                System.out.println(
+                    shortestPath.distTo(Integer.parseInt(
+                                            path[1])));
+            } else {
+                System.out.println("No Path Found.");
+            }
+            // Handle the case of DirectedPaths, where two
+            // integers are given.
             // First is the source and second is the destination.
             // If the path exists print the distance between them.
             // Other wise print "No Path Found."
-            String[] inputs = scan.nextLine().split(" ");
-            int source = Integer.parseInt(inputs[0]);
-            int dest = Integer.parseInt(inputs[1]);
-            DijkstraUndirectedSP dp = new DijkstraUndirectedSP(eg, source);
-            if (dp.hasPathTo(dest)) {
-                System.out.println(dp.distTo(dest));
-            } else {
-                System.out.println("No Path Found.");
-            }
             break;
 
         case "ViaPaths":
-            // Handle the case of ViaPaths, where three integers are given.
-            // First is the source and second is the via
-            // is the one where path should pass throuh.
-            // third is the destination.
-            // If the path exists print the distance between them.
-            // Other wise print "No Path Found."
-            String[] input = scan.nextLine().split(" ");
-            int src = Integer.parseInt(input[0]);
-            int via = Integer.parseInt(input[1]);
-            int dst = Integer.parseInt(input[2]);
-            DijkstraUndirectedSP dp1 = new DijkstraUndirectedSP(eg, src);
-            double totalSum = 0.0;
-            ArrayList<Integer> path = new ArrayList<>();
-            if (dp1.hasPathTo(dst)) {
-                if (dp1.hasPathTo(via)) {
-                    path.add(src);
-                    totalSum += dp1.distTo(via);
-                    for (Edge e : dp1.pathTo(via)) {
-                        int temp = e.either();
-                        if (!path.contains(temp)) {
-                            path.add(temp);
-                        }
-                        if (!path.contains(e.other(temp))) {
-                            path.add(e.other(temp));
-                        }
+            String[] viaPath = s.nextLine().split(" ");
+            double dist = 0.0;
+            boolean flag = true;
+            shortestPath = new DijkstraSP(
+                graph, Integer.parseInt(viaPath[0]));
+            String str = viaPath[0] + " ";
+            for (int i = 1; i < viaPath.length; i++) {
+                if (shortestPath.hasPathTo(
+                            Integer.parseInt(viaPath[i]))) {
+                    if (i == 1) {
+                        dist += shortestPath.distTo(
+                                    Integer.parseInt(
+                                        viaPath[i]));
+                        str += viaPath[1];
                     }
-                    dp1 = new DijkstraUndirectedSP(eg, via);
-                    if (dp1.hasPathTo(dst)) {
-                        totalSum += dp1.distTo(dst);
-                        for (Edge e : dp1.pathTo(dst)) {
-                            int temp = e.either();
-                            if (!path.contains(temp)) {
-                                path.add(temp);
-                            }
-                            if (!path.contains(e.other(temp))) {
-                                path.add(e.other(temp));
-                            }
-                        }
+                    if (i == 2) {
+                        shortestPath = new DijkstraSP(
+                            graph, Integer.parseInt(
+                                viaPath[1]));
+                        dist += shortestPath.distTo(
+                                    Integer.parseInt(
+                                        viaPath[i]));
+                        shortestPath.pathTo(
+                            Integer.parseInt(
+                                viaPath[i]));
+                        String spath = shortestPath.strPath();
+                        String rev = new StringBuffer(
+                            spath).reverse().toString();
+                        str += rev;
                     }
+                } else {
+                    flag = false;
                 }
-                System.out.println(totalSum);
-                String out = path.toString().replaceAll(",", "");
-                out = out.substring(1, out.length() - 1);
-                System.out.println(out);
+            }
+            if (flag) {
+                System.out.println(dist);
+                System.out.println(str);
             } else {
                 System.out.println("No Path Found.");
             }
+            // Handle the case of ViaPaths, where three integers are given.
+            // First is the source and second is the via is the one
+            // where path should pass throuh.
+            // third is the destination.
+            // If the path exists print the distance between them.
+            // Other wise print "No Path Found."
             break;
 
         default:

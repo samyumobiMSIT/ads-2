@@ -1,25 +1,32 @@
 Starting audit...
 Audit done.
 Starting audit...
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraSP.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraSP.java:124:19: ';' is preceded with whitespace. [NoWhitespaceBefore]
 Audit done.
-Checkstyle ends with 1 errors.
+Checkstyle ends with 2 errors.
+Starting audit...
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\DijkstraUndirectedSP.java:124:19: ';' is preceded with whitespace. [NoWhitespaceBefore]
+Audit done.
+Checkstyle ends with 2 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Edge.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
 Checkstyle ends with 1 errors.
 Starting audit...
-Audit done.
-Starting audit...
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:265:23: Parameter k should be final. [FinalParameters]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:277:23: Parameter k should be final. [FinalParameters]
-Audit done.
-Checkstyle ends with 3 errors.
-Starting audit...
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\EdgeWeightedGraph.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
 Checkstyle ends with 1 errors.
+Starting audit...
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
+Starting audit...
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:5: Class Solution should be declared as final. [FinalClass]
+Audit done.
+Checkstyle ends with 2 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Stack.java:13: Line has trailing spaces. [RegexpSingleline]
