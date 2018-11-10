@@ -1,77 +1,130 @@
-/**
- * Class for edge weighted graph.
+/**.
+ * edge weighted graph
+ * Complexity is O(N)
  */
 class EdgeWeightedGraph {
-    /**
-     *the variable to store vertices.
+    /**.
+     * newline variable
+     */
+    private static final String NEWLINE = System.getProperty("line.separator");
+    /**.
+     * variable for vertices
      */
     private int vertices;
-    /**
-     *the variable to store edges.
+    /**.
+     * variable for edges
      */
     private int edges;
-    /**
-     *the array of bags to store.
-     *complete adjacency list.
+    /**.
+     * variable fo bag
      */
     private Bag<Edge>[] adj;
-    /**
-     *the constructor to initialize.
+    /**.
+     * constructor
+     * Complexity is O(N)
      *
-     * @param      v vertices count
+     * @param      ver   The version
      */
-    EdgeWeightedGraph(final int v, final int e) {
-        this.vertices = v;
-        this.edges = e;
+    EdgeWeightedGraph(final int ver) {
+        this.vertices = ver;
+        this.edges = 0;
         adj = (Bag<Edge>[]) new Bag[vertices];
         for (int i = 0; i < vertices; i++) {
             adj[i] = new Bag<Edge>();
         }
     }
-    /**
-     *this method returns the vertices count.
+    /**.
+     * method to return the vertices count
+     * Complexity is O(1)
      *
-     * @return  number of vertices.
+     * @return     { int }
      */
-    public int vertices() {
+    public int V() {
         return this.vertices;
     }
-    /**
-     *this method is to build the graph.
+    /**.
+     * method to return the edges count
+     * Complexity is O(1)
      *
-     * @param      edge  The edge
+     * @return     { int }
      */
-    public void addEdge(final Edge edge) {
-        int vertexOne = edge.either();
-        int vertexTwo = edge.other(vertexOne);
-        adj[vertexOne].add(edge);
-        adj[vertexTwo].add(edge);
+    public int noOfEdges() {
+        return this.edges;
     }
-    /**
-     *returns the iterator to return the bag at that.
-     *vertex.
-     * @param      vertex  The vertex
-     *time complexity is O(V)
-     * @return iterator at that vertex.
+    /**.
+     * method to add the edge
+     * Complexity is O(1)
+     *
+     * @param      e     { Edge }
      */
-    public Iterable<Edge> adj(final int vertex) {
-        return adj[vertex];
+    public void addEdge(final Edge e) {
+        int first = e.either();
+        int sec = e.other(first);
+        adj[first].add(e);
+        adj[sec].add(e);
+        edges++;
     }
-    /**
-     *returns all the edges in graph.
-     *time complexity is O(E)
-     * @return bag of all the edges.
+    /**.
+     * Iterable adj
+     * Complexity is O(1)
+     *
+     * @param      v     { int }
+     *
+     * @return     { Iterator }
+     */
+    public Iterable<Edge> adj(final int v) {
+        return adj[v];
+    }
+    /**.
+     * degree method
+     * Complexity is O(1)
+     *
+     * @param      ver   The version
+     *
+     * @return     { int }
+     */
+    public int degree(final int ver) {
+        return this.adj[ver].size();
+    }
+    /**.
+     * Iterable method for edges
+     * Complexity is O(N^2)
+     *
+     * @return     { Iterator }
+     */
+    public Iterable<Edge> edges() {
+        Bag<Edge> list = new Bag<Edge>();
+        for (int v = 0; v < vertices; v++) {
+            int selfLoops = 0;
+            for (Edge e : adj(v)) {
+                if (e.other(v) > v) {
+                    list.add(e);
+                } else if (e.other(v) == v) {
+                    if (selfLoops % 2 == 0) {
+                        list.add(e);
+                    }
+                    selfLoops++;
+                }
+            }
+        }
+        return list;
+    }
+    /**.
+     * method to print the objects
+     * Complexity is O(N^2)
+     *
+     * @return     String representation of the object.
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(vertices + " vertices " + edges + " edges" + "\n");
+        s.append(vertices + " " + edges + NEWLINE);
         for (int v = 0; v < vertices; v++) {
             s.append(v + ": ");
             for (Edge e : adj[v]) {
                 s.append(e + "  ");
             }
-            s.append("\n");
+            s.append(NEWLINE);
         }
         return s.toString();
     }
- }
+}

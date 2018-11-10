@@ -1,25 +1,29 @@
 import java.util.Scanner;
 /**
- * Solution class
+ * Class for Solution.
  */
 public final class Solution {
     /**
-     * Solution class
+     * Constructs the object.
      */
     private Solution() {
         //empty constructor.
     }
-   
+    /**
+     * Client program.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int vertices = Integer.parseInt(scan.nextLine());
         int edges = Integer.parseInt(scan.nextLine());
-        EdgeWeightedGraph ewg = new EdgeWeightedGraph(edges,vertices);
+        EdgeWeightedGraph ewg = new EdgeWeightedGraph(vertices);
         int i = edges;
         while (i > 0) {
             String[] arr = scan.nextLine().split(" ");
             Edge ed = new Edge(Integer.parseInt(arr[0]),
-                               Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
+                        Integer.parseInt(arr[1]), Integer.parseInt(arr[2]));
             ewg.addEdge(ed);
             i--;
         }
@@ -64,21 +68,59 @@ public final class Solution {
             dest = Integer.parseInt(viaPaths[viaPaths.length - 1]);
             DijkstraUndirectedSP dsp2 = new DijkstraUndirectedSP(ewg, source);
             if (dsp2.hasPathTo(dest)) {
+                Queue<Integer> q = new Queue<Integer>();
                 for (Edge e : dsp2.pathTo(via)) {
-                    System.out.print(e + "   ");
+                    String[] arr1 = e.toString().split(" ");
+                    String[] arr2 = arr1[0].split("-");
+                    int m = 0;
+                    int n = 0;
+                    for (Integer k : q) {
+                        if (Integer.parseInt(arr2[1]) == k) {
+                            m = 1;
+                        }
+                        if (Integer.parseInt(arr2[1]) == k) {
+                            n = 1;
+                        }
+                    }
+                    if (n == 0) {
+                        q.enqueue(Integer.parseInt(arr2[1]));
+                    }
+                    if (m == 0) {
+                        q.enqueue(Integer.parseInt(arr2[0]));
+                    }
                 }
                 DijkstraUndirectedSP dsp1 = new DijkstraUndirectedSP(ewg, via);
                 for (Edge e : dsp1.pathTo(dest)) {
-                    System.out.print(e + "   ");
+                    String[] arr = e.toString().split(" ");
+                    String[] arr3 = arr[0].split("-");
+                    int p = 0;
+                    int r = 0;
+                    for (Integer j : q) {
+                        if (Integer.parseInt(arr3[0]) == j) {
+                            p = 1;
+                        }
+                        if (Integer.parseInt(arr3[1]) == j) {
+                            r = 1;
+                        }
+                    }
+                    if (p == 0) {
+                        q.enqueue(Integer.parseInt(arr3[0]));
+                    }
+                    if (r == 0) {
+                        q.enqueue(Integer.parseInt(arr3[1]));
+                    }
                 }
-                System.out.println(dsp1.distTo(dest));
+                System.out.println(dsp2.distTo(via) + dsp1.distTo(dest));
+                while (!q.isEmpty()) {
+                    System.out.print(q.dequeue() + " ");
+                }
             } else {
                 System.out.println("No Path Found.");
             }
             break;
-
         default:
             break;
         }
     }
 }
+

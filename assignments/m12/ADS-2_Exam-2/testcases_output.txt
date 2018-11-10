@@ -9,7 +9,7 @@ Expected Output:
 5:
 
 Your Output: 
-6 vertices 6 edges
+6 6
 0: Edge@1f96302  Edge@14eac69  
 1: Edge@a57993  Edge@1b84c92  Edge@14eac69  
 2: Edge@1c7c054  Edge@12204a1  Edge@a57993  
@@ -33,7 +33,7 @@ Expected Output:
 9: 7-9 157.00000  2-9 237.00000
 
 Your Output: 
-11 vertices 10 edges
+10 11
 0: Edge@1f96302  Edge@14eac69  
 1: Edge@a57993  Edge@1b84c92  Edge@1c7c054  
 2: Edge@12204a1  Edge@a298b7  Edge@14991ad  
@@ -43,38 +43,31 @@ Your Output:
 6: Edge@1c7c054  
 7: Edge@154617c  Edge@d93b30  Edge@a57993  Edge@1b84c92  Edge@1f96302  
 8: 
-9: Edge@154617c  Edge@12204a1  
-10:
+9: Edge@154617c  Edge@12204a1
 ----------------------------------------
 
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 No Path Found.
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:46)
+No Path Found.
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 370.0
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:46)
+370.0
 ----------------------------------------
 
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 No Path Found.
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:65)
+No Path Found.
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -83,8 +76,7 @@ Expected Output:
 5 2 4 0 7 1
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: EdgeWeightedGraph.edges()Ljava/lang/Iterable;
-	at DijkstraUndirectedSP.<init>(DijkstraUndirectedSP.java:28)
-	at Solution.main(Solution.java:65)
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:86)
 ----------------------------------------
 
