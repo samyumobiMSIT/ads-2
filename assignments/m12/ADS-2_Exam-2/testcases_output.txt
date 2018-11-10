@@ -70,13 +70,13 @@ Your Output:
 No Path Found.
 ----------------------------------------
 
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 692.0
 5 2 4 0 7 1
 
 Your Output: 
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
-	at Solution.main(Solution.java:86)
+692.0
+5 2 4 0 7 1
 ----------------------------------------
 
