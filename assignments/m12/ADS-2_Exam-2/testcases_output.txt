@@ -9,8 +9,7 @@ Expected Output:
 5:
 
 Your Output: 
-Exception in thread "main" java.lang.NullPointerException
-	at Prims.main(Prims.java:306)
+EdgeWeightedGraph@1f96302
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -28,26 +27,23 @@ Expected Output:
 9: 7-9 157.00000  2-9 237.00000
 
 Your Output: 
-Exception in thread "main" java.lang.NullPointerException
-	at Prims.main(Prims.java:306)
+EdgeWeightedGraph@1f96302
 ----------------------------------------
 
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 No Path Found.
 
 Your Output: 
-Exception in thread "main" java.lang.NullPointerException
-	at Prims.main(Prims.java:306)
+No Path Found.
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 370.0
 
 Your Output: 
-Exception in thread "main" java.lang.NullPointerException
-	at Prims.main(Prims.java:306)
+370.0
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -55,8 +51,7 @@ Expected Output:
 No Path Found.
 
 Your Output: 
-Exception in thread "main" java.lang.NullPointerException
-	at Prims.main(Prims.java:306)
+
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -65,7 +60,6 @@ Expected Output:
 5 2 4 0 7 1
 
 Your Output: 
-Exception in thread "main" java.lang.NullPointerException
-	at Prims.main(Prims.java:306)
+
 ----------------------------------------
 
