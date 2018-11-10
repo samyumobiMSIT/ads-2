@@ -21,9 +21,10 @@ Checkstyle ends with 15 errors.
 Starting audit...
 Audit done.
 Starting audit...
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\EdgeWeightedGraph.java:42:16: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\EdgeWeightedGraph.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\EdgeWeightedGraph.java:23:46: Expected @param tag for 'e'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 1 errors.
+Checkstyle ends with 2 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\IndexMinPQ.java:265:23: Parameter k should be final. [FinalParameters]
@@ -32,10 +33,13 @@ Audit done.
 Checkstyle ends with 3 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:2: First sentence should end with a period. [JavadocStyle]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:6: First sentence should end with a period. [JavadocStyle]
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:12: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:13:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:22: Line is longer than 80 characters (found 83). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:23: Line is longer than 80 characters (found 83). [LineLength]
+[ERROR] D:\ads-2\assignments\m12\ADS-2_Exam-2\Solution.java:71: Line is longer than 80 characters (found 81). [LineLength]
 Audit done.
-Checkstyle ends with 4 errors.
+Checkstyle ends with 7 errors.
 Starting audit...
 Audit done.
