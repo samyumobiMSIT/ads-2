@@ -121,7 +121,7 @@ class DijkstraSP {
         validateVertex(v);
         if (!hasPathTo(v)) {
             // return null;
-            return ;
+            return;
         }
         Stack<Edge> path = new Stack<Edge>();
         int x = v;
