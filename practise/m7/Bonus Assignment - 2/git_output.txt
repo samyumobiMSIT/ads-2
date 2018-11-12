@@ -1,0 +1,14 @@
+warning: LF will be replaced by CRLF in practise/m7/Bonus Assignment - 2/In.java.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m7/Bonus Assignment - 2/testcases/input000.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m7/Bonus Assignment - 2/testcases/input001.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m7/Bonus Assignment - 2/testcases/input002.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m7/Bonus Assignment - 2/testcases/output000.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m7/Bonus Assignment - 2/testcases/output001.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in practise/m7/Bonus Assignment - 2/testcases/output002.txt.
+The file will have its original line endings in your working directory.

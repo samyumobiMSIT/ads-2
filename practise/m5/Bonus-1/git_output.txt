@@ -1,0 +1,3 @@
+[master 7e8b8b2] "ads2_m5_ba1_1: 3/3 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 1 file changed, 32 deletions(-)
+ rewrite practise/m5/Bonus-1/git_output.txt (100%)

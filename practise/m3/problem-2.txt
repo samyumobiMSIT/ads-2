@@ -1,1 +1,2 @@
 By examining the possibilities, we find 1 graph with 0 edges, 1 graph with 1 edge, 2 non-isomorphic graphs with 2 edges, 3 non-isomorphic graphs with 3 edges, 2 nonisomorphic graphs with 4 edges, 1 graph with 5 edges and 1 graph with 6 edges. Altogether, we have 11 non-isomorphic graphs on 4 vertices.
+

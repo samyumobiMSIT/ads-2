@@ -1,2 +1,0 @@
-removeVerticalSeam
-HJoceanSmall.png

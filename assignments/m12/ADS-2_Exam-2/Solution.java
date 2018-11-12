@@ -17,7 +17,9 @@ public final class Solution {
         // Parallel Edges are allowed...
         // Take the Graph input here...
         Scanner s = new Scanner(System.in);
+        //vertices
         int cities = Integer.parseInt(s.nextLine());
+        //edges
         int roadLines = Integer.parseInt(s.nextLine());
         EdgeWeightedGraph graph = new EdgeWeightedGraph(cities);
         for (int i = 0; i < roadLines; i++) {
