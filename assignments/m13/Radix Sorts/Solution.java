@@ -38,6 +38,8 @@
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  */
+import java.util.Scanner;
+import java.util.Arrays;
 public class Solution {
     private static final int BITS_PER_BYTE = 8;
 
@@ -135,7 +137,16 @@ public class Solution {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
+    	 Scanner scan = new Scanner(System.in);
+        int lines = Integer.parseInt(scan.nextLine());
+        Solution l = new Solution();
+        String[] strarr = new String[lines];
+        for (int i = 0; i < lines; i++) {
+            strarr[i] = scan.nextLine();
+        }
+        l.sort(strarr, strarr[0].length());
+        System.out.println(Arrays.toString(strarr));
+        /*String[] a = StdIn.readAllStrings();
         int n = a.length;
 
         // check that strings have fixed length
@@ -148,6 +159,6 @@ public class Solution {
 
         // print results
         for (int i = 0; i < n; i++)
-            System.out.println("["+a[i]+"]");
+            System.out.println("["+a[i]+"]");*/
     }
 }
