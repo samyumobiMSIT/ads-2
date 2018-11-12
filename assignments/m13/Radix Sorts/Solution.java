@@ -45,10 +45,10 @@ public class Solution {
 
     // do not instantiate
     private Solution() { }
-
-   /**  
+ /**
      * Rearranges the array of W-character strings in ascending order.
-     *
+     * Time complexity of sort is O(wn).
+     * n is the input size.
      * @param a the array to be sorted
      * @param w the number of characters per string
      */
@@ -79,10 +79,12 @@ public class Solution {
         }
     }
 
-   /**
+   
+    /**
      * Rearranges the array of 32-bit integers in ascending order.
      * This is about 2-3x faster than Arrays.sort().
-     *
+     * Time complexity of sort is O(wn).
+     * n is the input size.
      * @param a the array to be sorted
      */
     public static void sort(int[] a) {
