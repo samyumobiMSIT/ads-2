@@ -11,7 +11,7 @@ final class Solution {
     }
     /**
      * Returns a string representation of the object.
-     *
+     * time complexity - O(N).
      * @param      a     { parameter_description }
      *
      * @return     String representation of the object.
@@ -29,7 +29,7 @@ final class Solution {
     }
     /**
      * Rearranges the array of W-character strings in ascending order.
-     *
+     * time complexity - O(WN).
      * @param a the array to be sorted
      * @param w the number of characters per string
      */
