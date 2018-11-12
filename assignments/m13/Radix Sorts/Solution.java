@@ -1,126 +1,77 @@
 import java.util.Scanner;
-import java.util.Arrays;
-public class Solution {
-    private static final int BITS_PER_BYTE = 8;
-
-    // do not instantiate
-    private Solution() { }
- /**
+/**
+ * Class for solution.
+ */
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //unused.
+    }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @param      a     { parameter_description }
+     *
+     * @return     String representation of the object.
+     */
+    public static String toString(final String[] a) {
+        String s = "[";
+        String ans;
+        for (int i = 0; i < a.length; i++) {
+            s = s + a[i] + ", ";
+        }
+        int val = s.length() - 2;
+        ans = s.substring(0, val);
+        ans += "]";
+        return ans;
+    }
+    /**
      * Rearranges the array of W-character strings in ascending order.
-     * Time complexity of sort is O(wn).
-     * n is the input size.
+     *
      * @param a the array to be sorted
      * @param w the number of characters per string
      */
-    public static void sort(String[] a, int w) {
+    public static void sort(final String[] a, final int w) {
         int n = a.length;
-        int R = 256;   // extend ASCII alphabet size
+        final int z = 256;   // extend ASCII alphabet size
         String[] aux = new String[n];
-
-        for (int d = w-1; d >= 0; d--) {
+        for (int d = w - 1; d >= 0; d--) {
             // sort by key-indexed counting on dth character
-
             // compute frequency counts
-            int[] count = new int[R+1];
-            for (int i = 0; i < n; i++)
+            int[] count = new int[z + 1];
+            for (int i = 0; i < n; i++) {
                 count[a[i].charAt(d) + 1]++;
-
-            // compute cumulates
-            for (int r = 0; r < R; r++)
-                count[r+1] += count[r];
-
-            // move data
-            for (int i = 0; i < n; i++)
-                aux[count[a[i].charAt(d)]++] = a[i];
-
-            // copy back
-            for (int i = 0; i < n; i++)
-                a[i] = aux[i];
-        }
-    }
-
-   
-    /**
-     * Rearranges the array of 32-bit integers in ascending order.
-     * This is about 2-3x faster than Arrays.sort().
-     * Time complexity of sort is O(wn).
-     * n is the input size.
-     * @param a the array to be sorted
-     */
-    public static void sort(int[] a) {
-        final int BITS = 32;                 // each int is 32 bits 
-        final int R = 1 << BITS_PER_BYTE;    // each bytes is between 0 and 255
-        final int MASK = R - 1;              // 0xFF
-        final int w = BITS / BITS_PER_BYTE;  // each int is 4 bytes
-
-        int n = a.length;
-        int[] aux = new int[n];
-
-        for (int d = 0; d < w; d++) {         
-
-            // compute frequency counts
-            int[] count = new int[R+1];
-            for (int i = 0; i < n; i++) {           
-                int c = (a[i] >> BITS_PER_BYTE*d) & MASK;
-                count[c + 1]++;
             }
-
             // compute cumulates
-            for (int r = 0; r < R; r++)
-                count[r+1] += count[r];
-
-            // for most significant byte, 0x80-0xFF comes before 0x00-0x7F
-            if (d == w-1) {
-                int shift1 = count[R] - count[R/2];
-                int shift2 = count[R/2];
-                for (int r = 0; r < R/2; r++)
-                    count[r] += shift1;
-                for (int r = R/2; r < R; r++)
-                    count[r] -= shift2;
+            for (int r = 0; r < z; r++) {
+                count[r + 1] += count[r];
             }
-
             // move data
             for (int i = 0; i < n; i++) {
-                int c = (a[i] >> BITS_PER_BYTE*d) & MASK;
-                aux[count[c]++] = a[i];
+                aux[count[a[i].charAt(d)]++] = a[i];
             }
-
             // copy back
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++) {
                 a[i] = aux[i];
+            }
         }
     }
-
     /**
-     * Reads in a sequence of fixed-length strings from standard input;
-     * Solution radix sorts them;
-     * and prints them to standard output in ascending order.
+     * main method.
      *
-     * @param args the command-line arguments
+     * @param      args  The arguments
      */
-    public static void main(String[] args) {
-    	 Scanner scan = new Scanner(System.in);
-        int lines = Integer.parseInt(scan.nextLine());
-        Solution l = new Solution();
-        String[] strarr = new String[lines];
-        for (int i = 0; i < lines; i++) {
-            strarr[i] = scan.nextLine();
+    public static void main(final String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
+        String[] a = new String[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextLine();
         }
-        l.sort(strarr, strarr[0].length());
-        System.out.println(Arrays.toString(strarr));
-        /*String[] a = StdIn.readAllStrings();
-        int n = a.length;
-
-        // check that strings have fixed length
         int w = a[0].length();
-        for (int i = 0; i < n; i++)
-            assert a[i].length() == w : "Strings must have fixed length";
-
-        // sort the strings
         sort(a, w);
-
-        // print results
-        for (int i = 0; i < n; i++)
-            System.out.println("["+a[i]+"]");*/
+        System.out.println(toString(a));
     }
 }
