@@ -8,7 +8,6 @@ ABASE
 ABASES
 
 Your Output: 
-ABACUS
 ABANDON
 ABANDONED
 ----------------------------------------
