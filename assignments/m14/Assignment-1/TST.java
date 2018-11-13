@@ -1,25 +1,35 @@
 public class TST<Value> {
-    private int n;              // size
-    private Node<Value> root;   // root of TST
+    private static final int R = 256;        // extended ASCII
 
-    private static class Node<Value> {
-        private char c;                        // character
-        private Node<Value> left, mid, right;  // left, middle, and right subtries
-        private Value val;                     // value associated with string
+
+    private Node root;      // root of trie
+    private int n;          // number of keys in trie
+
+    // R-way trie node
+    private static class Node {
+        private Object val;
+        private Node[] next = new Node[R];
     }
 
-    /**
+   /**
      * Initializes an empty string symbol table.
      */
     public TST() {
     }
 
+
     /**
-     * Returns the number of key-value pairs in this symbol table.
-     * @return the number of key-value pairs in this symbol table
+     * Returns the value associated with the given key.
+     * @param key the key
+     * @return the value associated with the given key if the key is in the symbol table
+     *     and {@code null} if the key is not in the symbol table
+     * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public int size() {
-        return n;
+    public Value get(String key) {
+        if (key == null) throw new IllegalArgumentException("argument to get() is null");
+        Node x = get(root, key, 0);
+        if (x == null) return null;
+        return (Value) x.val;
     }
 
     /**
@@ -30,38 +40,15 @@ public class TST<Value> {
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public boolean contains(String key) {
-        if (key == null) {
-            throw new IllegalArgumentException("argument to contains() is null");
-        }
+        if (key == null) throw new IllegalArgumentException("argument to contains() is null");
         return get(key) != null;
     }
 
-    /**
-     * Returns the value associated with the given key.
-     * @param key the key
-     * @return the value associated with the given key if the key is in the symbol table
-     *     and {@code null} if the key is not in the symbol table
-     * @throws IllegalArgumentException if {@code key} is {@code null}
-     */
-    public Value get(String key) {
-        if (key == null) {
-            throw new IllegalArgumentException("calls get() with null argument");
-        }
-        if (key.length() == 0) throw new IllegalArgumentException("key must have length >= 1");
-        Node<Value> x = get(root, key, 0);
+    private Node get(Node x, String key, int d) {
         if (x == null) return null;
-        return x.val;
-    }
-
-    // return subtrie corresponding to given key
-    private Node<Value> get(Node<Value> x, String key, int d) {
-        if (x == null) return null;
-        if (key.length() == 0) throw new IllegalArgumentException("key must have length >= 1");
+        if (d == key.length()) return x;
         char c = key.charAt(d);
-        if      (c < x.c)              return get(x.left,  key, d);
-        else if (c > x.c)              return get(x.right, key, d);
-        else if (d < key.length() - 1) return get(x.mid,   key, d+1);
-        else                           return x;
+        return get(x.next[c], key, d+1);
     }
 
     /**
@@ -73,54 +60,38 @@ public class TST<Value> {
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public void put(String key, Value val) {
-        if (key == null) {
-            throw new IllegalArgumentException("calls put() with null key");
-        }
-        if (!contains(key)) n++;
-        root = put(root, key, val, 0);
+        if (key == null) throw new IllegalArgumentException("first argument to put() is null");
+        if (val == null) delete(key);
+        else root = put(root, key, val, 0);
     }
 
-    private Node<Value> put(Node<Value> x, String key, Value val, int d) {
-        char c = key.charAt(d);
-        if (x == null) {
-            x = new Node<Value>();
-            x.c = c;
+    private Node put(Node x, String key, Value val, int d) {
+        if (x == null) x = new Node();
+        if (d == key.length()) {
+            if (x.val == null) n++;
+            x.val = val;
+            return x;
         }
-        if      (c < x.c)               x.left  = put(x.left,  key, val, d);
-        else if (c > x.c)               x.right = put(x.right, key, val, d);
-        else if (d < key.length() - 1)  x.mid   = put(x.mid,   key, val, d+1);
-        else                            x.val   = val;
+        char c = key.charAt(d);
+        x.next[c] = put(x.next[c], key, val, d+1);
         return x;
     }
 
-    // /**
-    //  * Returns the string in the symbol table that is the longest prefix of {@code query},
-    //  * or {@code null}, if no such string.
-    //  * @param query the query string
-    //  * @return the string in the symbol table that is the longest prefix of {@code query},
-    //  *     or {@code null} if no such string
-    //  * @throws IllegalArgumentException if {@code query} is {@code null}
-    //  */
-    // public String longestPrefixOf(String query) {
-    //     if (query == null) {
-    //         throw new IllegalArgumentException("calls longestPrefixOf() with null argument");
-    //     }
-    //     if (query.length() == 0) return null;
-    //     int length = 0;
-    //     Node<Value> x = root;
-    //     int i = 0;
-    //     while (x != null && i < query.length()) {
-    //         char c = query.charAt(i);
-    //         if      (c < x.c) x = x.left;
-    //         else if (c > x.c) x = x.right;
-    //         else {
-    //             i++;
-    //             if (x.val != null) length = i;
-    //             x = x.mid;
-    //         }
-    //     }
-    //     return query.substring(0, length);
-    // }
+    /**
+     * Returns the number of key-value pairs in this symbol table.
+     * @return the number of key-value pairs in this symbol table
+     */
+    public int size() {
+        return n;
+    }
+
+    /**
+     * Is this symbol table empty?
+     * @return {@code true} if this symbol table is empty and {@code false} otherwise
+     */
+    public boolean isEmpty() {
+        return size() == 0;
+    }
 
     /**
      * Returns all keys in the symbol table as an {@code Iterable}.
@@ -129,9 +100,7 @@ public class TST<Value> {
      * @return all keys in the symbol table as an {@code Iterable}
      */
     public Iterable<String> keys() {
-        Queue<String> queue = new Queue<String>();
-        collect(root, new StringBuilder(), queue);
-        return queue;
+        return keysWithPrefix("");
     }
 
     /**
@@ -139,30 +108,23 @@ public class TST<Value> {
      * @param prefix the prefix
      * @return all of the keys in the set that start with {@code prefix},
      *     as an iterable
-     * @throws IllegalArgumentException if {@code prefix} is {@code null}
      */
     public Iterable<String> keysWithPrefix(String prefix) {
-        if (prefix == null) {
-            throw new IllegalArgumentException("calls keysWithPrefix() with null argument");
-        }
-        Queue<String> queue = new Queue<String>();
-        Node<Value> x = get(root, prefix, 0);
-        if (x == null) return queue;
-        if (x.val != null) queue.enqueue(prefix);
-        collect(x.mid, new StringBuilder(prefix), queue);
-        return queue;
+        Queue<String> results = new Queue<String>();
+        Node x = get(root, prefix, 0);
+        collect(x, new StringBuilder(prefix), results);
+        return results;
     }
 
-    //all keys in subtrie rooted at x with given prefix
-    private void collect(Node<Value> x, StringBuilder prefix, Queue<String> queue) {
+    private void collect(Node x, StringBuilder prefix, Queue<String> results) {
         if (x == null) return;
-        collect(x.left,  prefix, queue);
-        if (x.val != null) queue.enqueue(prefix.toString() + x.c);
-        collect(x.mid,   prefix.append(x.c), queue);
-        prefix.deleteCharAt(prefix.length() - 1);
-        collect(x.right, prefix, queue);
+        if (x.val != null) results.enqueue(prefix.toString());
+        for (char c = 0; c < R; c++) {
+            prefix.append(c);
+            collect(x.next[c], prefix, results);
+            prefix.deleteCharAt(prefix.length() - 1);
+        }
     }
-
 
     /**
      * Returns all of the keys in the symbol table that match {@code pattern},
@@ -172,24 +134,86 @@ public class TST<Value> {
      *     as an iterable, where . is treated as a wildcard character.
      */
     public Iterable<String> keysThatMatch(String pattern) {
-        Queue<String> queue = new Queue<String>();
-        //System.out.println("....");
-        collect(root, new StringBuilder(), 0, pattern, queue);
-        return queue;
+        Queue<String> results = new Queue<String>();
+        collect(root, new StringBuilder(), pattern, results);
+        return results;
     }
 
-    private void collect(Node<Value> x, StringBuilder prefix, int i, String pattern, Queue<String> queue) {
+    private void collect(Node x, StringBuilder prefix, String pattern, Queue<String> results) {
         if (x == null) return;
-        //System.out.println("....");
-        char c = pattern.charAt(i);
-        if (c == '.' || c < x.c) collect(x.left, prefix, i, pattern, queue);
-        if (c == '.' || c == x.c) {
-            if (i == pattern.length() - 1 && x.val != null) queue.enqueue(prefix.toString() + x.c);
-            if (i < pattern.length() - 1) {
-                collect(x.mid, prefix.append(x.c), i+1, pattern, queue);
+        int d = prefix.length();
+        if (d == pattern.length() && x.val != null)
+            results.enqueue(prefix.toString());
+        if (d == pattern.length())
+            return;
+        char c = pattern.charAt(d);
+        if (c == '.') {
+            for (char ch = 0; ch < R; ch++) {
+                prefix.append(ch);
+                collect(x.next[ch], prefix, pattern, results);
                 prefix.deleteCharAt(prefix.length() - 1);
             }
         }
-        if (c == '.' || c > x.c) collect(x.right, prefix, i, pattern, queue);
+        else {
+            prefix.append(c);
+            collect(x.next[c], prefix, pattern, results);
+            prefix.deleteCharAt(prefix.length() - 1);
+        }
     }
-}
+
+    /**
+     * Returns the string in the symbol table that is the longest prefix of {@code query},
+     * or {@code null}, if no such string.
+     * @param query the query string
+     * @return the string in the symbol table that is the longest prefix of {@code query},
+     *     or {@code null} if no such string
+     * @throws IllegalArgumentException if {@code query} is {@code null}
+     */
+    public String longestPrefixOf(String query) {
+        if (query == null) throw new IllegalArgumentException("argument to longestPrefixOf() is null");
+        int length = longestPrefixOf(root, query, 0, -1);
+        if (length == -1) return null;
+        else return query.substring(0, length);
+    }
+
+    // returns the length of the longest string key in the subtrie
+    // rooted at x that is a prefix of the query string,
+    // assuming the first d character match and we have already
+    // found a prefix match of given length (-1 if no such match)
+    private int longestPrefixOf(Node x, String query, int d, int length) {
+        if (x == null) return length;
+        if (x.val != null) length = d;
+        if (d == query.length()) return length;
+        char c = query.charAt(d);
+        return longestPrefixOf(x.next[c], query, d+1, length);
+    }
+
+    /**
+     * Removes the key from the set if the key is present.
+     * @param key the key
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public void delete(String key) {
+        if (key == null) throw new IllegalArgumentException("argument to delete() is null");
+        root = delete(root, key, 0);
+    }
+
+    private Node delete(Node x, String key, int d) {
+        if (x == null) return null;
+        if (d == key.length()) {
+            if (x.val != null) n--;
+            x.val = null;
+        }
+        else {
+            char c = key.charAt(d);
+            x.next[c] = delete(x.next[c], key, d+1);
+        }
+
+        // remove subtrie rooted at x if it is completely empty
+        if (x.val != null) return x;
+        for (int c = 0; c < R; c++)
+            if (x.next[c] != null)
+                return x;
+        return null;
+    }
+    }
