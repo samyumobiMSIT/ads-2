@@ -188,11 +188,9 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m14\Assignment-1\Solution.java:9:24: '<' is not preceded with whitespace. [WhitespaceAround]
 [ERROR] D:\ads-2\assignments\m14\Assignment-1\Solution.java:9:39: ';' is not followed by whitespace. [WhitespaceAfter]
 [ERROR] D:\ads-2\assignments\m14\Assignment-1\Solution.java:9:43: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] D:\ads-2\assignments\m14\Assignment-1\Solution.java:10:31: '-' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] D:\ads-2\assignments\m14\Assignment-1\Solution.java:10:32: '-' is not followed by whitespace. [WhitespaceAround]
 [ERROR] D:\ads-2\assignments\m14\Assignment-1\Solution.java:22:5: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
-Checkstyle ends with 13 errors.
+Checkstyle ends with 11 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m14\Assignment-1\TST.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m14\Assignment-1\TST.java:1: Missing a Javadoc comment. [JavadocType]

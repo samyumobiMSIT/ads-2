@@ -6,8 +6,8 @@ public class Solution {
          TST<Integer> st = new TST<Integer>();
         String[] words = loadWords();
         //Your code goes here...
-        for(int i = 0;i< words.length;i++){
-            st.put(words[i], i-1);
+        for(int i = 1;i< words.length;i++){
+            st.put(words[i], i);
         }
         String req = scan.nextLine();
         //int sum = 0;
