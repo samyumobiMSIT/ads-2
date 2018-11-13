@@ -11,7 +11,7 @@ public class Solution {
         }
         String req = scan.nextLine();
         //int sum = 0;
-        for (String s : st.keysThatMatch(req)) {
+        for (String s : st.keysWithPrefix(req)) {
             System.out.println(s);
             //sum +=1;
         }
