@@ -1,0 +1,10 @@
+warning: LF will be replaced by CRLF in assignments/m14/Assignment-1/Solution.java.
+The file will have its original line endings in your working directory.
+[master 20b6d1c] "ads2_m14_a1_1: 6/6 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 8 files changed, 628 insertions(+), 353 deletions(-)
+ rewrite assignments/m14/Assignment-1/Solution.class (100%)
+ rewrite assignments/m14/Assignment-1/Solution.java (60%)
+ rewrite assignments/m14/Assignment-1/TST$Node.class (93%)
+ rewrite assignments/m14/Assignment-1/TST.class (99%)
+ rewrite assignments/m14/Assignment-1/TST.java (73%)
+ rewrite assignments/m14/Assignment-1/result/score.json (77%)
