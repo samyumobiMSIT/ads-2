@@ -41,7 +41,7 @@ public class BoggleSolver {
    // Returns the set of all valid words in the given Boggle board, as an Iterable.
    public Iterable<String> getAllValidWords(BoggleBoard board) {
       if (board == null) 
-         throw new java.lang.IllegalArgumentException("Board is null!");
+         throw new java.lang.IllegalArgumentException("Board is null");
       // choose set because each word must appears only once
       Set<String> foundWords = new TreeSet<String>();
       // for all dices as first letter
@@ -120,7 +120,8 @@ public class BoggleSolver {
     
 }
        
-      /* String dir = "D:\\ads-2\\assignments\\m15\\boggle\\Files";
+      /* Stress Unit Test
+       String dir = "D:\\ads-2\\assignments\\m15\\boggle\\Files";
         String dictDir = dir + "dictionary-yawl.txt";
         String boardDir = dir + "board-points26539.txt";
        In in = new In(dictDir);
