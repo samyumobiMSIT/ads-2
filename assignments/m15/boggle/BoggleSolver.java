@@ -104,10 +104,29 @@ public class BoggleSolver {
    
    // Test
    public static void main(String[] args) {
-       In in = new In(args[0]);
+
+    In in = new In(args[0]);
+      String[] dictionary = in.readAllStrings();
+      BoggleSolver solver = new BoggleSolver(dictionary);
+      BoggleBoard board = new BoggleBoard(args[1]);
+      int score = 0;
+      for (String word : solver.getAllValidWords(board))
+      {
+        StdOut.println(word);
+          score += solver.scoreOf(word);
+      }
+      StdOut.println("Score = " + score);
+  }
+    
+}
+       
+      /* String dir = "D:\\ads-2\\assignments\\m15\\boggle\\Files";
+        String dictDir = dir + "dictionary-yawl.txt";
+        String boardDir = dir + "board-points26539.txt";
+       In in = new In(dictDir);
        String[] dictionary = in.readAllStrings();
        BoggleSolver solver = new BoggleSolver(dictionary);
-       BoggleBoard board = new BoggleBoard(args[1]);
+       BoggleBoard board = new BoggleBoard(boardDir);
        // Stress test
        // BoggleBoard board = new BoggleBoard(10, 11);
        int score = 0;
@@ -118,4 +137,4 @@ public class BoggleSolver {
        }
        StdOut.println("Score = " + score);
    }
-}
+}*/
