@@ -41,7 +41,7 @@ public class BoggleSolver {
    // Returns the set of all valid words in the given Boggle board, as an Iterable.
    public Iterable<String> getAllValidWords(BoggleBoard board) {
       if (board == null) 
-         throw new java.lang.IllegalArgumentException("Board is null");
+         throw new java.lang.IllegalArgumentException("board is null");
       // choose set because each word must appears only once
       Set<String> foundWords = new TreeSet<String>();
       // for all dices as first letter

@@ -230,11 +230,11 @@ Your Output:
 Score = 32175
 ----------------------------------------
 
-########## Testcase 29: Failed ##########
+########## Testcase 29: Passed ##########
 Expected Output: 
 board is null
 
 Your Output: 
-Board is null
+board is null
 ----------------------------------------
 
