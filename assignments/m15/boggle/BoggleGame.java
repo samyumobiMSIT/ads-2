@@ -1,29 +1,3 @@
-/******************************************************************************
- *  Compilation:  javac BoggleGame.java
- *  Execution:    java BoggleGame [m n]
- *  Dependencies: BoggleSolver.java BoggleBoard.java 
- * 
- *
- *  GUI for the boggle solver. Pits the user against a computer opponent
- *  of various difficulties. Can be launched from the command line, where 
- *  the default size of the board for that game must be specified. 
- *  
- *  To add: Way to change the size of the board from inside the game
- *
- *  % javac BoggleGame.java
- *  
- *  % java BoggleGame 
- *
- *  % java -Xmx300m BoggleGame 3 7
- *  
- *  Report bugs to: wayne@princeton.edu, CC mdrabick@princeton.edu
- *
- *  Note: expect some compiler warning with Java 7 because
- *  javax.swing.JList is a parameterized type in Java 7 but not
- *  in Java 6.
- *
- ******************************************************************************/
-
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -650,7 +624,7 @@ public class BoggleGame extends JFrame {
     
     /**
      * Class that displays the board for the user to interact with.
-     * @author mdrabick
+     * 
      */
     private class BoardPanel extends JPanel {
         private int NUM_OF_CUBES = BOARD_ROWS * BOARD_COLS;
