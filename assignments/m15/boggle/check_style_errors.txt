@@ -91,6 +91,7 @@ Checkstyle ends with 56 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:4: Line has trailing spaces. [RegexpSingleline]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:5: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:8: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:9: Line has trailing spaces. [RegexpSingleline]
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:10: Line has trailing spaces. [RegexpSingleline]
@@ -555,7 +556,7 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:1001:100: '+' should be on a new line. [OperatorWrap]
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleGame.java:1002: Line is longer than 80 characters (found 107). [LineLength]
 Audit done.
-Checkstyle ends with 465 errors.
+Checkstyle ends with 466 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:4: Missing a Javadoc comment. [JavadocType]

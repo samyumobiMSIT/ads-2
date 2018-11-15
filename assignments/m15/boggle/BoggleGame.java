@@ -2,7 +2,7 @@
  *  Compilation:  javac BoggleGame.java
  *  Execution:    java BoggleGame [m n]
  *  Dependencies: BoggleSolver.java BoggleBoard.java 
- *  Author:       Matthew Drabick
+ * 
  *
  *  GUI for the boggle solver. Pits the user against a computer opponent
  *  of various difficulties. Can be launched from the command line, where 
