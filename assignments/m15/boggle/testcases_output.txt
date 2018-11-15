@@ -4,7 +4,7 @@ Score = 33
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -13,7 +13,7 @@ Score = 84
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -22,7 +22,7 @@ Score = 1
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -31,7 +31,7 @@ Score = 2
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -40,7 +40,7 @@ Score = 3
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -49,7 +49,7 @@ Score = 1000
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 6: Failed ##########
@@ -58,7 +58,7 @@ Score = 400
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 7: Failed ##########
@@ -67,7 +67,7 @@ Score = 7
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 8: Failed ##########
@@ -76,7 +76,7 @@ Score = 155
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 9: Failed ##########
@@ -85,7 +85,7 @@ Score = 172
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 10: Failed ##########
@@ -94,7 +94,7 @@ Score = 68
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 11: Failed ##########
@@ -103,7 +103,7 @@ Score = 147
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 12: Failed ##########
@@ -112,7 +112,7 @@ Score = 687
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 13: Failed ##########
@@ -121,7 +121,7 @@ Score = 0
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 14: Failed ##########
@@ -130,7 +130,7 @@ Score = 172
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 15: Failed ##########
@@ -139,7 +139,7 @@ Score = 129
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 16: Failed ##########
@@ -148,7 +148,7 @@ Score = 2
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 17: Failed ##########
@@ -157,7 +157,7 @@ Score = 1
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 18: Failed ##########
@@ -166,7 +166,7 @@ Score = 14
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 19: Failed ##########
@@ -175,7 +175,7 @@ Score = 11
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 20: Failed ##########
@@ -184,7 +184,7 @@ Score = 33
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 21: Failed ##########
@@ -193,7 +193,7 @@ Score = 23
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 22: Failed ##########
@@ -202,7 +202,7 @@ Score = 24
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 23: Failed ##########
@@ -211,7 +211,7 @@ Score = 30
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 24: Failed ##########
@@ -220,7 +220,7 @@ Score = 0
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 25: Failed ##########
@@ -229,7 +229,7 @@ Score = 26539
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 26: Failed ##########
@@ -238,7 +238,7 @@ Score = 19797
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 27: Failed ##########
@@ -247,7 +247,7 @@ Score = 27325
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 28: Failed ##########
@@ -256,7 +256,7 @@ Score = 32175
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 
 ########## Testcase 29: Failed ##########
@@ -265,6 +265,6 @@ board is null
 
 Your Output: 
 Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
-	at BoggleSolver.main(BoggleSolver.java:230)
+	at BoggleSolver.main(BoggleSolver.java:107)
 ----------------------------------------
 

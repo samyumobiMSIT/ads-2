@@ -1,245 +1,121 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Queue;
 import java.util.Set;
-import java.util.Stack;
+import java.util.TreeSet;
 
-public class BoggleSolver
-{
-    private BoggleDictionary boggleTrie;
+public class BoggleSolver {
+   
+   private static final char Q_LETTER = 'Q';
+   
+   private static final String QU_STRING = "QU";
+   
+   private final FastPrefixTST<Integer> dictionary;
+   
+   // Initializes the data structure using the given array of strings as the dictionary.
+   // (each word in the dictionary contains only the uppercase letters A through Z.)
+   public BoggleSolver(final String[] dictionary) {
+      // shuffle alphabet dictionary to create more balanced trie
+      shuffle(dictionary);
+      this.dictionary = new FastPrefixTST<Integer>();
+      int[] points = {0, 0, 0, 1, 1, 2, 3, 5, 11};
+      for (String s : dictionary) {
+         // if maxpoint word
+         if (s.length() >= points.length - 1) {
+            this.dictionary.put(s, points[points.length - 1]);
+         }
+         else {
+            this.dictionary.put(s, points[s.length()]);
+         }
+      }
+   }
 
-    private class DictionaryNode {
-        private char c; // character
-        private DictionaryNode left, mid, right; // left, middle, and right subtries
-        private String val; // value associated with string
-    }
+   // Knuth shuffling algorithm
+   private void shuffle(String[] dictionary) {
+      for (int i = 1; i < dictionary.length; i++) {
+         // choose random string from left part of i including i
+         int randLeftIndex = (int) (Math.random() * (i + 1) );
+         String buffer = dictionary[randLeftIndex];
+         dictionary[randLeftIndex] = dictionary[i];
+         dictionary[i] = buffer;
+      }
+   }
 
-    private class BoggleDictionary {
-        private DictionaryNode root;
+   // Returns the set of all valid words in the given Boggle board, as an Iterable.
+   public Iterable<String> getAllValidWords(BoggleBoard board) {
+      if (board == null) 
+         throw new java.lang.IllegalArgumentException("Board is null!");
+      // choose set because each word must appears only once
+      Set<String> foundWords = new TreeSet<String>();
+      // for all dices as first letter
+      for (int row = 0; row < board.rows(); row++) {
+         for (int col = 0; col < board.cols(); col++) {
+            // current watching string
+            String charSequence = addLetter("", board.getLetter(row, col));
+            // array with visited dices
+            boolean marked[][] = new boolean[board.rows()][board.cols()];
+            marked[row][col] = true;
+            dfs(foundWords, charSequence, marked, row, col, board);
+         }
+      }
+      return foundWords;
+   }
 
-        public BoggleDictionary() {
-        }
+   // depth first search for searching valid words
+   private void dfs(Set<String> foundWords, String charSequence, boolean[][] marked,
+         int startRow, int startCol, BoggleBoard board) {
+      // add valid word to set
+      if (isValidWord(charSequence) ) foundWords.add(charSequence);
+      // check all adjacent dices 
+      // max & min methods to avoid going beyond the borders of board
+      // start upper left adjacent dice
+      for (int row = Math.max(0, startRow - 1); row <= Math.min(board.rows() - 1, startRow + 1); row++) {
+         for (int col = Math.max(0, startCol - 1); col <= Math.min(board.cols() - 1,startCol + 1); col++) {
+            if (marked[row][col]) continue;
+            if (!dictionary.hasPrefix(charSequence)) continue;
+            // prepare to recursive call
+            marked[row][col] = true;
+            dfs(foundWords, addLetter(charSequence, board.getLetter(row, col)), marked, row, col, board);
+            // roll back after recursive call
+            marked[row][col] = false;
+         }
+      }
+   }
 
-        public void put(String s) {
-            root = put(root, s, s, 0);
-        }
-
-        private DictionaryNode put(DictionaryNode x, String s, String val, int d) {
-            char c = s.charAt(d);
-            if (x == null) {
-                x = new DictionaryNode();
-                x.c = c;
-            }
-            if (c < x.c)
-                x.left = put(x.left, s, val, d);
-            else if (c > x.c)
-                x.right = put(x.right, s, val, d);
-            else if (d < s.length() - 1)
-                x.mid = put(x.mid, s, val, d + 1);
-            else
-                x.val = val;
-            return x;
-        }
-
-        private boolean contains(String key) {
-            return get(key) != null;
-        }
-
-        private String get(String key) {
-            if (key == null)
-                throw new NullPointerException();
-            if (key.length() == 0)
-                throw new IllegalArgumentException("key must have length >= 1");
-            DictionaryNode x = get(root, key, 0);
-            if (x == null)
-                return null;
-            return x.val;
-        }
-
-        // return subtrie corresponding to given key
-        private DictionaryNode get(DictionaryNode x, String key, int d) {
-            if (x == null)
-                return null;
-            char c = key.charAt(d);
-            if (c < x.c)
-                return get(x.left, key, d);
-            else if (c > x.c)
-                return get(x.right, key, d);
-            else if (d < key.length() - 1)
-                return get(x.mid, key, d + 1);
-            else
-                return x;
-
-            // Stack<DictionaryNode> stack = new Stack<DictionaryNode>();
-            // stack.push(x);
-            // while (!stack.isEmpty()) {
-            //     char c = key.charAt(d);
-            //     x = stack.pop();
-            //     while (c < x.c) {
-            //         if (x.left == null)
-            //             return null;
-            //         stack.push(x.left);
-            //     }
-            //     while (c > x.c) {
-            //         if (x.right == null)
-            //             return null;
-            //         stack.push(x.right);
-            //     }
-            //     else if (d < key.length() - 1) {
-            //         if (x.mid == null)
-            //             return null;
-            //         stack.push(x.mid);
-            //         d++;
-            //     }
-            //     else
-            //         return x;
-            // }
-            // return x;
-        }
-    }
-
-    // Initializes the data structure using the given array of strings as the dictionary.
-    // (You can assume each word in the dictionary contains only the uppercase letters A through Z.)
-    public BoggleSolver(String[] dictionary) {
-        boggleTrie = new BoggleDictionary();
-        for (int val = 0; val < dictionary.length; val++)
-            boggleTrie.put(dictionary[val]);
-    }
-
-    private class BoggleWord {
-        private HashSet<String> words;
-        private Hashtable<String, Character> bd;
-        private Hashtable<String, Set<String>> surrounds;
-        private int rows, cols;
-
-        public BoggleWord(BoggleBoard board) {
-            words = new HashSet<String>();
-            bd = new Hashtable<String, Character>();
-            surrounds = new Hashtable<String, Set<String>>();
-            rows = board.rows();
-            cols = board.cols();
-            for (int i = 0; i < rows; i++)
-                for (int j = 0; j < cols; j++) {
-                    bd.put(getHash(i, j), board.getLetter(i, j));
-                    surrounds.put(getHash(i, j), getSurrounds(i, j));
-                }
-        }
-
-        private String getValue(char s) {
-            if (s == 'Q')
-                return "QU";
-            else
-                return Character.toString(s);
-        }
-
-        private String getHash(int x, int y) {
-            return x + " " + y;
-        }
-
-        private int getX(String hashCode) {
-            return Integer.parseInt(hashCode.split(" ")[0]);
-        }
-
-        private int getY(String hashCode) {
-            return Integer.parseInt(hashCode.split(" ")[1]);
-        }
-
-        private String word(ArrayList<String> visited) {
-            StringBuilder str = new StringBuilder();
-            for (String s: visited)
-                str.append(getValue(bd.get(s)));
-            return str.toString();
-        }
-
-        public void buildWord(int x, int y) {
-            ArrayList<String> visited = new ArrayList<String>();
-            String start = getHash(x, y);
-            String suffix = getValue(bd.get(start));
-            DictionaryNode curNode = boggleTrie.get(boggleTrie.root, getValue(bd.get(start)), 0);
-            if (curNode != null)
-                dfs(curNode, start, start, visited);
-        }
-
-        private void dfs(DictionaryNode curNode, String start, String cur, ArrayList<String> visited) {
-
-            visited.add(cur);
-            String str = curNode.val;
-
-            if (str != null && str.length() > 2 && !words.contains(str)) {
-                words.add(str);
-            }
-
-            for (String next: surrounds.get(cur)) {
-                if (!visited.contains(next)) {
-                    String prefix = getValue(bd.get(next));
-                    DictionaryNode nextNode = boggleTrie.get(curNode.mid, prefix, 0);
-                    if (nextNode != null)
-                        dfs(nextNode, start, next, visited);
-                }
-            }
-
-            visited.remove(cur);
-        }
-
-        private Set<String> getSurrounds(int row, int col) {
-            Set<String> surrounds = new HashSet<String>();
-            for (int i = row - 1; i <= row + 1; i++)
-                for (int j = col - 1; j <= col + 1; j++)
-                    if (i >= 0 && i < rows && j >= 0 && j < cols && !(i == row && j == col)) {
-                        surrounds.add(getHash(i, j));
-                    }
-            return surrounds;
-        }
-
-    }
-
-    // Returns the set of all valid words in the given Boggle board, as an Iterable.
-    public Iterable<String> getAllValidWords(BoggleBoard board) {
-        BoggleWord bw = new BoggleWord(board);
-        for (int i = 0; i < board.rows(); i++)
-            for (int j = 0; j < board.cols(); j++) {
-                bw.buildWord(i, j);
-            }
-        ArrayList<String> words = new ArrayList<String>(bw.words);
-        Collections.sort(words);
-        return words;
-    }
-
-    // Returns the score of the given word if it is in the dictionary, zero otherwise.
-    // (You can assume the word contains only the uppercase letters A through Z.)
-    public int scoreOf(String word) {
-        if (boggleTrie.get(word) != null) {
-            int len  = word.length();
-            switch(len) {
-                case 1: case 2: return 0;
-                case 3: case 4: return 1;
-                case 5: return 2;
-                case 6: return 3;
-                case 7: return 5;
-                default: return 11;
-            }
-        }
-        return 0;
-    }
-
-    public static void main(String[] args)
-    {
-        In in = new In(args[0]);
-        String[] dictionary = in.readAllStrings();
-        BoggleSolver solver = new BoggleSolver(dictionary);
-        BoggleBoard board = new BoggleBoard(args[1]);
-        int score = 0;
-        long start = System.nanoTime();
-        for (String word : solver.getAllValidWords(board))
-        {
-            StdOut.println(word);
-            score += solver.scoreOf(word);
-        }
-        long elapsedTime = System.nanoTime();
-        StdOut.println("Score = " + score);
-        StdOut.println("Time = " + elapsedTime/1000000);
-    }
+   private String addLetter(String to, char letter) {
+      if (letter == Q_LETTER) return to + QU_STRING;
+      else return to + letter;
+   }
+   
+   private boolean isValidWord(String currentWord) {
+      if (currentWord == null) return false;
+      if (dictionary.contains(currentWord) && currentWord.length() > 2) return true;
+      else return false;
+   }
+   
+   // Returns the score of the given word if it is in the dictionary, zero otherwise.
+   // (the word contains only the uppercase letters A through Z.)
+   public int scoreOf(String word) {
+      if (word == null || word.length() == 0) 
+         throw new java.lang.IllegalArgumentException("You want to score empty string!");
+      Integer score = dictionary.get(word);
+      if (score == null) 
+         return 0;
+      else 
+         return score;
+   }
+   
+   // Test
+   public static void main(String[] args) {
+       In in = new In(args[0]);
+       String[] dictionary = in.readAllStrings();
+       BoggleSolver solver = new BoggleSolver(dictionary);
+       BoggleBoard board = new BoggleBoard(args[1]);
+       // Stress test
+       // BoggleBoard board = new BoggleBoard(10, 11);
+       int score = 0;
+       for (String word : solver.getAllValidWords(board))
+       {
+           StdOut.println(word + " " + solver.dictionary.get(word));
+           score += solver.scoreOf(word);
+       }
+       StdOut.println("Score = " + score);
+   }
 }
