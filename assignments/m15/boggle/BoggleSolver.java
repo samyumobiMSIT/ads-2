@@ -7,14 +7,14 @@ public class BoggleSolver {
    
    private static final String QU_STRING = "QU";
    
-   private final FastPrefixTST<Integer> dictionary;
+   private final TST<Integer> dictionary;
    
    // Initializes the data structure using the given array of strings as the dictionary.
    // (each word in the dictionary contains only the uppercase letters A through Z.)
    public BoggleSolver(final String[] dictionary) {
       // shuffle alphabet dictionary to create more balanced trie
       shuffle(dictionary);
-      this.dictionary = new FastPrefixTST<Integer>();
+      this.dictionary = new TST<Integer>();
       int[] points = {0, 0, 0, 1, 1, 2, 3, 5, 11};
       for (String s : dictionary) {
          // if maxpoint word

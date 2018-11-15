@@ -1,4 +1,4 @@
-public class FastPrefixTST<Value> {
+public class TST<Value> {
 
    private int N;       // size
    private Node root;   // root of TST
