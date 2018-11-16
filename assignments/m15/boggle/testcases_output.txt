@@ -86,12 +86,12 @@ Your Output:
 Score = 68
 ----------------------------------------
 
-########## Testcase 11: Failed ##########
+########## Testcase 11: Passed ##########
 Expected Output: 
 Score = 147
 
 Your Output: 
-
+Score = 147
 ----------------------------------------
 
 ########## Testcase 12: Passed ##########
