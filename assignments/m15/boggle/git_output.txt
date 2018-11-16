@@ -1,0 +1,3 @@
+[master d9c52f1] "ads2_m16_a1_1: 30/30 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+ rewrite assignments/m15/boggle/result/score.json (93%)
