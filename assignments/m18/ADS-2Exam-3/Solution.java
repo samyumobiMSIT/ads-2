@@ -1,7 +1,10 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
-
+import java.util.Arrays;
+/**
+ * Solution clas
+ */
 public class Solution {
 
 	// Don't modify this method.
@@ -153,7 +156,10 @@ class T9 {
 				}
 			}
 			if(num.equals(t9Signature)) {
-				list.add(each);
+				if(tst.contains(each)) {
+					list.add(each);
+				}
+				
 			}
 		} 
 		return list;
@@ -162,20 +168,56 @@ class T9 {
 	// return all possibilities(words), find top k with highest frequency.
 	public Iterable<String> getSuggestions(Iterable<String> words, int k) {
 		// your code goes here
+		System.out.print("Possible : ");
+		for(String one : words) {
+			System.out.print(one + " " + tst.get(one));
+		}
+		System.out.println();
 		ArrayList<String> al = new ArrayList<>();
+		BinarySearchST<Integer, ArrayList<String>> bst = new BinarySearchST<>();
 		MaxPQ<Integer> maxpq = new MaxPQ<>();
 		for(String each : words) {
-			maxpq.insert(tst.get(each));
+			if(tst.contains(each)) {
+				maxpq.insert(tst.get(each));
+			}
+			
 		}
-		for(int i =0;i<k;i++) {
-			int f = maxpq.delMax();
-			for(String word : words) {
-				if(f == tst.get(word)) {
-					al.add(word);
-				}
+		for(String each : words) {
+			int freq = tst.get(each);
+			if(bst.contains(freq)) {
+				ArrayList<String> arr = bst.get(freq);
+				arr.add(each);
+				Collections.sort(arr);
+				bst.put(freq, arr);
+			} else {
+				bst.put(freq, new ArrayList<String>());
+				ArrayList<String> arr = bst.get(freq);
+				arr.add(each);
+				Collections.sort(arr);
+				bst.put(freq, arr);
 			}
 		}
+		int i =0;
+
+		while(true) {
+			if(maxpq.isEmpty()) break;
+			int m = maxpq.delMax();
+			ArrayList<String> arr2 = bst.get(m);
+			//System.out.println(arr2);
+			for(int j =0;j<arr2.size();j++) {
+				al.add(arr2.get(j));
+				i++;
+				//System.out.println(i + "-"+ k);
+				if(i >= k) break;
+			}
+			if(i >= k) break;	
+				
+			}	
+			
+		
+
 		Collections.sort(al);
+		//System.out.println(al.size() + " - " + k);
 		return al;
 	}
 
