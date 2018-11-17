@@ -1,0 +1,197 @@
+########## Testcase 0: Failed ##########
+Expected Output: 
+52
+28
+240
+3
+98
+54
+47
+149
+
+Your Output: 
+null
+null
+null
+null
+null
+null
+null
+null
+----------------------------------------
+
+########## Testcase 1: Failed ##########
+Expected Output: 
+wont
+working
+what
+whatever
+whats
+whatsup
+vegetables
+too
+took
+tookplace
+tool
+toolets
+tooo
+toopray
+toot
+toothpaste
+tootsie
+over
+overa
+overdid
+overdose
+overemphasiseor
+overheating
+overtime
+message
+messaged
+messageit
+messageits
+messageno
+messagepandy
+messages
+messagesome
+going
+
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at Solution.main(Solution.java:26)
+----------------------------------------
+
+########## Testcase 2: Failed ##########
+Expected Output: 
+hello
+pizza
+what
+sunday
+ball
+call
+involve
+finish
+gone
+good
+home
+battery
+friends
+watches
+morning
+tonight
+shop
+phne
+any
+bmw
+box
+boy
+coz
+jay
+jaz
+kay
+law
+lay
+ammo
+das
+ear
+far
+send
+pocked
+pest
+rest
+woo
+paying
+saying
+james
+lands
+hates
+casting
+packing
+peeps
+bam
+bao
+cam
+can
+abt
+act
+bat
+cat
+mines
+liver
+lives
+dime
+dine
+find
+fine
+seeking
+
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at Solution.main(Solution.java:38)
+----------------------------------------
+
+########## Testcase 3: Failed ##########
+Expected Output: 
+hello
+is
+right
+words
+
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at Solution.main(Solution.java:57)
+----------------------------------------
+
+########## Testcase 4: Failed ##########
+Expected Output: 
+update
+record
+immediately
+bristol
+call
+spoil
+kiss
+lips
+pints
+alone
+blood
+shop
+any
+boy
+pay
+say
+goods
+inner
+cards
+cares
+rate
+save
+card
+care
+case
+happy
+sales
+come
+poker
+roles
+real
+maps
+itor
+paces
+beer
+bffs
+jane
+kane
+lane
+chef
+ages
+aids
+bids
+paper
+keep
+
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at Solution.main(Solution.java:70)
+----------------------------------------
+
