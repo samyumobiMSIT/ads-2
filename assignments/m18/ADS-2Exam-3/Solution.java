@@ -1,5 +1,5 @@
-import java.util.Scanner;
 
+import java.util.Scanner;
 
 public class Solution {
 
@@ -84,28 +84,66 @@ public class Solution {
 		In in = new In(file);
 		return in.readAllStrings();
 	}
-
-	public static BinarySearchST<String, Integer> loadDictionary(String file) {
-		BinarySearchST<String, Integer>  st = new BinarySearchST<String, Integer>();
+	/**
+	 * Loads a dictionary.
+	 *
+	 * @param      file  The file
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
+	public static BinarySearchST<String, Integer> loadDictionary(
+		final String file) {
+		BinarySearchST<String, Integer>  st = new
+		BinarySearchST<String, Integer>();
 		// your code goes here
+		String[] dict = toReadFile(file);
+		for (int i = 0; i < dict.length; i++) {
+			String str = dict[i].toLowerCase();
+			if (st.contains(str)) {
+				st.put(str , st.get(str) + 1);
+			} else {
+				st.put(str, 1);
+			}
+		}
 		return st;
 	}
 
 }
-
+/**
+ * Class for t 9.
+ */
 class T9 {
-
+	/**
+	 * tst for loading words with freq.
+	 */
+	private TST<Integer> tst;
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      st    { parameter_description }
+	 */
 	public T9(BinarySearchST<String, Integer> st) {
 		// your code goes here
+		tst = new TST<>();
+		for (String eachWord : st.keys()) {
+			tst.put(eachWord, st.get(eachWord));
+		}
 	}
 
-	// get all the prefixes that match with given prefix.
-	public Iterable<String> getAllWords(String prefix) {
+	//get all the prefixes that match with given prefix.
+	/**
+	 * Gets all words.
+	 *
+	 * @param      prefix  The prefix
+	 *
+	 * @return     All words.
+	 */
+	public Iterable<String> getAllWords(final String prefix) {
 		// your code goes here
-		return null;
+		return tst.keysWithPrefix(prefix);
 	}
 
-	public Iterable<String> potentialWords(String t9Signature) {
+	public Iterable<String> potentialWords(final String t9Signature) {
 		// your code goes here
 		return null;
 	}
