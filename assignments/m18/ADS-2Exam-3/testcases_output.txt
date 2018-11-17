@@ -220,7 +220,7 @@ fine
 seeking
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 hello
 is
@@ -228,7 +228,6 @@ right
 words
 
 Your Output: 
-Possible : is 704within 6words 22rights 2right 87hello 42
 hello
 is
 right
@@ -284,97 +283,10 @@ paper
 keep
 
 Your Output: 
-Possible : update 5
-update
-Possible : record 3
-record
-Possible : immediately 4
-immediately
-Possible : bristol 2
-bristol
-Possible : ball 1call 226
-ball
-call
-Possible : spoil 1
-spoil
-Possible : kiss 31lips 1
-kiss
-lips
-Possible : pints 1
-pints
-Possible : alone 13blood 3
-alone
-blood
-Possible : shop 13
-shop
-Possible : any 101bmw 3box 5boy 30coz 15
-any
-boy
-coz
-Possible : pax 1pay 28saw 21say 82
-pay
-saw
-say
-Possible : goods 1inner 1
-goods
-goods
-inner
-Possible : cards 1cares 3
-cards
-cares
-Possible : rate 2save 7
-rate
-save
-Possible : bare 1base 2card 10care 58case 13
-card
-care
-case
-Possible : happy 104
-happy
-Possible : 
-Possible : sales 1
-sales
-Possible : 
-Possible : bone 2come 209
-bone
-come
-Possible : 
-Possible : 
-Possible : 
-Possible : poker 2roles 1
-poker
-roles
-Possible : real 24
-real
-Possible : maps 1
-maps
-Possible : itor 1
-itor
-Possible : paces 1
-paces
-Possible : adds 1beer 4bffs 1
-adds
-beer
-bffs
-Possible : jane 2kane 1lane 2
-jane
-jane
-lane
-Possible : 
-Possible : 
-Possible : 
-Possible : 
-Possible : 
-Possible : chef 1
-chef
-Possible : ages 2aids 1bids 1
-ages
-aids
-bids
-Possible : paper 11pases 1
-paper
-pases
-Possible : keep 59
-keep
+Exception in thread "main" java.util.NoSuchElementException: Priority queue underflow
+	at MaxPQ.delMax(MaxPQ.java:174)
+	at T9.getSuggestions(Solution.java:231)
+	at T9.t9(Solution.java:253)
+	at Solution.main(Solution.java:84)
 ----------------------------------------
 
