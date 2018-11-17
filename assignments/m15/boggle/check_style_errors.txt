@@ -470,8 +470,40 @@ Audit done.
 Checkstyle ends with 459 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:7: Line is longer than 80 characters (found 89). [LineLength]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:8: Line is longer than 80 characters (found 100). [LineLength]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:36: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:42:64: 'board' hides a field. [HiddenField]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:57:5: Unused @param tag for 'prefix'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:60:5: Unused @param tag for 'count'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:64:67: Expected @param tag for 'pref'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:67:39: Expected @param tag for 'cnt'. [JavadocMethod]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:82:26: '3' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:88: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:90: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:93: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:95: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:97: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:101: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:103: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:105: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:117: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:119: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:119:30: '3' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:119:52: '4' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:121: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:121:35: '5' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:123: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:123:35: '6' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:124:20: '3' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:125: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:125:35: '7' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:126:20: '5' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:127: 'else' construct must use '{}'s. [NeedBraces]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:128:20: '11' is a magic number. [MagicNumber]
+[ERROR] D:\ads-2\assignments\m15\boggle\BoggleSolver.java:136: 'if' construct must use '{}'s. [NeedBraces]
 Audit done.
-Checkstyle ends with 1 errors.
+Checkstyle ends with 33 errors.
 Starting audit...
 [ERROR] D:\ads-2\assignments\m15\boggle\In.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] D:\ads-2\assignments\m15\boggle\In.java:28: Line has trailing spaces. [RegexpSingleline]
@@ -989,5 +1021,9 @@ Starting audit...
 [ERROR] D:\ads-2\assignments\m15\boggle\StdRandom.java:589: 'for' construct must use '{}'s. [NeedBraces]
 Audit done.
 Checkstyle ends with 183 errors.
+Starting audit...
+[ERROR] D:\ads-2\assignments\m15\boggle\Trie.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
 Starting audit...
 Audit done.

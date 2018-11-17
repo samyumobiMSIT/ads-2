@@ -14,131 +14,52 @@ Your Output:
 Score = 84
 ----------------------------------------
 
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 Score = 1
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 1
 ----------------------------------------
 
-########## Testcase 3: Failed ##########
+########## Testcase 3: Passed ##########
 Expected Output: 
 Score = 2
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 2
 ----------------------------------------
 
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 Score = 3
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 3
 ----------------------------------------
 
-########## Testcase 5: Failed ##########
+########## Testcase 5: Passed ##########
 Expected Output: 
 Score = 1000
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 1000
 ----------------------------------------
 
-########## Testcase 6: Failed ##########
+########## Testcase 6: Passed ##########
 Expected Output: 
 Score = 400
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 400
 ----------------------------------------
 
-########## Testcase 7: Failed ##########
+########## Testcase 7: Passed ##########
 Expected Output: 
 Score = 7
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 7
 ----------------------------------------
 
 ########## Testcase 8: Passed ##########
@@ -149,46 +70,20 @@ Your Output:
 Score = 155
 ----------------------------------------
 
-########## Testcase 9: Failed ##########
+########## Testcase 9: Passed ##########
 Expected Output: 
 Score = 172
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 172
 ----------------------------------------
 
-########## Testcase 10: Failed ##########
+########## Testcase 10: Passed ##########
 Expected Output: 
 Score = 68
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 68
 ----------------------------------------
 
 ########## Testcase 11: Passed ##########
@@ -199,25 +94,12 @@ Your Output:
 Score = 147
 ----------------------------------------
 
-########## Testcase 12: Failed ##########
+########## Testcase 12: Passed ##########
 Expected Output: 
 Score = 687
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 687
 ----------------------------------------
 
 ########## Testcase 13: Passed ##########
@@ -228,46 +110,20 @@ Your Output:
 Score = 0
 ----------------------------------------
 
-########## Testcase 14: Failed ##########
+########## Testcase 14: Passed ##########
 Expected Output: 
 Score = 172
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 172
 ----------------------------------------
 
-########## Testcase 15: Failed ##########
+########## Testcase 15: Passed ##########
 Expected Output: 
 Score = 129
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 129
 ----------------------------------------
 
 ########## Testcase 16: Passed ##########
@@ -342,97 +198,36 @@ Your Output:
 Score = 0
 ----------------------------------------
 
-########## Testcase 25: Failed ##########
+########## Testcase 25: Passed ##########
 Expected Output: 
 Score = 26539
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 26539
 ----------------------------------------
 
-########## Testcase 26: Failed ##########
+########## Testcase 26: Passed ##########
 Expected Output: 
 Score = 19797
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 19797
 ----------------------------------------
 
-########## Testcase 27: Failed ##########
+########## Testcase 27: Passed ##########
 Expected Output: 
 Score = 27325
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 27325
 ----------------------------------------
 
-########## Testcase 28: Failed ##########
+########## Testcase 28: Passed ##########
 Expected Output: 
 Score = 32175
 
 Your Output: 
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at TrieSET$Node.<init>(TrieSET.java:28)
-	at TrieSET$Node.<init>(TrieSET.java:24)
-	at TrieSET.add(TrieSET.java:100)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:109)
-	at TrieSET.add(TrieSET.java:86)
-	at BoggleSolver.<init>(BoggleSolver.java:42)
-	at Solution.main(Solution.java:28)
+Score = 32175
 ----------------------------------------
 
 ########## Testcase 29: Passed ##########
