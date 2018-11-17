@@ -1,105 +1,186 @@
-import static java.lang.System.out;
-
-import java.util.NoSuchElementException;
-
+import java.util.Comparator;
+import java.util.ArrayList;
 /**
- * Implements a <i>Priority Queue</i> ordered that iterates over the largest key.
- * 
- * <h5>Lecture: APIs and Elementary Implementations (Week 4)</h5>
- * 
- * <p>
- *  Keep the entries ordered in an resizing array.
- * </p>
- * 
- * <p>This colecttion uses <i>Binary heap</i> algorithm.</p>
- * 
- * @see UnorderedMaxPQ.java
- * @author eder.magalhaes
- * @param <Key> parameterized type for key.
+ * Class for maximum pq.
+ *
+ * @param      <Key>  The key
  */
-public class MaxPQ<Key extends Comparable<Key>> {
-
+public class MaxPQ<Key> {
+    /**
+     * stores items from 1 to n.
+     */
     private Key[] pq;
-    private int N;
-    
+    /**
+     * Number of items on priority queue.
+     */
+    private int n;
+    /**
+     * Comparator variable.
+     */
+    private Comparator<Key> comparator;
+
+    /**
+     * Initializes an empty priority queue with the given initial capacity.
+     *
+     * @param  initCapacity the initial capacity of this priority queue
+     */
+    public MaxPQ(final int initCapacity) {
+        pq = (Key[]) new Object[initCapacity + 1];
+        n = 0;
+    }
+
+    /**
+     * Initializes an empty priority queue.
+     */
     public MaxPQ() {
-    	this(1);
+        this(1);
     }
-    
-    @SuppressWarnings("unchecked")
-	public MaxPQ(int capacity) {
-        pq = (Key[]) new Comparable[capacity+1];
-    }
-    
+
+    /**
+     * Returns true if this priority queue is empty.
+     *
+     * @return {@code true} if this priority queue is empty;
+     *         {@code false} otherwise
+     */
     public boolean isEmpty() {
-        return N == 0;
+        return n == 0;
     }
-    
-    public void insert(Key x) {
-    	if (N == pq.length - 1) 
-    	    resize(2 * pq.length);
-    	
-        pq[++N] = x;
-        swim(N);
+
+    /**
+     * Returns the number of keys on this priority queue.
+     *
+     * @return the number of keys on this priority queue
+     */
+    public int size() {
+        return n;
     }
-    
+
+    /**
+     * Returns a largest key on this priority queue.
+     *
+     * @return a largest key on this priority queue
+     */
+    public Key max() {
+        return pq[1];
+    }
+
+    /**
+     * Helper function to double the size of the heap array.
+     *
+     * @param      capacity  The capacity
+     */
+    private void resize(final int capacity) {
+        Key[] temp = (Key[]) new Object[capacity];
+        for (int i = 1; i <= n; i++) {
+            temp[i] = pq[i];
+        }
+        pq = temp;
+    }
+
+
+    /**
+     * Adds a new key to this priority queue.
+     *
+     * @param  x the new key to add to this priority queue
+     */
+    public void insert(final Key x) {
+        if (n == pq.length - 1) {
+            resize(2 * pq.length);
+        }
+        pq[++n] = x;
+        swim(n);
+    }
+
+    /**
+     * Removes and returns a largest key
+     * on this priority queue.
+     *
+     * @return a largest key on this priority queue
+     */
     public Key delMax() {
-    	if (isEmpty()) 
-    	    throw new NoSuchElementException();
-    	
+        final int four = 4;
         Key max = pq[1];
-        exch(1, N--);
+        exch(1, n--);
         sink(1);
-        
-        pq[N+1] = null;
-        
-        if ((N > 0) && (N == (pq.length - 1) / 4)) 
-            resize(pq.length  / 2);
-        
+        pq[n + 1] = null;
+        // to avoid loiterig and help with garbage collection
+        if ((n > 0) && (n == (pq.length - 1) / four)) {
+            resize(pq.length / 2);
+        }
         return max;
     }
-    
-    //node promoted to level of incompetence (Binary heap);
-    private void swim(int k) {
+
+    /**
+    * Swim function.
+    *
+    * @param      k1     { parameter_description }
+    */
+    private void swim(final int k1) {
+        int k = k1;
         while (k > 1 && less(k / 2, k)) {
             exch(k, k / 2);
             k = k / 2;
         }
     }
-    
-    //better subordinate (child) promoted (Binary heap);
-    private void sink(int k) {
-        while (2 * k <= N) {
+    /**
+     * Sink function.
+     *
+     * @param      k1     { parameter_description }
+     */
+    private void sink(final int k1) {
+        int k = k1;
+        while (2 * k <= n) {
             int j = 2 * k;
-            
-            if (j < N && less(j, j+ 1))
+            if (j < n && less(j, j + 1)) {
                 j++;
-            
-            if (!less(k, j))
+            }
+            if (!less(k, j)) {
                 break;
-            
+            }
             exch(k, j);
             k = j;
         }
     }
-    
-    private boolean less(int i, int j) {
-        return pq[i].compareTo(pq[j]) < 0;
+
+    /**
+     * Less than function.
+     *
+     * @param      i     { parameter_description }
+     * @param      j     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    private boolean less(final int i, final int j) {
+        if (comparator == null) {
+            return ((Comparable<Key>) pq[i]).compareTo(pq[j]) < 0;
+        } else {
+            return comparator.compare(pq[i], pq[j]) < 0;
+        }
     }
-    
-    private void exch(int i, int j) {
+    /**
+     * Swaps the values in the array.
+     *
+     * @param      i     { parameter_description }
+     * @param      j     { parameter_description }
+     */
+    private void exch(final int i, final int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
     }
-    
-    private void resize(int capacity) {
-        @SuppressWarnings("unchecked")
-        Key[] copy = (Key[]) new Comparable[capacity];
-        
-        for (int i = 1; i <= N; i++) 
-            copy[i] = pq[i];
-        
-        pq = copy;
+
+    /**
+     * Prints the best 5.
+     *
+     * @param      best  The best
+     */
+    public void print5(final ArrayList<Key> best) {
+        final int five = 5;
+        for (int i = 1; i <= five; i++) {
+            Key temp = delMax();
+            System.out.println(temp);
+            best.add(temp);
+        }
+        System.out.print("\n");
     }
 }
