@@ -1,0 +1,9 @@
+warning: LF will be replaced by CRLF in assignments/m18/ADS-2Exam-3/BinarySearchST.java.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in assignments/m18/ADS-2Exam-3/Queue.java.
+The file will have its original line endings in your working directory.
+[master 29721ac] "ads2_m18_a1_1: 4/5 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 7 files changed, 680 insertions(+), 664 deletions(-)
+ rewrite assignments/m18/ADS-2Exam-3/BinarySearchST.java (78%)
+ rewrite assignments/m18/ADS-2Exam-3/Queue.java (98%)
+ rewrite assignments/m18/ADS-2Exam-3/result/score.json (73%)
