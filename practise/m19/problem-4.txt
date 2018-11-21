@@ -1,0 +1,7 @@
+Write a Java regular expression for each of the following:
+
+Phone numbers, such as (609) 555-1234
+String expression = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$";
+
+Social Security numbers, such as 123-45-6789
+String expression = "^\\d{3}[- ]?\\d{2}[- ]?\\d{4}$";

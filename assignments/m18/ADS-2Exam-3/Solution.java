@@ -24,9 +24,11 @@ public final class Solution {
         switch (cases) {
         case "loadDictionary":
             // input000.txt and output000.txt
+            //build dictionary using loaddictionary
             BinarySearchST<String, Integer> hash = loadDictionary(
                     "/Files/t9.csv");
             while (scan.hasNextLine()) {
+                //keys are words-string, integer- freq(words)
                 String key = scan.nextLine();
                 System.out.println(hash.get(key));
             }
@@ -34,17 +36,23 @@ public final class Solution {
 
         case "getAllPrefixes":
             // input001.txt and output001.txt
+            /**
+             **load words in to TST with values  
+             ** as frequencies of words
+             **/
             T9 t9 = new T9(loadDictionary("/Files/t9.csv"));
             while (scan.hasNextLine()) {
                 String prefix = scan.nextLine();
                 for (String each : t9.getAllWords(prefix)) {
+                   // return keys that matches the given prefix
                     System.out.println(each);
                 }
             }
             break;
 
         case "potentialWords":
-            // input002.txt and output002.txt
+            // input002.txt and output002.txt       
+        //Possible words for T9Signature word (
             t9 = new T9(loadDictionary("/Files/t9.csv"));
             int count = 0;
             while (scan.hasNextLine()) {
@@ -61,6 +69,7 @@ public final class Solution {
 
         case "topK":
             // input003.txt and output003.txt
+             //Top K frequencies
             t9 = new T9(loadDictionary("/Files/t9.csv"));
             Bag<String> bag = new Bag<String>();
             int k = Integer.parseInt(scan.nextLine());
@@ -68,7 +77,9 @@ public final class Solution {
                 String line = scan.nextLine();
                 bag.add(line);
             }
+            //combining all word possibilities based on their frequencies
             for (String each : t9.getSuggestions(bag, k)) {
+                //returns the top k(Integer) prefixes
                 System.out.println(each);
             }
 
@@ -106,7 +117,7 @@ public final class Solution {
     }
     /**
      * Loads a dictionary.
-     *
+     * Reads File and if i/p contains word, read and put word in dict
      * @param      file  The file
      *
      * @return     { description_of_the_return_value }
@@ -160,6 +171,7 @@ class T9 {
      */
     public Iterable<String> getAllWords(final String prefix) {
         // your code goes here
+        //T9 contructor inserts values as frequencies of word. TST.java
         return tst.keysWithPrefix(prefix);
     }
     /**
@@ -215,21 +227,25 @@ class T9 {
      * Gets the suggestions.
      *
      * @param      words  The words
-     * @param      k      { parameter_description }
+     * @param      k      { length_word }
      *
      * @return     The suggestions.
      */
     public Iterable<String> getSuggestions(final Iterable<String> words,
                                            final int k) {
         // your code goes here
+        //Method returns the top k(Integer) prefixes by combining all word possibilities based on their
+         //frequencies.
         ArrayList<String> arr = new ArrayList<>();
         MaxPQ<Integer> max = new MaxPQ<>();
         for (String each : words) {
             max.insert(tst.get(each));
         }
         for (int i = 0; i < k; i++) {
+            //combining all word possibilities based on their frequencies.
             int freq = max.delMax();
             for (String eachOne : words) {
+                //If frequencies match, compare based on the word lengths.
                 if (freq == tst.get(eachOne)) {
                     arr.add(eachOne);
                 }

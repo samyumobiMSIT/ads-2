@@ -223,6 +223,7 @@ public class TST<Value> {
             throw new IllegalArgumentException(
                 "calls keysWithPrefix() with null argument");
         }
+        //inserting values as frequencies of word in Q
         Queue<String> queue = new Queue<String>();
         Node<Value> x = get(root, prefix, 0);
         if (x == null) {
@@ -246,10 +247,12 @@ public class TST<Value> {
         if (x == null) {
             return;
         }
+        //enQ new freq value in x.left
         collect(x.left,  prefix, queue);
         if (x.val != null) {
             queue.enqueue(prefix.toString() + x.c);
         }
+        //
         collect(x.mid,   prefix.append(x.c), queue);
         prefix.deleteCharAt(prefix.length() - 1);
         collect(x.right, prefix, queue);
@@ -257,30 +260,37 @@ public class TST<Value> {
     /**
      * { function_description }.
      *
-     * @param      x        { parameter_description }
-     * @param      prefix   The prefix
-     * @param      i        { parameter_description }
-     * @param      pattern  The pattern
+     * @param      x        { node containing word in i/p }
+     * @param      prefix   The prefix }
+     * @param      i        { int i=0 for longestPrefix  }
+     * @param      pattern  The pattern in dict
      * @param      queue    The queue
      */
     private void collect(final Node<Value> x, final StringBuilder prefix,
         final int i, final String pattern, final Queue<String> queue) {
         if (x == null) {
             return;
-        }
+        } //i=0
         char c = pattern.charAt(i);
+        //if pattern length < char length i/p SI, SIN
         if (c == '.' || c < x.c) {
+            //collect pattern store in x.left
             collect(x.left, prefix, i, pattern, queue);
         }
         if (c == '.' || c == x.c) {
+            // if I/p matches with pattern ie: SIN SIN enQ
+            //put char using StringBuilder prefix in Q and add to the Node
             if (i == pattern.length() - 1 && x.val != null) {
                 queue.enqueue(prefix.toString() + x.c);
             }
+            //if 0<4 , 0<3, 0<2, 0<1  checking each char if pattern does not match word
             if (i < pattern.length() - 1) {
+                //collect words, recurse thru Q, pattern does not match
                 collect(x.mid, prefix.append(x.c), i + 1, pattern, queue);
+                //check prefix and deletechar where not matched , again add and check for next char
                 prefix.deleteCharAt(prefix.length() - 1);
             }
-        }
+        }//c in vegeatables
         if (c == '.' || c > x.c) {
             collect(x.right, prefix, i, pattern, queue);
         }
