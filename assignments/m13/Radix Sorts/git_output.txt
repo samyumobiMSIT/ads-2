@@ -1,0 +1,53 @@
+[master 35bad90] "ads2_m13_a1_1: 8/8 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 51 files changed, 5103 insertions(+), 13 deletions(-)
+ create mode 100644 practise/m19/problem-4.txt
+ create mode 100644 practise/m21/bonus-ag1/Huffman/BinaryDump.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/BinaryIn.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/BinaryOut.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/BinaryStdIn.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/BinaryStdIn.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/BinaryStdOut.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/BinaryStdOut.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/HexDump.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/Huffman$Node.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/Huffman.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/Huffman.docx
+ create mode 100644 practise/m21/bonus-ag1/Huffman/Huffman.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/MinPQ$HeapIterator.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/MinPQ.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/MinPQ.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/StdIn.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/StdIn.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/StdOut.class
+ create mode 100644 practise/m21/bonus-ag1/Huffman/StdOut.java
+ create mode 100644 practise/m21/bonus-ag1/Huffman/input001.txt
+ create mode 100644 practise/m21/bonus-ag1/Huffman/input002.txt
+ create mode 100644 practise/m21/bonus-ag1/Huffman/output001.txt
+ create mode 100644 practise/m21/bonus-ag1/Huffman/output002.txt
+ create mode 100644 practise/m21/bonus-ag2/LZW/BinaryIn.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/BinaryOut.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/BinaryStdIn.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/BinaryStdIn.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/BinaryStdOut.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/BinaryStdOut.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/HexDump.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/LZW.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/LZW.docx
+ create mode 100644 practise/m21/bonus-ag2/LZW/LZW.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/Queue$1.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/Queue$ListIterator.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/Queue$Node.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/Queue.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/Queue.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/StdOut.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/TST$1.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/TST$Node.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/TST.class
+ create mode 100644 practise/m21/bonus-ag2/LZW/TST.java
+ create mode 100644 practise/m21/bonus-ag2/LZW/input001.txt
+ create mode 100644 practise/m21/bonus-ag2/LZW/input002.txt
+ create mode 100644 practise/m21/bonus-ag2/LZW/output001.txt
+ create mode 100644 practise/m21/bonus-ag2/LZW/output002.txt
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+To https://github.com/samyumobiMSIT/ads-2.git
+   559e3f3..35bad90  master -> master
