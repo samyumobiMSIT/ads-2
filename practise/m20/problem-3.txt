@@ -1,0 +1,24 @@
+Give the result of encoding the strings a , aa , aaa , aaaa , ... (strings consisting of N a ’s) with run-length encoding. What is the compression ratio as a function of N?
+
+The encoder inputs the first "a" into I, searches and finds "a" in the dictionary.
+It inputs the next "a" but finds that Ix, which is now "aa", is not in the
+dictionary. The encoder thus adds string "aa" to the dictionary as entry 256 and
+outputs the token 97 (a). Variable I is initialized to the second "a" . The third "a"
+is input, so Ix is the string "aa", which is now in the dictionary. I becomes this
+string, and the fourth "a" is input. Ix is now "aaa" which is not in the dictionary.
+The encoder thus adds string "aaa" to the dictionary as entry 257 and outputs 256
+(aa). I is init ialized to the fourth "a" . Continuing this process is straightforward.
+The result is that strings "aa" , "aaa" , "aaaa" ,... are added to the dictionary
+as entries 256, 257, 258,.. . , and the output is
+97 (a), 256 (aa), 257 (aaa), 258 (aaaa),. . .
+
+The output consists of pointers pointing to longer and longer strings of as. The first
+k pointers thus point at strings whose total length is 1 + 2 + ... + k = (k + k2)/2.
+Assuming an input stream that consists of one million as, we can find the size
+of the compressed output stream by solving the quadratic equation (k + k2)/2 = 1000000 for the unknown k, The solution is k :::::J 1414. The original, 8-million bit
+input is thus compressed into 1414 pointers, each at least 9-bit (and in practice,
+probably 16-bit) long. The compression factor is thus either 8M/(1414 x 9) :::::J 628.6
+or 8M/(1414 x 16) :::::J 353.6.
+This is an impressive result but such input streams are rare (notice that this
+particular input can best be compressed by generating an output stream containing
+just "1000000 a" , and without using LZW).

@@ -1,0 +1,8 @@
+Write a regular expression for each of the following sets of binary strings:
+
+Contains at least three consecutive 1 s
+Contains the substring 110
+Contains the substring 1101100
+Does not contain the substring 110
+
+(0|1)*111(0|1)*, (0|1)*110(0|1)*, (0|1)*1101100(0|1)*, (0|10)*1*

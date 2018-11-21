@@ -1,0 +1,8 @@
+Write a regular expression for each of the following sets of binary strings. Use only the basic operations.
+has at least 3 characters, and the third character is 0
+number of 0s is a multiple of 3
+starts and ends with the same character
+odd length
+starts with 0 and has odd length, or starts with 1 and has even length
+length is at least 1 and at most 3
+Answers: (0|1)(0|1)0(0|1)*,   1* | (1*01*01*01*)*,   1(0|1)*1 | 0(0|1)*0 | 0 | 1,   (0|1)((0|1)(0|1))*,   0((0|1)(0|1))* | 1(0|1)((0|1)(0|1))*,   (0|1) | (0|1)(0|1) | (0|1)(0|1)(0|1).
